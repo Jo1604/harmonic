@@ -7,7 +7,7 @@ class MainScene extends Group {
         // Call parent Group() constructor
         super();
 
-        const loader = new GLTFLoader();
+
 
         this.name = 'MainScene';
 

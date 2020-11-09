@@ -27,13 +27,15 @@
     <script src="three.min.js"></script>
     <script src="three.module.js" type="module"></script>
     <script src="GLTFLoader.js" type="module"></script>
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas1"></canvas>
     <script type="module">
       //import { WebGLRenderer, PerspectiveCamera, Vector3 } from 'three';
-      import { SeedScene } from './SeedScene.js';
+      import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
+      import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
+      //import { SeedScene } from './SeedScene.js';
 
       // Initialize core ThreeJS components
-        const scene = new SeedScene();
+        const scene = new THREE.Scene();
         const camera = new PerspectiveCamera();
 
         // Set up camera
@@ -41,7 +43,7 @@
         camera.lookAt(new Vector3(0, 0, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
-        const canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('canvas1');
         const renderer = new THREE.WebGLRenderer({ canvas });
         renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -52,6 +54,7 @@
         //controls.minDistance = 4;
         //controls.maxDistance = 16;
         //controls.update();
+
         //lighting
         const dir = new SpotLight(0xffffff, 1.6, 7, 0.8, 1, 1);
         const ambi = new AmbientLight(0x404040, 1.32);
@@ -62,6 +65,11 @@
         scene.add(dir);
         scene.add(ambi);
         scene.add(hemi);
+        //loaders
+        const loader = new GLTFLoader();
+        loader.load('./MainScene.gltf', (gltf) => {
+            this.add(gltf.scene);
+        });
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             controls.update();
