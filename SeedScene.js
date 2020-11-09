@@ -1,6 +1,5 @@
 import { Scene, Color } from './three.min.js';
 import { MainScene } from './MainScene.js';
-import { BasicLights.js } from './BasicLights.js';
 
 class SeedScene extends Scene {
     constructor() {
@@ -13,8 +12,8 @@ class SeedScene extends Scene {
         // Add meshes to scene
         const land = new MainScene();
         //const flower = new Flower(this);
-        const lights = new BasicLights();
-        this.add(land, lights);
+        //const lights = new BasicLights();
+        this.add(land);
     }
 }
 
