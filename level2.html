@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+  body {
+    background-color: #40474b;
+  }
+  .vertical-menu {
+    width: 169px;
+    float: right;
+  }
+  .vertical-menu a {
+    background-color: #6EC9DD;
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .vertical-menu b {
+    background-color: #6EBBB7;
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .vertical-menu c {
+    background-color: #8AB8CF;
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+  }
+
+  .vertical-menu d {
+    background-color: #2D5182;
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+  }
+
+  .vertical-menu a:hover {
+    background-color: #EFFAF1;
+  }
+
+  .vertical-menu b:hover {
+    background-color: #EFFAF1;
+  }
+
+  .vertical-menu c:hover {
+    background-color: #EFFAF1;
+  }
+
+  .vertical-menu d:hover {
+    background-color: #EFFAF1;
+  }
+
+  .vertical-menu a.active {
+    background-color: #000;
+    color: white;
+  }
+  .vertical-menu b.active {
+    background-color: #000;
+    color: white;
+  }
+  .vertical-menu c.active {
+    background-color: #000;
+    color: white;
+  }
+  .vertical-menu d.active {
+    background-color: #000;
+    color: white;
+  }
+  .column {
+    float: left;
+    padding: 10px;
+  }
+
+  .left {
+    width: 25%;
+  }
+
+  .right {
+    width: 60%;
+  }
+  </style>
+  <body>
+
+    <div class="row">
+      <div class="column left" style="background-color:#40474b;">
+        <h2>Column 1</h2>
+        <p>Some text..</p>
+      </div>
+      <div class="column right" style="background-color:#2f3033;">
+        <h2>Column 2</h2>
+        <p>Some text..</p>
+      </div>
+    </div>
+
+    <div class="vertical-menu">
+      <a href="home.html">
+        <img alt="Home" src="buttons/Home.png"
+         width="158" height="50" margin.right=8px  onClick="openfileHome()">
+      </a>
+      <b href="level1.html">
+        <img alt="Level 1" src="buttons/Level 1.png"
+       width="158" height="50" margin.right=8px onClick="openfile1()">
+     </b>
+      <c href="level2.html"class="active">
+        <img alt="Level 2" src="buttons/Level 2.png"
+       width="158" height="50" margin.right=8px  onClick="openfile2()">
+     </c>
+      <d href="level3.html">
+        <img alt="Level 3" src="buttons/Level 3.png"
+       width="158" height="50" margin.right=8px  onClick="openfile3()">
+     </d>
+
+    </div>
+    <script type="text/javascript">
+      function openfileHome() {
+        window.location = "file://C:/Users/Jo/Desktop/IW/StarterJS/home.html";
+      }
+      function openfile1() {
+        window.location = "file://C:/Users/Jo/Desktop/IW/StarterJS/level1.html";
+      }
+      function openfile2() {
+        window.location = "file://C:/Users/Jo/Desktop/IW/StarterJS/level2.html";
+      }
+      function openfile3() {
+        window.location = "file://C:/Users/Jo/Desktop/IW/StarterJS/level3.html";
+      }
+    </script>
+  </body>
+</html>
