@@ -49,11 +49,11 @@
     <div class="vertical-center">
       <button class="button button1" id="start">Start Game</button>
     </div>
+    <script type="module">
+        let start = document.getElementById("start");
+        start.addEventListener('click', function(){
+          window.location.href = "home.html"
+        });
+      </script>
   </body>
-  <script type="module">
-      let start = document.getElementById("start");
-      start.addEventListener('click', function(){
-        window.location.href = "home.html"
-      });
-    </script>
 </html>

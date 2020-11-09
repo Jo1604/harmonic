@@ -1,4 +1,4 @@
-import { Group, SpotLight, AmbientLight, HemisphereLight } from 'three';
+import { Group, SpotLight, AmbientLight, HemisphereLight } from './three.min.js';
 
 class BasicLights extends Group {
     constructor(...args) {
@@ -16,4 +16,4 @@ class BasicLights extends Group {
     }
 }
 
-export default BasicLights;
+export {BasicLights};

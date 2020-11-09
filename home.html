@@ -11,6 +11,8 @@
       }
     </style>
   </head>
+  <script src="SeedScene.js" type="module"></script>
+  <script src="BasicLights.js" type="module"></script>
   <style>
     body {
       background-color: #40474b;
@@ -22,25 +24,16 @@
   <body>
     <p>Follow the Paths and find trees that trasport you to differnt worlds.</p>
     <p>Don't forget to explore</p>
+
+    <script src="three.min.js"></script>
     <canvas id="canvas"></canvas>
     <script type="module">
-      /**
-       * app.js
-       *
-       * This is the first file loaded. It sets up the Renderer,
-       * Scene and Camera. It also starts the render loop and
-       * handles window resizes.
-       *
-       */
-      import { WebGLRenderer, PerspectiveCamera, Vector3 } from 'three';
-      import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-      import { SeedScene } from 'scenes';
+      //import { WebGLRenderer, PerspectiveCamera, Vector3 } from 'three';
+      import { SeedScene } from './SeedScene.js';
 
       // Initialize core ThreeJS components
-      function init() {
         const scene = new SeedScene();
         const camera = new PerspectiveCamera();
-        const renderer = new WebGLRenderer({ antialias: true });
 
         // Set up camera
         camera.position.set(6, 3, -10);
@@ -52,12 +45,12 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         // Set up controls
-        const controls = new OrbitControls(camera, canvas);
-        controls.enableDamping = true;
-        controls.enablePan = false;
-        controls.minDistance = 4;
-        controls.maxDistance = 16;
-        controls.update();
+        //const controls = new OrbitControls(camera, canvas);
+        //controls.enableDamping = true;
+        //controls.enablePan = false;
+        //controls.minDistance = 4;
+        //controls.maxDistance = 16;
+        //controls.update();
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
@@ -77,8 +70,6 @@
         };
         windowResizeHandler();
         window.addEventListener('resize', windowResizeHandler, false);
-      }
-      init();
     </script>
   </body>
 </html>

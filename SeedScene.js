@@ -1,6 +1,6 @@
-import { Scene, Color } from 'three';
-import { MainScene } from 'objects';
-import { BasicLights } from 'lights';
+import { Scene, Color } from './three.min.js';
+import { MainScene } from './MainScene.js';
+import { BasicLights.js } from './BasicLights.js';
 
 class SeedScene extends Scene {
     constructor() {
