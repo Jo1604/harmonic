@@ -57,8 +57,8 @@
 
         // Set up controls
         const controls = new PointerLockControls(camera, canvas);
+        controls.locked();
         controls.addEventListener('locked', function () {
-
         });
         var onKeyDown = function (event) {
             switch (event.keyCode) {
@@ -185,7 +185,7 @@
         // Resize Handler
         const windowResizeHandler = () => {
             const { innerHeight, innerWidth } = window;
-            renderer.setSize(innerWidth/1.03, innerHeight);
+            renderer.setSize(innerWidth/1.03, innerHeight/1.2);
             camera.aspect = innerWidth / innerHeight;
             camera.updateProjectionMatrix();
         };
