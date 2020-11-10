@@ -67,8 +67,8 @@
         scene.add(hemi);
         //loaders
         const loader = new THREE.GLTFLoader();
-        loader.load('./MainScene.gltf', (gltf) => {
-            this.add(gltf.scene);
+        loader.load('./MainSceneBin.glb', (glb) => {
+            this.add(glb.scene);
         });
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
