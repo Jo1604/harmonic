@@ -164,27 +164,27 @@
         scene.add(stars);
 
         //load base
-        const loader = new GLTFLoader();
-        loader.load('./MainSceneBin.glb', function (gltf) {
+        const loaderScene = new GLTFLoader();
+        loaderScene.load('./MainSceneBin.glb', function (gltf) {
           scene.add( gltf.scene );
         });
 
         //load doors
-        const loader = new GLTFLoader();
-        loader.load('./Door1.glb', function (gltf) {
+        const loaderDoor1 = new GLTFLoader();
+        loaderDoor1.load('./Door1.glb', function (gltf) {
           gltf.scene.position.x = -5;
           gltf.scene.position.y = 1;
           gltf.scene.position.z = 2.36;
           scene.add( gltf.scene );
         });
 
-        const loader = new GLTFLoader();
-        loader.load('./Door2.glb', function (gltf) {
+        const loaderDoor2 = new GLTFLoader();
+        loaderDoor2.load('./Door2.glb', function (gltf) {
           scene.add( gltf.scene );
         });
 
-        const loader = new GLTFLoader();
-        loader.load('./Door3.glb', function (gltf) {
+        const loaderDoor3 = new GLTFLoader();
+        loaderDoor3.load('./Door3.glb', function (gltf) {
           scene.add( gltf.scene );
         });
         // Render loop
