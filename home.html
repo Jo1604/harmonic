@@ -31,7 +31,6 @@
       //import { WebGLRenderer, PerspectiveCamera, Vector3 } from 'three';
       import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
       import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
-      //import { SeedScene } from './SeedScene.js';
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -67,7 +66,7 @@
         //loaders
         const loader = new GLTFLoader();
         loader.load('./MainSceneBin.glb', (gltf) => {
-            this.add(gltf.scene);
+            scene.add(gltf.scene);
         });
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
