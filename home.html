@@ -59,7 +59,7 @@
 
         // Set up controls
         const controls = new PointerLockControls(camera, canvas);
-        document.body.addEventListener( 'click' , function () {
+        document.body.addEventListener( 'keypress' , function () {
           //lock mouse on screen
           controls.lock();
           }, false);
