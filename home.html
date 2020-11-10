@@ -65,8 +65,11 @@
         scene.add(hemi);
         //loaders
         const loader = new GLTFLoader();
-        loader.load('./MainSceneBin.glb', (gltf));
-        scene.add( gltf.scene );
+        loader.load('./MainSceneBin.glb', function (gltf) {
+          scene.add( gltf.scene );
+        }
+        );
+
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             //controls.update();
