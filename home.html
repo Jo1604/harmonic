@@ -40,6 +40,8 @@
       var moveRight = false;
       var velocity = new THREE.Vector3();
       var direction = new THREE.Vector3();
+      var mouse = new THREE.Vector2();
+      var raycaster = new THREE.Raycaster();
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -48,7 +50,7 @@
 
         // Set up camera
         camera.position.set(5, 1, 1);
-        camera.lookAt(new THREE.Vector3(3, 1, -1));
+        camera.lookAt(new THREE.Vector3(4, 1, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
         const canvas = document.getElementById('canvas1');
@@ -57,10 +59,27 @@
 
         // Set up controls
         const controls = new PointerLockControls(camera, canvas);
-        document.body.addEventListener( 'click', function () {
+        document.body.addEventListener( 'click' , function () {
           //lock mouse on screen
           controls.lock();
-          }, false );
+          }, false);
+
+        // Double click on objects
+        document.body.addEventListener( 'dbclick', dbclick, false);
+        function dbclick(event){
+          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+          raycaster.setFromCamera(mouse, camera);
+          var intersects = raycaster.intersectObjects(scene.children);
+          var object;
+          if (event && intersects.length > 0) {
+            for (var i = 0; i < intersects.length; i++) {
+              object = intersects[i].object.id;
+              if(object == 2) {
+                window.location.href = "./assignment1.html"
+              }
+            }
+          }
         controls.addEventListener('locked', function () {
         });
         var onKeyDown = function (event) {
@@ -111,14 +130,6 @@
         };
         window.addEventListener('keydown', onKeyDown, false);
         window.addEventListener('keyup', onKeyUp, false);
-
-        // Set up controls
-        //const controls = new OrbitControls(camera, canvas);
-        //controls.enableDamping = true;
-        //controls.enablePan = false;
-        //controls.minDistance = 4;
-        //controls.maxDistance = 16;
-        //controls.update();
 
         //lighting
         const dir = new THREE.SpotLight(0xffffff, 1.6, 7, 0.8, 1, 1);
@@ -182,6 +193,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
+            console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
