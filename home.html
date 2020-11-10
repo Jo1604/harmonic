@@ -67,8 +67,7 @@
         const loader = new GLTFLoader();
         loader.load('./MainSceneBin.glb', function (gltf) {
           scene.add( gltf.scene );
-        }
-        );
+        });
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
