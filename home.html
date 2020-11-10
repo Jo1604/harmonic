@@ -49,7 +49,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(5, 1, 1);
+        camera.position.set(5, 0.5, 1);
         camera.lookAt(new THREE.Vector3(4, 1, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -75,7 +75,7 @@
           if (event && intersects.length > 0) {
             for (var i = 0; i < intersects.length; i++) {
               object = intersects[i].object.id;
-              if(object == 2) {
+              if(object == 24) { //Door1
                 window.location.href = "./assignment1.html"
               }
             }
@@ -173,7 +173,7 @@
         const loaderDoor1 = new GLTFLoader();
         loaderDoor1.load('./Door1.glb', function (gltf) {
           gltf.scene.position.x = -5;
-          gltf.scene.position.y = 1;
+          gltf.scene.position.y = 0.3;
           gltf.scene.position.z = 2.36;
           scene.add( gltf.scene );
         });
