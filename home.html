@@ -63,6 +63,27 @@
         scene.add(dir);
         scene.add(ambi);
         scene.add(hemi);
+
+        // sunset sky
+        var starGeo = new THREE.Geometry();
+        for (let i = 0; i < 6000; i++) {
+            let star = new Vector3(
+                Math.random() * 600 - 300,
+                Math.random() * 600 - 300,
+                Math.random() * 600 - 300
+            );
+            starGeo.vertices.push(star);
+        }
+        let starMaterial = new THREE.PointsMaterial({
+            color: 0xFFFFFF,
+            size: 0.7
+        });
+
+        var stars = new THree.Points(starGeo, starMaterial);
+        // Set background to a nice color
+        scene.background = new THREE.Color(0x001933);
+        scene.add(stars);
+
         //loaders
         const loader = new GLTFLoader();
         loader.load('./MainSceneBin.glb', function (gltf) {
