@@ -79,7 +79,7 @@
             for (var i = 0; i < intersects.length; i++) {
               object = intersects[i].object.id;
               console.log(object)
-              if(object == 31) { //Door1
+              if(object == 17) { //Door1
                 console.log("door1")
                 window.location.href = "./assignment1.html"
               }
@@ -181,7 +181,7 @@
           gltf.scene.position.z = 2.36;
           scene.add( gltf.scene );
         });
-        const geometry = new THREE.SphereGeometry( 5, 6, 6 );
+        const geometry = new THREE.SphereGeometry( 1, 6, 6 );
         const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
         const sphere1 = new THREE.Mesh( geometry, material );
         scene.add(sphere1)
