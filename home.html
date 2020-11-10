@@ -46,6 +46,65 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         // Set up controls
+        const controls = new PointerLockControls(camera, canvas);
+        controls.addEventListener('locked', function () {
+
+        });
+        var onKeyDown = function (event) {
+
+            switch (event.keyCode) {
+
+                case 38: // up
+                case 87: // w
+                    moveForward = true;
+                    break;
+
+                case 37: // left
+                case 65: // a
+                    moveLeft = true;
+                    break;
+
+                case 40: // down
+                case 83: // s
+                    moveBackward = true;
+                    break;
+
+                case 39: // right
+                case 68: // d
+                    moveRight = true;
+                    break;
+            }
+        };
+        var onKeyUp = function (event) {
+
+            switch (event.keyCode) {
+
+                case 38: // up
+                case 87: // w
+                    moveForward = false;
+                    break;
+
+                case 37: // left
+                case 65: // a
+                    moveLeft = false;
+                    break;
+
+                case 40: // down
+                case 83: // s
+                    moveBackward = false;
+                    break;
+
+                case 39: // right
+                case 68: // d
+                    moveRight = false;
+                    break;
+
+            }
+        };
+        window.addEventListener('keydown', onKeyDown, false);
+        window.addEventListener('keyup', onKeyUp, false);
+
+        // Set up controls
         //const controls = new OrbitControls(camera, canvas);
         //controls.enableDamping = true;
         //controls.enablePan = false;
