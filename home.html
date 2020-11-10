@@ -66,8 +66,8 @@
           }, false);
 
         // Double click on objects
-        document.body.addEventListener( 'dbclick', dbclick, false);
-        function dbclick(event){
+        window.addEventListener( 'click', click, false);
+        function click(event){
           controls.unlock();
           mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
           mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
@@ -85,8 +85,7 @@
             }
           }
         }
-        controls.addEventListener('locked', function () {
-        });
+        
         var onKeyDown = function (event) {
             switch (event.keyCode) {
                 case 38: // up
