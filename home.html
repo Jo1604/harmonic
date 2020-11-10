@@ -163,12 +163,30 @@
         scene.background = new THREE.Color(0x7da3be);
         scene.add(stars);
 
-        //loaders
+        //load base
         const loader = new GLTFLoader();
         loader.load('./MainSceneBin.glb', function (gltf) {
           scene.add( gltf.scene );
         });
 
+        //load doors
+        const loader = new GLTFLoader();
+        loader.load('./Door1.glb', function (gltf) {
+          gltf.scene.position.x = -5;
+          gltf.scene.position.y = 1;
+          gltf.scene.position.z = 2.36;
+          scene.add( gltf.scene );
+        });
+
+        const loader = new GLTFLoader();
+        loader.load('./Door2.glb', function (gltf) {
+          scene.add( gltf.scene );
+        });
+
+        const loader = new GLTFLoader();
+        loader.load('./Door3.glb', function (gltf) {
+          scene.add( gltf.scene );
+        });
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
