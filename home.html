@@ -67,6 +67,7 @@
         // Double click on objects
         document.body.addEventListener( 'dbclick', dbclick, false);
         function dbclick(event){
+          controls.unlock();
           mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
           mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
           raycaster.setFromCamera(mouse, camera);
