@@ -15,7 +15,7 @@
     body {
       background-color: #40474b;
     }
-    p{
+    p {
       text-align: center;
     }
   </style>
@@ -67,7 +67,7 @@
         // sunset stars
         var starGeo = new THREE.Geometry();
         for (let i = 0; i < 6000; i++) {
-            let star = new Vector3(
+            let star = new THREE.Vector3(
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300,
                 Math.random() * 600 - 300
@@ -79,7 +79,7 @@
             size: 0.7
         });
 
-        var stars = new THree.Points(starGeo, starMaterial);
+        var stars = new THREE.Points(starGeo, starMaterial);
         // Set background to a nice color
         scene.background = new THREE.Color(0x001933);
         scene.add(stars);
