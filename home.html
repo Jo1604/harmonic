@@ -6,7 +6,7 @@
     <style>
       body {
         font-family: "Indie Flower";
-        font-size: 32px;
+        font-size: 28px;
         color: white
       }
     </style>
@@ -57,7 +57,7 @@
 
         // Set up controls
         const controls = new PointerLockControls(camera, canvas);
-        controls.locked();
+        controls.lock();
         controls.addEventListener('locked', function () {
         });
         var onKeyDown = function (event) {
