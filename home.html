@@ -181,13 +181,13 @@
           gltf.scene.position.z = 2.36;
           scene.add( gltf.scene );
         });
-        const geometry = new THREE.SphereGeometry( 0.01, 6, 6 );
+        const geometry = new THREE.SphereGeometry( 0.015, 6, 6 );
         const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
         const sphere1 = new THREE.Mesh( geometry, material );
         scene.add(sphere1)
         sphere1.position.x = -4.95
-        sphere1.position.y = 0.5;
-        sphere1.position.z = 2.42;
+        sphere1.position.y = 0.505;
+        sphere1.position.z = 2.4;
 
         const loaderDoor2 = new GLTFLoader();
         loaderDoor2.load('./Door2.glb', function (gltf) {
