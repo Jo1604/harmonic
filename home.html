@@ -6,7 +6,7 @@
     <style>
       body {
         font-family: "Indie Flower";
-        font-size: 28px;
+        font-size: 20px;
         color: white
       }
     </style>
@@ -20,7 +20,8 @@
     }
   </style>
   <body>
-    <p>Follow the Paths and find trees that trasport you to differnt worlds. Don't forget to explore</p>
+    <p>Follow the Paths and find trees that trasport you to differnt worlds. Don't forget to explore!</p>
+    <p>Press any key to start moving. Use your mouse to look around and your arrow keys (or WASD) to move. Press ESC key to use your mouse normally. </p>
 
     <script src="three.min.js"></script>
     <script src="three.module.js" type="module"></script>
@@ -76,7 +77,7 @@
           if (event && intersects.length > 0) {
             for (var i = 0; i < intersects.length; i++) {
               object = intersects[i].object.id;
-              if(object == 24) { //Door1
+              if(object == 17) { //Door1
                 window.location.href = "./assignment1.html"
               }
             }
