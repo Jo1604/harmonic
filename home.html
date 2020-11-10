@@ -175,7 +175,7 @@
               controls.moveForward(- velocity.z * delta);
               prevTime = time;
             }
-            controls.update();
+            //controls.update();
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
