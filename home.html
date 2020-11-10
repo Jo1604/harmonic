@@ -185,8 +185,8 @@
         const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
         const sphere1 = new THREE.Mesh( geometry, material );
         scene.add(sphere1)
-        sphere1.position.x = -4.8;
-        sphere1.position.y = 0.3;
+        sphere1.position.x = -4.87;
+        sphere1.position.y = 0.38;
         sphere1.position.z = 2.2;
 
         const loaderDoor2 = new GLTFLoader();
@@ -211,8 +211,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 100.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 100.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 90.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 90.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
