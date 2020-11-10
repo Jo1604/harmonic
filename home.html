@@ -64,7 +64,7 @@
         scene.add(ambi);
         scene.add(hemi);
 
-        // sunset sky
+        // sunset stars
         var starGeo = new THREE.Geometry();
         for (let i = 0; i < 6000; i++) {
             let star = new Vector3(
@@ -87,6 +87,7 @@
         //loaders
         const loader = new GLTFLoader();
         loader.load('./MainSceneBin.glb', function (gltf) {
+          gltf.scene.position.set(0, -25, 10);
           scene.add( gltf.scene );
         });
 
