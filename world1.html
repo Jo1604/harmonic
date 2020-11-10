@@ -173,6 +173,14 @@
           scene.add( gltf.scene );
         });
 
+        // load computer
+        const geometry = new THREE.BoxGeometry( 0.5, 1, 1 );
+        const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+        const cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
+        cube.position.x = -5;
+        cube.position.y = 8;
+        cube.position.z = 2;
         //load doors
         /*const loaderDoor1 = new GLTFLoader();
         loaderDoor1.load('./Door1.glb', function (gltf) {
