@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie Flower">
+    <link href="https://fonts.googleapis.com/css?family=Noto Sans JP" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      h1{
+        font-family: "Indie Flower";
+        font-size: 50px;
+        color: white
+      }
+      p{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 23px;
+        color: white
+      }
+
+    </style>
+  </head>
+  <style>
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      display:inline-block;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+    .button1 {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+    .button1: hover {
+      background-color: RoyalBlue;
+    }
+    .button {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 5px 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .button: hover {
+      background-color: RoyalBlue;
+    }
+    /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 60%;
+    padding: 10px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    h1 {
+      text-align: left-align;
+    }
+    p{
+      text-indent:10px;
+      text-align: left-align;
+      margin-top: 0px;
+      margin-right: 50px;
+      margin-bottom: 2px
+    }
+    .list{
+      display: inline-block;
+    }
+    .comm{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: silver;
+      display: block;
+      text-indent: 10px;
+    }
+    .label{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: block;
+      text-indent: 10px;
+    }
+    .sect{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: cyan;
+      display: block;
+      text-indent: 200px;
+    }
+    .instruct{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: mediumpurple;
+      display: inline-block;
+    }
+    .dest{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: seagreen;
+      display: inline-block;
+    }
+    .src1{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: palegoldenrod;
+      display: inline-block;
+    }
+    .src2{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: coral;
+      display: inline-block;
+    }
+    .reg{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: block;
+    }
+    .mid{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: block;
+      text-indent: 200px;
+    }
+  </style>
+  <body style="background-color: rgb(52, 60, 66);">
+      <h1>Practice 1: Array Maninpulation</h1>
+      <p> Given an array, fill it out with the correct information. Hover over the code for more information and help!</p>
+      <div class="column" style="background-color:#0E1D2B;">
+        <br>
+        <p class="comm">//------------------------------------------------------------------------------</p>
+        <p class="sect">.section .bss</p>
+        <p class="label"> <span title= " Array with 3 elements type int (4 bytes)"> MyIntArray:</span> &emsp;&emsp; .skip&emsp; 12</p>
+        <br>
+        <p class="comm">//------------------------------------------------------------------------------</p>
+        <p class="sect">.section .text</p>
+        <p class="comm">//This is to keep track of where in the stack we add things</p> <p class="comm">//(more on this in Lesson 2) </p>
+        <br>
+        <p class="mid"> .equ &emsp;MAIN_STACK,&emsp;16</p>
+        <br>
+        <p class="mid"> .global main </p>
+        <br>
+        <p class="reg"> main: </p>
+        <p class="comm">//---------------------------------Prolog------------------------------------</p>
+        <br>
+        <p class="instruct">sub</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
+        <br>
+        <p class="instruct">str</p><p class="src1">x30,</p><p class="dest">[sp]</p>
+        <br>
+        <br>
+        <p class="comm">//&emsp;Load base address of MyIntArray to x0</p>
+        <p class="instruct">adr</p><p class="dest">x0,</p><p class="src1">MyIntArray,</p>
+        <p class="comm">//&emsp;Enter the number of your birthday month in index 0</p>
+        <br>
+        <p class="instruct"><span title="How many bytes does this int take up?">sub</span></p>
+        <form class="list">
+         <select name = "selectDest">select
+            <option value = "Choose1" selected>ChooseDest</option>
+            <option value = "x1">x1</option>
+            <option value = "w1">w1</option>
+         </select>
+      </form>
+      <p class="dest"> , </p>
+      <form class="list">
+         <select name = "selectImm">select
+            <option value = "Choose2" selected>Choose Birthday Month number</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+            <option value = "12">11</option>
+            <option value = "12">12</option>
+         </select>
+      </form>
+        <br>
+        <p class="instruct">str</p>
+        <form class="list">
+         <select name = "selectDest">select
+            <option value = "Choose1" selected>ChooseDest</option>
+            <option value = "x1">x1</option>
+            <option value = "w1">w1</option>
+         </select>
+      </form>
+      <p class="dest"> , </p>
+      <form class="list">
+       <select name = "selectDest">select
+          <option value = "Choose1" selected>ChooseDest</option>
+          <option value = "x0">x0</option>
+          <option value = "w0">w0</option>
+          <option value = "x0">x1</option>
+          <option value = "w1">w1</option>
+       </select>
+    </form>
+    <p class="comm">//&emsp;Calculate your height in inches. Store in index 1</p>
+    <br>
+    <p class="instruct">mov</p>
+    <form class="list">
+     <select name = "selectDest">select
+        <option value = "Choose1" selected>ChooseDest</option>
+        <option value = "x1">x1</option>
+        <option value = "w1">w1</option>
+     </select>
+  </form>
+  <p class="dest"> , </p>
+  <form class="list">
+     <select name = "selectImm">select
+        <option value = "Choose3" selected>Height: feet</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+        <option value = "5">5</option>
+        <option value = "6">6</option>
+        <option value = "7">7</option>
+        <option value = "8">8</option>
+        <option value = "9">9</option>
+        <option value = "10">10</option>
+     </select>
+  </form>
+  <br>
+  <p class="instruct">mov</p>
+  <form class="list">
+   <select name = "selectDest">select
+      <option value = "Choose1" selected>ChooseDest</option>
+      <option value = "x1">x1</option>
+      <option value = "w1">w1</option>
+   </select>
+</form>
+<p class="dest"> , </p>
+<form class="list">
+   <select name = "selectImm">select
+      <option value = "Choose3" selected>Height: inches</option>
+      <option value = "1">1</option>
+      <option value = "2">2</option>
+      <option value = "3">3</option>
+      <option value = "4">4</option>
+      <option value = "5">5</option>
+      <option value = "6">6</option>
+      <option value = "7">7</option>
+      <option value = "8">8</option>
+      <option value = "9">9</option>
+      <option value = "10">10</option>
+      <option value = "11">11</option>
+   </select>
+</form>
+<br>
+<p class="instruct"><span title="Save space: you can store your result in the same register as your source">mul</span></p>
+<form class="list">
+ <select name = "selectDest">select
+    <option value = "Choose1" selected>ChooseDest</option>
+    <option value = "x1">x1</option>
+    <option value = "w1">w1</option>
+    <option value = "x2">x2</option>
+    <option value = "w2">w2</option>
+ </select>
+</form>
+<p class="dest"> , </p>
+<form class="list">
+ <select name = "selectSrc1">select
+    <option value = "Choose1" selected>ChooseSrc1</option>
+    <option value = "x1">x1</option>
+    <option value = "w1">w1</option>
+    <option value = "x2">x2</option>
+    <option value = "w2">w2</option>
+ </select>
+</form>
+<p class="src1"> , </p>
+<p class="src2"> 12 </p>
+<br>
+<p class="instruct">add</p>
+<form class="list">
+ <select name = "selectDest">select
+    <option value = "Choose1" selected>ChooseDest</option>
+    <option value = "x1">x1</option>
+    <option value = "w1">w1</option>
+    <option value = "x2">x2</option>
+    <option value = "w2">w2</option>
+ </select>
+</form>
+<p class="dest"> , </p>
+<form class="list">
+ <select name = "selectSrc1">select
+    <option value = "Choose1" selected>ChooseSrc1</option>
+    <option value = "x1">x1</option>
+    <option value = "w1">w1</option>
+    <option value = "x2">x2</option>
+    <option value = "w2">w2</option>
+ </select>
+</form>
+<p class="src1"> , </p>
+<form class="list">
+ <select name = "selectSrc1">select
+    <option value = "Choose1" selected>ChooseSrc1</option>
+    <option value = "x1">x1</option>
+    <option value = "w1">w1</option>
+    <option value = "x2">x2</option>
+    <option value = "w2">w2</option>
+ </select>
+</form>
+<br>
+<p class="instruct">str</p>
+<form class="list">
+ <select name = "selectDest">select
+    <option value = "Choose1" selected>ChooseSrc1</option>
+    <option value = "x1">x1</option>
+    <option value = "w1">w1</option>
+    <option value = "x2">x2</option>
+    <option value = "w2">w2</option>
+ </select>
+</form>
+<p class="dest">, </p>
+<p class="dest">[&emsp;x0, </p>
+<form class="list">
+ <select name = "selectSrc1">select
+    <option value = "Choose1" selected>Index</option>
+    <option value = "1">x1</option>
+    <option value = "2">w1</option>
+    <option value = "3">x2</option>
+ </select>
+</form>
+<p class="dest"> , </p>
+<form class="list">
+ <select name = "selectSrc1">select
+    <option value = "Choose1" selected>Operation</option>
+    <option value = "LSL1">LSL 1</option>
+    <option value = "LSL2">LSL 2</option>
+    <option value = "LSL3">LSL 3</option>
+    <option value = "LSL4">LSL 4</option>
+ </select>
+</form>
+<p class="dest"> ] </p>
+<br>
+<p class="comm">//&emsp;Last 3 Digits of phone number. Store result in index 3</p>
+<br>
+<p class="instruct">mov</p> <p class="dest">w1,</p>
+<form class="list">
+ <select name = "selectDest">select
+    <option value = "Choose1" selected>ChooseDigit1</option>
+    <option value = "0">0</option>
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9">9</option>
+ </select>
+</form>
+<br>
+<p class="instruct">mov</p> <p class="dest">w2,</p>
+<form class="list">
+ <select name = "selectDest">select
+    <option value = "Choose1" selected>ChooseDigit2</option>
+    <option value = "0">0</option>
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9">9</option>
+ </select>
+</form>
+<br>
+<p class="instruct">mov</p> <p class="dest">w3,</p>
+<form class="list">
+ <select name = "selectDest">select
+    <option value = "Choose1" selected>ChooseDigit3</option>
+    <option value = "0">0</option>
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9">9</option>
+ </select>
+</form>
+<br>
+<p class="instruct">add</p> <p class="dest">w1,</p><p class="src1">w1,</p><p class="src2">w2</p>
+<br>
+<p class="instruct">add</p> <p class="dest">w1,</p><p class="src1">w1,</p><p class="src2">w3</p>
+
+
+        <p class="comm">//---------------------------------Epilog-------------------------------------</p>
+        <br>
+        <p class="instruct">mov</p><p class="dest">w0,</p><p class="src1">0,</p>
+        <br>
+        <p class="instruct">ldr</p><p class="dest">x30,</p><p class="src1">[sp]</p>
+        <br>
+        <p class="instruct">add</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
+        <br>
+        <p class="instruct">ret</p>
+      </div>
+    <canvas id="canvas"></canvas>
+    <script >
+
+    </script>
+
+  </body>
+</html>

@@ -93,7 +93,7 @@
       background-color: DodgerBlue;
       border: none;
       color: white;
-      padding: 5px 5px;
+      padding: 2px 10px;
       font-size: 15px;
       cursor: pointer;
     }
@@ -138,9 +138,15 @@
   </style>
   <body style="background-color: rgb(64, 71, 75); overflow: hidden;">
     <button type="button" class="button" id="prev"><i class="fa fa-arrow-left"> Previous</i></button>
+    <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
     <button type="button" class="button" id="next">Next <i class="fa fa-arrow-right"></i></button>
 
     <div class= "slides">
+      <h1 id ="introh"> Welcome to Lesson 1 !</h1>
+      <p id="introInstruct">Use the arrows to navigate the slides. Look out for interactive features! If at any time you want to go back to World 1, click the world button.</p>
+      <br>
+      <p id ="introp"> Lesson one goes over the different components of an ARM program. Good luck!</p>
+
       <div class="columns">
       <h1 id="h0">High Level vs Low Level Languages</h1>
       <ul id="s0a">
@@ -159,6 +165,8 @@
           </ol></p1>
         </li>
       </ul>
+      <img id ="python" src="python.jpg" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="assemb" src="assemb.png" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
     </div>
 
     <div class="columns">
@@ -258,7 +266,7 @@
         </li>
       </ul>
       <div class="dropdown">
-        <button id="dropArth" class="dropbtn">Dropdown</button>
+        <button id="dropArth" class="dropbtn">Select Examples</button>
         <div class="dropdown-content">
           <input id= "b4a" type="text" onclick="AddEx()" value="Addtion Example">
           <input id= "b4b" type="text" onclick="OrEx()" value="Or Example">
@@ -288,7 +296,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="varldst" src="loadVar.jpg" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="varldst" src="loadVar.jpg" width="580" height="230" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
       <p id = "s5b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=170" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
     <div class="columns">
@@ -305,7 +313,6 @@
         <li><p1><b><font color="#e10000"> .Global </font></b> label:
           <ol>
             <li>label variables/data and sections that need to be seen from outside the file </li>
-            <li>Static(internal) information is the default so use .global to make information available to external</li>
           </ol></p1>
         </li>
         <li><p1>Data types:
@@ -317,7 +324,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="sects" src="sects.jpg" width="530" height="520" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="sects" src="sects.jpg" width="530" height="520" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:50px;"/>
       <p id = "s6b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=40" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
@@ -329,11 +336,17 @@
     <canvas id="canvas"></canvas>
     <script >
       let next = document.getElementById("next");
+      let world = document.getElementById("world");
       let prev = document.getElementById("prev");
+
+      let introh = document.getElementById("introh");
+      let introa = document.getElementById("introInstruct");
+      let introb = document.getElementById("introp");
 
       let h0 = document.getElementById("h0");
       let s0a = document.getElementById("s0a");
-      //let s0b = document.getElementById("s0b");
+      let i0a = document.getElementById("python");
+      let i0b = document.getElementById("assemb");
 
       let h1 = document.getElementById("h1");
       let s1a = document.getElementById("s1a");
@@ -377,9 +390,14 @@
       let s7 = document.getElementById("s7");
       let b7 = document.getElementById("start");
       // Display the first slide
-      h0.style.display = "inline";
-      s0a.style.display = "block";
-      //s0b.style.display = "block";
+      introh.style.display = "inline";
+      introa.style.display = "block";
+      introb.style.display = "block";
+
+      h0.style.display = "none";
+      s0a.style.display = "none";
+      i0a.style.display = "none";
+      i0b.style.display = "none";
 
       h1.style.display = "none";
       s1a.style.display = "none";
@@ -423,21 +441,44 @@
       b7.style.display = "none";
 
       // slide number
-      let slide = 1;
+      let slide = 0;
       // click next or prev buttons
       next.addEventListener('click', nextSlide, false);
+      world.addEventListener('click', goToWorld, false);
       prev.addEventListener('click', prevSlide, false);
+
+      function goToWorld() {
+        window.location.href = "./world1.html"
+      }
 
       function nextSlide() {
         switch (slide) {
+          case 0:
+            slide = 1;
+            next.style.display = "inline";
+            world.style.display = "inline";
+            prev.style.display = "inline";
+
+            introh.style.display = "none";
+            introa.style.display = "none";
+            introb.style.display = "none";
+
+
+            h0.style.display = "inline";
+            s0a.style.display = "block";
+            i0a.style.display = "inline";
+            i0b.style.display = "inline";
+            break;
           case 1:
             slide = 2;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h0.style.display = "none";
             s0a.style.display = "none";
-            //s0b.style.display = "none";
+            i0a.style.display = "none";
+            i0b.style.display = "none";
 
             h1.style.display = "inline";
             s1a.style.display = "block";
@@ -447,6 +488,7 @@
           case 2:
             slide = 3;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h1.style.display = "none";
@@ -462,6 +504,7 @@
           case 3:
             slide = 4;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h2.style.display = "none";
@@ -477,6 +520,7 @@
           case 4:
             slide = 5;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h3.style.display = "none";
@@ -495,6 +539,7 @@
           case 5:
             slide = 6;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h4.style.display = "none";
@@ -517,6 +562,7 @@
           case 6:
             slide = 7;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h5.style.display = "none";
@@ -533,6 +579,7 @@
           case 7:
             slide = 8;
             next.style.display = "none";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h6.style.display = "none";
@@ -546,6 +593,7 @@
             break;
           default:
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "none";
 
             //h0.style.display = "none";
@@ -555,14 +603,31 @@
 
       function prevSlide(){
         switch (slide) {
+          case 1:
+            slide = 0;
+            next.style.display = "inline";
+            world.style.display = "inline";
+            prev.style.display = "inline";
+
+            introh.style.display = "inline";
+            introa.style.display = "block";
+            introb.style.display = "block";
+
+            h0.style.display = "none";
+            s0a.style.display = "none";
+            i0a.style.display = "none";
+            i0b.style.display = "none";
+            break;
           case 2:
             slide = 1;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h0.style.display = "inline";
             s0a.style.display = "block";
-            //s0b.style.display = "block";
+            i0a.style.display = "inline";
+            i0b.style.display = "inline";
 
             h1.style.display = "none";
             s1a.style.display = "none";
@@ -572,6 +637,7 @@
           case 3:
             slide = 2;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h1.style.display = "inline";
@@ -587,6 +653,7 @@
           case 4:
             slide = 3;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h2.style.display = "inline";
@@ -602,6 +669,7 @@
           case 5:
             slide = 4;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h3.style.display = "inline";
@@ -623,6 +691,7 @@
           case 6:
             slide = 5;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h4.style.display = "inline";
@@ -642,6 +711,7 @@
           case 7:
             slide = 6;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h5.style.display = "inline";
@@ -658,6 +728,7 @@
           case 8:
             slide = 7;
             next.style.display = "inline";
+            world.style.display = "inline";
             prev.style.display = "inline";
 
             h6.style.display = "inline";
