@@ -168,6 +168,7 @@
     }
   </style>
   <body style="background-color: rgb(52, 60, 66);">
+    <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
       <h1>Practice 1: Array Maninpulation</h1>
       <p> Given an array, fill it out with the correct information. Hover over the code for more information and help!</p>
       <div class="column" style="background-color:#0E1D2B;">
@@ -450,6 +451,11 @@
       </div>
     <canvas id="canvas"></canvas>
     <script >
+    let world = document.getElementById("world");
+    world.addEventListener('click', goToWorld, false);
+    function goToWorld() {
+      window.location.href = "./world1.html"
+    }
 
     </script>
 
