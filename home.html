@@ -198,6 +198,11 @@
           gltf.scene.rotation.z =  Math.PI / 4;
           scene.add( gltf.scene );
         });
+        const sphere2 = new THREE.Mesh( geometry, material );
+        scene.add(sphere2)
+        sphere2.position.x = 6.61
+        sphere2.position.y = 0.56;
+        sphere2.position.z = -3.91;
 
         const loaderDoor3 = new GLTFLoader();
         loaderDoor3.load('./Door3.glb', function (gltf) {
