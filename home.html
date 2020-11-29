@@ -197,6 +197,9 @@
 
         const loaderDoor2 = new GLTFLoader();
         loaderDoor2.load('./Door2.glb', function (gltf) {
+          gltf.scene.position.x = 5;
+          gltf.scene.position.y = 0.3;
+          gltf.scene.position.z = -2.36;
           scene.add( gltf.scene );
         });
 
