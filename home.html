@@ -141,8 +141,7 @@
         //const ambi = new THREE.AmbientLight(0x404040, 1.32);
         //const hemi = new THREE.HemisphereLight(0xffffbb, 0x080820, 2.3);
 
-        dir.position.set(5, 1, 0);
-        dir.target.position.set(0, 0, 0);
+        dir.position.set(3, 0.9, 20);
         scene.add(dir);
         //scene.add(ambi);
         //scene.add(hemi);
@@ -186,7 +185,7 @@
         const sphere1 = new THREE.Mesh( geometry, material );
         scene.add(sphere1)
         sphere1.position.x = -4.95
-        sphere1.position.y = 0.55;
+        sphere1.position.y = 0.56;
         sphere1.position.z = 2.32;
 
         const loaderDoor2 = new GLTFLoader();
