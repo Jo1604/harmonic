@@ -139,12 +139,12 @@
         //lighting
         const dir = new THREE.SpotLight(0xffb400, 1.6, 100, 1.3, 1, 1);
         const ambi = new THREE.AmbientLight(0xffd369, 0.5);
-        //const hemi = new THREE.HemisphereLight(0xffffbb, 0x080820, 2.3);
+        const hemi = new THREE.HemisphereLight(0xffb400, 0x075a26, 1);
 
         dir.position.set(3, 0.9, 20);
         scene.add(dir);
         scene.add(ambi);
-        //scene.add(hemi);
+        scene.add(hemi);
 
         // sunset stars
         var starGeo = new THREE.Geometry();
