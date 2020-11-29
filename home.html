@@ -147,11 +147,11 @@
         scene.add(ambi);
         scene.add(hemi);
         scene.add(fire);
-        scene.add(fire.target);
+        //scene.add(fire.target);
 
         dir.position.set(3, 0.9, 20);
         fire.position.set(0, 1, 0);
-        fire.target.position.set(0, 50, 0);
+        //fire.target.position.set(0, 50, 0);
 
         // sunset stars
         var starGeo = new THREE.Geometry();
@@ -234,7 +234,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            //console.log(camera.position)
+            console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
