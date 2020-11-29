@@ -195,12 +195,15 @@
           gltf.scene.position.x = 6.65;
           gltf.scene.position.y = 0.3;
           gltf.scene.position.z = -3.96;
-          gltf.scene.rotation.z =  Math.PI * 2;
+          gltf.scene.rotation.z =  Math.PI / 4;
           scene.add( gltf.scene );
         });
 
         const loaderDoor3 = new GLTFLoader();
         loaderDoor3.load('./Door3.glb', function (gltf) {
+          gltf.scene.position.x = 1.23;
+          gltf.scene.position.y = 0.3;
+          gltf.scene.position.z = -6.01;
           scene.add( gltf.scene );
         });
         // Render loop
