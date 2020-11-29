@@ -137,7 +137,7 @@
         window.addEventListener('keyup', onKeyUp, false);
 
         //lighting
-        const dir = new THREE.SpotLight(0xffffff, 1.6, 7, 1.5, 1, 1);
+        const dir = new THREE.SpotLight(0xffb400, 1.6, 70, 1.5, 1, 1);
         //const ambi = new THREE.AmbientLight(0x404040, 1.32);
         //const hemi = new THREE.HemisphereLight(0xffffbb, 0x080820, 2.3);
 
@@ -186,8 +186,8 @@
         const sphere1 = new THREE.Mesh( geometry, material );
         scene.add(sphere1)
         sphere1.position.x = -4.95
-        sphere1.position.y = 0.51;
-        sphere1.position.z = 2.40;
+        sphere1.position.y = 0.515;
+        sphere1.position.z = 2.405;
 
         const loaderDoor2 = new GLTFLoader();
         loaderDoor2.load('./Door2.glb', function (gltf) {
