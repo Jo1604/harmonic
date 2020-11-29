@@ -150,7 +150,7 @@
         scene.add(fire.target);
 
         dir.position.set(3, 0.9, 20);
-        fire.position.set(3, 1, 0);
+        fire.position.set(0, 1, 0);
         fire.target.position.set(0, 50, 0);
 
         // sunset stars
@@ -200,6 +200,8 @@
           gltf.scene.position.x = 5;
           gltf.scene.position.y = 0.3;
           gltf.scene.position.z = -2.36;
+          gltf.scene.lookAt.x = 5;
+          gltf.scene.lookAt.x = 5;
           scene.add( gltf.scene );
         });
 
