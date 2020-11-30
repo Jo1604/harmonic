@@ -200,16 +200,16 @@
         });
         const sphere2 = new THREE.Mesh( geometry, material );
         scene.add(sphere2)
-        sphere2.position.x = 6.69
+        sphere2.position.x = 6.64
         sphere2.position.y = 0.56;
-        sphere2.position.z = -3.91;
+        sphere2.position.z = -3.89;
 
         const loaderDoor3 = new GLTFLoader();
         loaderDoor3.load('./Door3.glb', function (gltf) {
           gltf.scene.position.x = 1.23;
           gltf.scene.position.y = 0.3;
           gltf.scene.position.z = -6.01;
-          gltf.scene.rotation.y =  5*Math.PI / 4;
+          gltf.scene.rotation.y =  4*Math.PI / 3;
           scene.add( gltf.scene );
         });
         // Render loop
