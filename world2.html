@@ -79,9 +79,9 @@
             for (var i = 0; i < intersects.length; i++) {
               object = intersects[i].object.id;
               console.log(object)
-              if(object == 17) { //Door1
+              if(object == 16) { //Door1
                 console.log("door1")
-                window.location.href = "./assignment1.html"
+                window.location.href = "./assignment2.html"
               }
             }
           }
@@ -141,7 +141,7 @@
         //const ambi = new THREE.AmbientLight(0xa5a17d, 1);
         const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
 
-        dir.position.set(5, 1, 2);
+        dir.position.set(3, 10, 0);
         //dir.target.position.set(0, 0, 0);
         scene.add(dir);
         //scene.add(ambi);
