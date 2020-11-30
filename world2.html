@@ -50,8 +50,8 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 3.5, 0);
-        //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
+        camera.position.set(3, 5.5, 0);
+        camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
         const canvas = document.getElementById('canvas1');
@@ -139,13 +139,13 @@
         //lighting
         const dir = new THREE.SpotLight(0xf9e38a, 1.6, 7, 0.8, 1, 1);
         //const ambi = new THREE.AmbientLight(0xa5a17d, 1);
-        //const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
+        const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
 
         dir.position.set(5, 1, 2);
         //dir.target.position.set(0, 0, 0);
         scene.add(dir);
         //scene.add(ambi);
-        //scene.add(hemi);
+        scene.add(hemi);
 
         // sunset stars
         var starGeo = new THREE.Geometry();
