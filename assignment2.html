@@ -256,57 +256,24 @@
       <img id ="whileARM1" src="./A2/whileARM1.jpg"width="620" height="210" style="margin-right:5px; margin-left:5px;"/>
       </div>
       <div class="column1">
-      <img id ="whileARM2" src="./A2/whileARM2.jpg"width="580" height="420" style="margin-right:15px; margin-left:0px; margin-bottom: 5px;"/>
+      <img id ="whileARM2" src="./A2/whileARM2.jpg"width="400" height="420" style="margin-right:15px; margin-left:50px; margin-bottom: 5px;"/>
     </div>
 
-    <div class="columns">
-      <h1 id="h5">Signed vs. Unsigned Numbers</h1>
-      <img id ="ldst" src="./A1/loadBasic.jpg" width="300" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:5px;"/>
+      <h1 id="h5">Control Flow with Unsigned Integers/Instructions</h1>
+      <div class="column">
       <ul id="s5a">
-        <li><p1>Basic Load, Store, and Address:
+        <li><p1>How to Represent Unsigned:
           <ol>
-            <li>Load (ldr): Derefrences source pointer register using [] and loads contents of source to destination register</li>
-            <li>Store (str): Stores data from destination register to derefrenced source </li>
-          </ol></p1>
-        </li>
-        <li><p1>Variations:
-          <ol>
-            <li>Many variations exist to these formats to make refrenceing offsets easier</li>
-            <li>Very helpful for data structures like arrays <b>(see practice at the end of the lesson)</b></li>
+            <li>Data is not designated unsigned directly but through the instructions used with them</li>
+            <li>Arithmetic: Division (sdiv vs udiv) and specific types of Multiplication  </li>
+            <li>Control Flow: Some instructions remain the same (b, cmp, beq, bne) while others have unsigned equivalents (see graphic)  </li>
           </ol></p1>
         </li>
       </ul>
-      <img id ="varldst" src="./A1/loadVar.jpg" width="580" height="230" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
-      <p id = "s5b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=170" target="_blank" rel="noopener noreferrer">Learn more</a></p>
-    </div>
-
-    <div class="columns">
-      <h1 id="h6">Sections and Data Types</h1>
-      <ul id="s6a">
-        <li><p1>Sections of Code:
-          <ol>
-            <li><b><font color="#ffd966">.data </font></b>: For variables with known value (Read/Write)</li>
-            <li><b><font color="#00B0F0">.rodata </font></b>: For data you will <b>only read</b> from like strings. </li>
-            <li><b><font color="#92D050">.bss </font></b>: For vaiables without known value (set to zero) </li>
-            <li><b><font color="#9933FF">.text </font></b>: For your code (Read only) </li>
-          </ol></p1>
-        </li>
-        <li><p1><b><font color="#e10000"> .Global </font></b> label:
-          <ol>
-            <li>label variables/data and sections that need to be seen from outside the file </li>
-          </ol></p1>
-        </li>
-        <li><p1>Data types:
-          <ol>
-            <li>char = .byte (1 byte) </li>
-            <li>short = .short (2 bytes)</li>
-            <li>int = .word (4 bytes)</li>
-            <li>long = .quad (8 bytes)</li>
-          </ol></p1>
-        </li>
-      </ul>
-      <img id ="sects" src="./A1/sects.jpg" width="530" height="520" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:50px;"/>
-      <p id = "s6b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=40" target="_blank" rel="noopener noreferrer">Learn more</a></p>
+      </div>
+      <div class="column1">
+      <img id ="unsigned" src="./A2/unsigned.jpg" width="590" height="270" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <p id = "ARMRef"><a href = "./ARMRef.pdf" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
     <h1 id="h7">Practice what you've learned!</h1>
@@ -352,14 +319,8 @@
 
       let h5 = document.getElementById("h5");
       let s5a = document.getElementById("s5a");
-      let s5b = document.getElementById("s5b");
-      let i5a = document.getElementById("ldst");
-      let i5b = document.getElementById("varldst");
-
-      let h6 = document.getElementById("h6");
-      let s6a = document.getElementById("s6a");
-      let s6b = document.getElementById("s6b");
-      let i6 = document.getElementById("sects");
+      let i5a = document.getElementById("unsigned");
+      let i5b = document.getElementById("ARMRef");
 
       let h7 = document.getElementById("h7");
       let s7 = document.getElementById("s7");
@@ -396,14 +357,8 @@
 
       h5.style.display = "none";
       s5a.style.display = "none";
-      s5b.style.display = "none";
       i5a.style.display = "none";
       i5b.style.display = "none";
-
-      h6.style.display = "none";
-      s6a.style.display = "none";
-      s6b.style.display = "none";
-      i6.style.display = "none";
 
       h7.style.display = "none";
       s7.style.display = "none";
@@ -497,7 +452,6 @@
 
             h5.style.display = "inline";
             s5a.style.display = "block";
-            s5b.style.display = "block";
             i5a.style.display = "inline";
             i5b.style.display = "inline";
             break;
@@ -506,22 +460,8 @@
 
             h5.style.display = "none";
             s5a.style.display = "none";
-            s5b.style.display = "none";
             i5a.style.display = "none";
             i5b.style.display = "none";
-
-            h6.style.display = "inline";
-            s6a.style.display = "block";
-            s6b.style.display = "block";
-            i6.style.display = "block";
-            break;
-          case 7:
-            slide = 8;
-
-            h6.style.display = "none";
-            s6a.style.display = "none";
-            s6b.style.display = "none";
-            i6.style.display = "none";
 
             h7.style.display = "inline";
             s7.style.display = "block";
@@ -598,6 +538,7 @@
             s4a.style.display = "none";
             i4a.style.display = "none";
             i4b.style.display = "none";
+            break;
           case 6:
             slide = 5;
 
@@ -608,7 +549,6 @@
 
             h5.style.display = "none";
             s5a.style.display = "none";
-            s5b.style.display = "none";
             i5a.style.display = "none";
             i5b.style.display = "none";
             break;
@@ -617,22 +557,8 @@
 
             h5.style.display = "inline";
             s5a.style.display = "block";
-            s5b.style.display = "block";
             i5a.style.display = "inline";
             i5b.style.display = "inline";
-
-            h6.style.display = "none";
-            s6a.style.display = "none";
-            s6b.style.display = "none";
-            i6.style.display = "none";
-            break;
-          case 8:
-            slide = 7;
-
-            h6.style.display = "inline";
-            s6a.style.display = "block";
-            s6b.style.display = "block";
-            i6.style.display = "block";
 
             h7.style.display = "none";
             s7.style.display = "none";
