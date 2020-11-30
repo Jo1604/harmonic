@@ -212,6 +212,11 @@
           gltf.scene.rotation.y =  4*Math.PI / 3;
           scene.add( gltf.scene );
         });
+        const sphere3 = new THREE.Mesh( geometry, material );
+        scene.add(sphere3)
+        sphere3.position.x = 1.22
+        sphere3.position.y = 0.56;
+        sphere3.position.z = -5.94;
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
