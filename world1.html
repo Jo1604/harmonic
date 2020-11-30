@@ -50,7 +50,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(5, 7, 1);
+        camera.position.set(3, 8, 1);
         camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -181,31 +181,6 @@
         cube.position.x = -5;
         cube.position.y = 8;
         cube.position.z = 2;
-        //load doors
-        /*const loaderDoor1 = new GLTFLoader();
-        loaderDoor1.load('./Door1.glb', function (gltf) {
-          gltf.scene.position.x = -5;
-          gltf.scene.position.y = 0.3;
-          gltf.scene.position.z = 2.36;
-          scene.add( gltf.scene );
-        });
-        const geometry = new THREE.SphereGeometry( 0.01, 6, 6 );
-        const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-        const sphere1 = new THREE.Mesh( geometry, material );
-        scene.add(sphere1)
-        sphere1.position.x = -5;
-        sphere1.position.y = 1;
-        sphere1.position.z = 2;
-
-        const loaderDoor2 = new GLTFLoader();
-        loaderDoor2.load('./Door2.glb', function (gltf) {
-          scene.add( gltf.scene );
-        });
-
-        const loaderDoor3 = new GLTFLoader();
-        loaderDoor3.load('./Door3.glb', function (gltf) {
-          scene.add( gltf.scene );
-        });*/
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
