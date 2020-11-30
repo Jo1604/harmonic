@@ -36,6 +36,9 @@
       a{
         color:white
       }
+      .start {
+        padding-right: 500px;
+      }
     </style>
   </head>
   <style>
@@ -136,16 +139,19 @@
       margin-top:0px;
     }
   </style>
-  <body style="background-color: rgb(64, 71, 75); overflow: hidden; background-image: url()">
+  <body style="background-color: rgb(64, 71, 75); overflow: hidden;">
     <button type="button" class="button" id="prev"><i class="fa fa-arrow-left"> Previous</i></button>
     <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
     <button type="button" class="button" id="next">Next <i class="fa fa-arrow-right"></i></button>
 
     <div class= "slides">
+      <div id = "intro" style = "background-image: url('./A1/bgA1.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
       <h1 id ="introh"> Welcome to Lesson 1 !</h1>
-      <p id="introInstruct">Use the arrows to navigate the slides. Look out for interactive features! If at any time you want to go back to World 1, click the world button.</p>
+      <p class = "start" id="introInstruct"><b>Use the arrows to navigate the slides. Look out for interactive features! If at any time you want to go back to World 1, click the world button.</b></p>
       <br>
-      <p id ="introp"> Lesson 1 goes over the different components of an ARM program. Good luck!</p>
+      <p class = "start" id ="introp"><b> Lesson 1 goes over the different components of an ARM program. Good luck!</b></p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
 
       <div class="columns">
       <h1 id="h0">High Level vs Low Level Languages</h1>
@@ -165,8 +171,8 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="python" src="python.jpg" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
-      <img id ="assemb" src="assemb.png" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="python" src="./A1/python.jpg" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="assemb" src="./A1/assemb.png" width="570" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
     </div>
 
     <div class="columns">
@@ -196,7 +202,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="VNArch" src="Von-Neumann.jpg" alt="Diagram showing the How the Control Unit, ALU, Registers, and RAM relate" width="500" height="400" style="margin-right:15px; margin-left:15px; margin-bottom: 5px; margin-top:20px;"/>
+      <img id ="VNArch" src="./A1/Von-Neumann.jpg" alt="Diagram showing the How the Control Unit, ALU, Registers, and RAM relate" width="500" height="400" style="margin-right:15px; margin-left:15px; margin-bottom: 5px; margin-top:20px;"/>
       <p id = "s1b"><a href="https://introcs.cs.princeton.edu/java/62toy/" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
@@ -220,7 +226,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="RegMap" src="RegMap.jpg" alt="Diagram of Registers and Stack with pointers" width="570" height="320" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:100px;"/>
+      <img id ="RegMap" src="./A1/RegMap.jpg" alt="Diagram of Registers and Stack with pointers" width="570" height="320" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:100px;"/>
       <p id = "s2b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=77" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
@@ -241,7 +247,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="PSTATE" src="PSTATE.jpg" alt="Diagram PSTATE Register" width="570" height="120" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:200px;"/>
+      <img id ="PSTATE" src="./A1/PSTATE.jpg" alt="Diagram PSTATE Register" width="570" height="120" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:200px;"/>
       <p id = "s3b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=79" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
@@ -273,15 +279,15 @@
           <input id= "b4c" type="text" onclick="LSLEx()" value="Logical Left Shift Example">
         </div>
       </div>
-      <img id ="Add" src="add.jpg"width="580" height="110" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
-      <img id ="Or" src="or.jpg"width="580" height="110" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
-      <img id ="Lsl" src="lsl.jpg"width="580" height="110" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="Add" src="./A1/add.jpg"width="580" height="110" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="Or" src="./A1/or.jpg"width="580" height="110" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="Lsl" src="./A1/lsl.jpg"width="580" height="110" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
       <p id = "s4b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=190" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
     <div class="columns">
       <h1 id="h5">Load and Store</h1>
-      <img id ="ldst" src="loadBasic.jpg" width="300" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:5px;"/>
+      <img id ="ldst" src="./A1/loadBasic.jpg" width="300" height="250" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:5px;"/>
       <ul id="s5a">
         <li><p1>Basic Load, Store, and Address:
           <ol>
@@ -296,7 +302,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="varldst" src="loadVar.jpg" width="580" height="230" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
+      <img id ="varldst" src="./A1/loadVar.jpg" width="580" height="230" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:10px;"/>
       <p id = "s5b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=170" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
     <div class="columns">
@@ -324,7 +330,7 @@
           </ol></p1>
         </li>
       </ul>
-      <img id ="sects" src="sects.jpg" width="530" height="520" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:50px;"/>
+      <img id ="sects" src="./A1/sects.jpg" width="530" height="520" style="margin-right:15px; margin-left:0px; margin-bottom: 5px; margin-top:50px;"/>
       <p id = "s6b"><a href="https://www.cs.princeton.edu/courses/archive/fall20/cos217/reading/ArmArchitectureReferenceManual.pdf#page=40" target="_blank" rel="noopener noreferrer">Learn more</a></p>
     </div>
 
@@ -342,6 +348,7 @@
       let introh = document.getElementById("introh");
       let introa = document.getElementById("introInstruct");
       let introb = document.getElementById("introp");
+      let intro = document.getElementById("intro");
 
       let h0 = document.getElementById("h0");
       let s0a = document.getElementById("s0a");
@@ -393,6 +400,7 @@
       introh.style.display = "inline";
       introa.style.display = "block";
       introb.style.display = "block";
+      intro.style.display = "block";
 
       h0.style.display = "none";
       s0a.style.display = "none";
@@ -462,6 +470,7 @@
             introh.style.display = "none";
             introa.style.display = "none";
             introb.style.display = "none";
+            intro.style.display = "none";
 
 
             h0.style.display = "inline";
@@ -612,6 +621,7 @@
             introh.style.display = "inline";
             introa.style.display = "block";
             introb.style.display = "block";
+            intro.style.display = "block";
 
             h0.style.display = "none";
             s0a.style.display = "none";

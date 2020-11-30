@@ -36,6 +36,9 @@
       a{
         color:white
       }
+      .start {
+        padding-right: 500px;
+      }
     </style>
   </head>
   <style>
@@ -136,16 +139,19 @@
       margin-top:0px;
     }
   </style>
-  <body style="background-color: rgb(64, 71, 75); overflow: hidden; background-image: url('./A1/bgA1.jpg'); ">
+  <body style="background-color: rgb(64, 71, 75); overflow: hidden;">
     <button type="button" class="button" id="prev"><i class="fa fa-arrow-left"> Previous</i></button>
     <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
     <button type="button" class="button" id="next">Next <i class="fa fa-arrow-right"></i></button>
 
     <div class= "slides">
+      <div id = "intro" style = "background-image: url('./A1/bgA1.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
       <h1 id ="introh"> Welcome to Lesson 1 !</h1>
-      <p id="introInstruct">Use the arrows to navigate the slides. Look out for interactive features! If at any time you want to go back to World 1, click the world button.</p>
+      <p class = "start" id="introInstruct"><b>Use the arrows to navigate the slides. Look out for interactive features! If at any time you want to go back to World 1, click the world button.</b></p>
       <br>
-      <p id ="introp"> Lesson 1 goes over the different components of an ARM program. Good luck!</p>
+      <p class = "start" id ="introp"><b> Lesson 1 goes over the different components of an ARM program. Good luck!</b></p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
 
       <div class="columns">
       <h1 id="h0">High Level vs Low Level Languages</h1>
@@ -342,6 +348,7 @@
       let introh = document.getElementById("introh");
       let introa = document.getElementById("introInstruct");
       let introb = document.getElementById("introp");
+      let intro = document.getElementById("intro");
 
       let h0 = document.getElementById("h0");
       let s0a = document.getElementById("s0a");
@@ -393,6 +400,7 @@
       introh.style.display = "inline";
       introa.style.display = "block";
       introb.style.display = "block";
+      intro.style.display = "block";
 
       h0.style.display = "none";
       s0a.style.display = "none";
@@ -462,6 +470,7 @@
             introh.style.display = "none";
             introa.style.display = "none";
             introb.style.display = "none";
+            intro.style.display = "none";
 
 
             h0.style.display = "inline";
@@ -612,6 +621,7 @@
             introh.style.display = "inline";
             introa.style.display = "block";
             introb.style.display = "block";
+            intro.style.display = "block";
 
             h0.style.display = "none";
             s0a.style.display = "none";
