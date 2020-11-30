@@ -298,7 +298,7 @@
         <p class="num">5</p><p class="comm">//------------------------------------------------------------------------------</p><br>
         <p class="num">6</p><p class="sect">.section .text</p><br>
         <p class="num">7</p><p class="comm">//This is to keep track of where in the stack we add things</p><br>
-        <p class="num">8</p><p class="comm">//(more on this in Lesson 2) </p>
+        <p class="num">8</p><p class="comm">//(more on this in Lesson 3) </p>
         <br>
         <p class="num">9</p><p class="mid"> .equ &emsp;MAIN_STACK,&emsp;16</p>
         <br>
@@ -308,9 +308,9 @@
         <p class="num">12</p><p class="comm">//---------------------------------Prolog------------------------------------</p>
         <br>
         <!--Prolog for MAIN_STACK-->
-        <p class="num">13</p><p class="instruct"><span title="More in Lesson 2">&emsp;&emsp;&emsp;sub</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
+        <p class="num">13</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;sub</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
         <br>
-        <p class="num">14</p><p class="instruct"><span title="More in Lesson 2">&emsp;&emsp;&emsp;str</p><p class="src1">x30,</p><p class="dest">[sp]</p>
+        <p class="num">14</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;str</p><p class="src1">x30,</p><p class="dest">[sp]</p>
         <br>
 
         <!-- adr x0, MyIntStruct-->
@@ -694,13 +694,13 @@ Store sum in the new index">&emsp;&emsp;&emsp;str&emsp;</p>
 
         <p class="num">40</p><p class="comm">//---------------------------------Epilog-------------------------------------</p><br>
         <p class="num">41</p><p class="reg"> Done: </p><br>
-        <p class="num">42</p><p class="instruct"><span title="More in Lesson 2">&emsp;&emsp;&emsp;mov</p><p class="dest">w0,</p><p class="src1">0</p>
+        <p class="num">42</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;mov</p><p class="dest">w0,</p><p class="src1">0</p>
         <br>
-        <p class="num">43</p><p class="instruct"><span title="More in Lesson 2">&emsp;&emsp;&emsp;ldr</p><p class="dest">x30,</p><p class="src1">[sp]</p>
+        <p class="num">43</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;ldr</p><p class="dest">x30,</p><p class="src1">[sp]</p>
         <br>
-        <p class="num">44</p><p class="instruct"><span title="More in Lesson 2">&emsp;&emsp;&emsp;add</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
+        <p class="num">44</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;add</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
         <br>
-        <p class="num">45</p><p class="instruct"><span title="More in Lesson 2">&emsp;&emsp;&emsp;ret</p><br><br>
+        <p class="num">45</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;ret</p><br><br>
       </div>
 
         <!--Display Error Messages-->
