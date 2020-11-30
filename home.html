@@ -83,6 +83,14 @@
                 console.log("door1")
                 window.location.href = "./world1.html"
               }
+              /*if(object == 17) { //Door2
+                console.log("door1")
+                window.location.href = "./world1.html"
+              }
+              if(object == 17) { //Door3
+                console.log("door1")
+                window.location.href = "./world1.html"
+              }*/
             }
           }
         }
@@ -242,7 +250,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            console.log(camera.position);
+            //console.log(camera.position);
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
