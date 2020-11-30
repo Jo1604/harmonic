@@ -139,7 +139,7 @@
       margin-top:0px;
     }
   </style>
-  <body style="background-color: rgb(64, 71, 75); overflow: hidden;">
+  <body style="background-color: rgb(51,51,51); overflow: hidden;">
     <button type="button" class="button" id="prev"><i class="fa fa-arrow-left"> Previous</i></button>
     <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
     <button type="button" class="button" id="next">Next <i class="fa fa-arrow-right"></i></button>
@@ -252,15 +252,16 @@
     </div>
 
     <div class="columns">
-      <h1 id="h4">Arithmetic Instructions</h1>
+      <h1 id="h4">Arithmetic and Logical Instructions</h1>
       <ul id="s4a">
-        <p>Format 1:<b> <font color="#e10000">name </font> <font color="#bf6a00">dest </font>, <font color="#e5c332">src1</font>,<font color="#289cf2">src2 </font> </b></p>
-        <p>Format 2:<b> <font color="#e10000">name </font> <font color="#bf6a00">dest </font>, <font color="#e5c332">src1</font>,<font color="#289cf2">imm </font> </b></p>
+        <p>Format 1:<b> <font color="#a11b1b">name </font> <font color="#bf6a00">dest </font>, <font color="#e5c332">src1</font>,<font color="#289cf2">src2 </font> </b></p>
+        <p>Format 2:<b> <font color="#a11b1b">name </font> <font color="#bf6a00">dest </font>, <font color="#e5c332">src1</font>,<font color="#289cf2">imm </font> </b></p>
         <li><p1>Format Key Words:
           <ol>
-            <li>dest: where will the calculation be saved</li>
-            <li>src1 or src2: what data is used for the calculation</li>
-            <li>imm: immediate value or constant to use in calculation</li>
+            <li><font color="#a11b1b">name: </font>instruction name</li>
+            <li><font color="#bf6a00">dest: </font>where will the calculation be saved</li>
+            <li><font color="#e5c332">src1</font> or <font color="#289cf2">src2:</font> what data is used for the calculation</li>
+            <li><font color="#289cf2">imm: </font>immediate value or constant to use in calculation</li>
             <li>dest and src can be the same register!</li>
           </ol></p1>
         </li>
