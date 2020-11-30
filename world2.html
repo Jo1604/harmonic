@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie Flower">
+    <style>
+      body {
+        font-family: "Indie Flower";
+        font-size: 20px;
+        color: white
+      }
+    </style>
+  </head>
+  <style>
+    body {
+      background-color: #40474b;
+    }
+    p {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <p>Click on the computer for the lesson plan. Explore and find the fallen stars!</p>
+    <p>Press the spacebar to start moving. Use your mouse to look around and arrow keys (or WASD) to move. Press ESC key to use your mouse normally. </p>
+
+    <script src="three.min.js"></script>
+    <script src="three.module.js" type="module"></script>
+    <script src="GLTFLoader.js" type="module"></script>
+    <canvas id="canvas1"></canvas>
+    <script type="module">
+      //import { WebGLRenderer, PerspectiveCamera, Vector3 } from 'three';
+      import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
+      import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
+      import {PointerLockControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/PointerLockControls.js';
+
+      // For Controls
+      var prevTime = Date.now();
+      var moveForward = false;
+      var moveBackward = false;
+      var moveLeft = false;
+      var moveRight = false;
+      var velocity = new THREE.Vector3();
+      var direction = new THREE.Vector3();
+      var mouse = new THREE.Vector2();
+      var raycaster = new THREE.Raycaster();
+
+      // Initialize core ThreeJS components
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera();
+        console.log(scene);
+
+        // Set up camera
+        camera.position.set(3, 8.5, 0);
+        //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
+
+        // Set up renderer, canvas, and minor CSS adjustments
+        const canvas = document.getElementById('canvas1');
+        const renderer = new THREE.WebGLRenderer({ canvas });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // Set up controls
+        const controls = new PointerLockControls(camera, canvas);
+        document.body.addEventListener( 'keypress' , function () {
+          //lock mouse on screen
+          controls.lock();
+          }, false);
+
+        // Double click on objects
+        document.body.addEventListener( 'click', click, false);
+        function click(event){
+          controls.unlock();
+          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+          raycaster.setFromCamera(mouse, camera);
+          var intersects = raycaster.intersectObjects(scene.children);
+          console.log(intersects)
+          var object;
+          if (event && intersects.length > 0) {
+            for (var i = 0; i < intersects.length; i++) {
+              object = intersects[i].object.id;
+              console.log(object)
+              if(object == 17) { //Door1
+                console.log("door1")
+                window.location.href = "./assignment1.html"
+              }
+            }
+          }
+        }
+
+        var onKeyDown = function (event) {
+            switch (event.keyCode) {
+                case 38: // up
+                case 87: // w
+                    moveForward = true;
+                    break;
+
+                case 37: // left
+                case 65: // a
+                    moveLeft = true;
+                    break;
+
+                case 40: // down
+                case 83: // s
+                    moveBackward = true;
+                    break;
+
+                case 39: // right
+                case 68: // d
+                    moveRight = true;
+                    break;
+            }
+        };
+        var onKeyUp = function (event) {
+            switch (event.keyCode) {
+                case 38: // up
+                case 87: // w
+                    moveForward = false;
+                    break;
+
+                case 37: // left
+                case 65: // a
+                    moveLeft = false;
+                    break;
+
+                case 40: // down
+                case 83: // s
+                    moveBackward = false;
+                    break;
+
+                case 39: // right
+                case 68: // d
+                    moveRight = false;
+                    break;
+            }
+        };
+        window.addEventListener('keydown', onKeyDown, false);
+        window.addEventListener('keyup', onKeyUp, false);
+
+        //lighting
+        //const dir = new THREE.SpotLight(0xffffff, 1.6, 7, 0.8, 1, 1);
+        const ambi = new THREE.AmbientLight(0xa5a17d, 1);
+        const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
+
+        //dir.position.set(5, 1, 2);
+        //dir.target.position.set(0, 0, 0);
+        //scene.add(dir);
+        scene.add(ambi);
+        scene.add(hemi);
+
+        // sunset stars
+        var starGeo = new THREE.Geometry();
+        for (let i = 0; i < 6000; i++) {
+            let star =new THREE.Vector3(
+                Math.random() * 600 - 300,
+                Math.random() * 600 - 300,
+                Math.random() * 600 - 300
+            );
+            starGeo.vertices.push(star);
+        }
+        let starMaterial = new THREE.PointsMaterial({
+            color: 0xFFFFFF,
+            size: 0.7
+        });
+
+        var stars = new THREE.Points(starGeo, starMaterial);
+        // Set background to a nice color
+        scene.background = new THREE.Color(0x7da3be);
+        scene.add(stars);
+
+        //load base
+        const loaderScene = new GLTFLoader();
+        loaderScene.load('./Island.glb', function (gltf) {
+          scene.add( gltf.scene );
+        });
+
+        // load computer
+        const geometry = new THREE.BoxGeometry( 0.5, 1, 1 );
+        const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+        const cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
+        cube.position.x = -5;
+        cube.position.y = 8;
+        cube.position.z = 2;
+        // Render loop
+        const onAnimationFrameHandler = (timeStamp) => {
+            if (controls.isLocked === true) {
+              var time = Date.now();
+              var delta = (time - prevTime) / 1000.0;
+
+              velocity.x -= velocity.x * 50.0 * delta;
+              velocity.z -= velocity.z * 50.0 * delta;
+
+              direction.z = Number(moveForward) - Number(moveBackward);
+              direction.x = Number(moveRight) - Number(moveLeft);
+              direction.normalize(); // this ensures consistent movements in all directions
+
+              if (moveForward || moveBackward) velocity.z -= direction.z * 100.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 100.0 * delta;
+
+
+              controls.moveRight(- velocity.x * delta);
+              controls.moveForward(- velocity.z * delta);
+              prevTime = time;
+            }
+            //controls.update();
+            renderer.render(scene, camera);
+            scene.update && scene.update(timeStamp);
+            window.requestAnimationFrame(onAnimationFrameHandler);
+            //console.log(camera.position)
+        };
+        window.requestAnimationFrame(onAnimationFrameHandler);
+
+        // Resize Handler
+        const windowResizeHandler = () => {
+            const { innerHeight, innerWidth } = window;
+            renderer.setSize(innerWidth/1.03, innerHeight/1.2);
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+        };
+        windowResizeHandler();
+        window.addEventListener('resize', windowResizeHandler, false);
+    </script>
+  </body>
+</html>
