@@ -273,8 +273,9 @@
 
         <!-- 19-->
         <p class="num">19</p><p class="comm">//-------------------------Load variables to registers-------------------</p><br>
+
           <p class="num">20</p>
-          <form class="list" id ="19" method="GET">
+          <form class="list" id ="20" method="GET">
             <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line20" name = "line20" size="3"></p>
             <p class="dest">x0,</p>
             <p class="src1">i&emsp;&emsp;&ensp;&emsp;</p>
@@ -414,8 +415,8 @@
         <p class="num">39</p>
           <form class="list" id ="39" method="GET">
             <p class="instruct">&emsp;&emsp;&emsp;b&emsp;&ensp;  </p>
-            <p class="dest"><input type = "text" id = "line39" name = "line39" size="3"></p>
-            <p class="comm">&emsp;&emsp;&emsp;&emsp;// end of statements in if &emsp;</p>
+            <p class="dest"><input type = "text" id = "line39" name = "line39" size="16"></p>
+            <p class="comm">// end of statements in if&nbsp;</p>
             <input type="submit" name="button" value="Submit"/>
           </form><br>
 
@@ -425,8 +426,8 @@
         <p class="num">41</p>
           <form class="list" id ="41" method="GET">
             <p class="instruct">&emsp;&emsp;&emsp;b&emsp;&ensp;  </p>
-            <p class="dest"><input type = "text" id = "line41" name = "line41" size="3"></p>
-            <p class="comm">&emsp;&emsp;&emsp;// end of statements in else &ensp;&nbsp;</p>
+            <p class="dest"><input type = "text" id = "line41" name = "line41" size="16"></p>
+            <p class="comm">// end of statements&emsp;&emsp;&nbsp;</p>
             <input type="submit" name="button" value="Submit"/>
           </form><br>
 
@@ -452,9 +453,12 @@
           <p class="label">endForStartWhile:</p><br>
 
         <p class="num">47</p>
-            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line38" name = "line38" size="3">
+          <form class="list" id ="47" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line47" name = "line47" size="3">
             <p class="dest">w3,</p>
-            <p class="src1">0&emsp;&emsp;&ensp;&emsp;</p>
+            <p class="src1">0&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form>
             <br>
 
         <p class="num">48</p>
@@ -491,8 +495,8 @@
         <p class="num">52</p>
           <form class="list" id ="52" method="GET">
             <p class="instruct">&emsp;&emsp;&emsp;b&emsp;&ensp;  </p>
-            <p class="dest"><input type = "text" id = "line52" name = "line52" size="3"></p>
-            <p class = "src1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <p class="dest"><input type = "text" id = "line52" name = "line52" size=16></p>
+            <p class = "src1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
             <input type="submit" name="button" value="Submit"/>
           </form><br>
 
@@ -514,6 +518,12 @@
         <p class="num">56</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;add</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
         <br>
         <p class="num">57</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;ret</p><br><br>
+
+          <form class="list" id ="exit" method="GET">
+            <p class="instruct">&emsp;&emsp; What is the value of count after exiting the while loop?</p>
+            <p class="dest"><input type = "text" id = "lineExit" name = "lineExit" size="3"></p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
       </div>
 
         <!--Display Error Messages-->
@@ -523,32 +533,36 @@
         <p class="comm">ble &emsp;&emsp; sub &emsp;&emsp; ldr&emsp;&emsp;</p><br><br>
 
         <p class= "errorReg"> Look here for feedback!<p>
-        <p class="error" id="18DestErr"></p>
-        <p class="error" id="19SrcErr"></p>
-        <p class="error" id="19DestErr"></p>
-        <p class="error" id="21DestErr"></p>
-        <p class="error" id="21FeetErr"></p>
-        <p class="error" id="22DestErr"></p>
-        <p class="error" id="22InchesErr"></p>
-        <p class="error" id="23DestErr"></p>
-        <p class="error" id="23Src1Err"></p>
-        <p class="error" id="24DestErr"></p>
-        <p class="error" id="24Src1Err"></p>
-        <p class="error" id="24Src2Err"></p>
-        <p class="error" id="25SrcErr"></p>
-        <p class="error" id="25IndexErr"></p>
-        <p class="error" id="25OpsErr"></p>
-        <p class="error" id="27DigitErr"></p>
-        <p class="error" id="28DigitErr"></p>
-        <p class="error" id="29DigitErr"></p>
-        <p class="error" id="33IndexErr"></p>
-        <p class="error" id="33OpsErr"></p>
-        <p class="error" id="36IndexErr"></p>
-        <p class="error" id="36OpsErr"></p>
-        <p class="error" id="39IndexErr"></p>
-        <p class="error" id="39OpsErr"></p>
+        <p class="error" id="20Err"></p>
+        <p class="error" id="21Err"></p>
+        <p class="error" id="22Err"></p>
+        <p class="error" id="23Err"></p>
+        <p class="error" id="24Err"></p>
+        <p class="error" id="25Err"></p>
+        <p class="error" id="26Err"></p>
+        <p class="error" id="27Err"></p>
+        <p class="error" id="30Err"></p>
+        <p class="error" id="33Err"></p>
+        <p class="error" id="35Err"></p>
+        <p class="error" id="37Err"></p>
+        <p class="error" id="38Err"></p>
+        <p class="error" id="39Err"></p>
+        <p class="error" id="41Err"></p>
+        <p class="error" id="47Err"></p>
+        <p class="error" id="49Err"></p>
+        <p class="error" id="50Err"></p>
+        <p class="error" id="52Err"></p>
+        <p class="error" id="ExitErr"></p>
+        <br>
+        <br>
 
         <!--Images-->
+        <!--Orginal C-->
+        <img id="c" src="./A2/originalC.png" style="width:100%;max-width:150px">
+        <div id="Mod" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modc">
+        </div>
         <!-- S1 -->
         <img id="A2S1" src="./A2/A2S1.png" alt="Slide1" style="width:100%;max-width:300px">
 
@@ -599,283 +613,247 @@
     <canvas id="canvas"></canvas>
     <script type ="module">
 
-    //18
-    document.getElementById("18").addEventListener('submit', Dest18, false);
-    function Dest18(event){
+    //20
+    document.getElementById("20").addEventListener('submit', L20, false);
+    function L20(event){
       event.preventDefault();
-      if(document.getElementById("18DestSel").value == "x1"){
-        document.getElementById("18DestErr").innerHTML = "Line 18 Dest: How many bits does x1 hold? How many are needed for a word (int)?";
+      if(document.getElementById("line20").value.toLowerCase() != "adr"){
+        document.getElementById("20Err").innerHTML = "Line 20: What instruction gets you the address of i? See the If Statements slide for more help!";
       }
-      if(document.getElementById("18DestSel").value == "w1"){
-        document.getElementById("18DestErr").innerHTML = "";
-      }
-      if(document.getElementById("18NumSel").value != "Choose Birthday Month number"){
-        document.getElementById("w1").innerHTML = document.getElementById("18NumSel").value;
-      }
-    }
-
-    //19
-    document.getElementById("19").addEventListener('submit', Src19, false);
-    function Src19(event) {
-      event.preventDefault();
-      if(document.getElementById("19SrcSel").value == "x1"){
-        document.getElementById("19SrcErr").innerHTML = "Line 19 Src: Where is your birthday month number saved?";
-      }
-      if(document.getElementById("19SrcSel").value == "w1"){
-        document.getElementById("19SrcErr").innerHTML = "";
-      }
-      if((document.getElementById("19DestSel").value == "w0") || (document.getElementById("19DestSel").value == "x1") || ( document.getElementById("19DestSel").value == "w1")){
-        document.getElementById("19DestErr").innerHTML = "Line 19 Dest: Where is the array base(index 0)?";
-      }
-      if(document.getElementById("19DestSel").value == "x0"){
-        document.getElementById("19DestErr").innerHTML = "";
-      }
-      if((document.getElementById("19DestSel").value == "x0")&& (document.getElementById("19SrcSel").value == "w1")){
-        document.getElementById("Index0").innerHTML = document.getElementById("18NumSel").value;
+      if(document.getElementById("line20").value.toLowerCase() == "adr"){
+        document.getElementById("20Err").innerHTML = "";
       }
     }
 
     //21
-    document.getElementById("21").addEventListener('submit', Src21, false);
-    function Src21(event) {
+    document.getElementById("21").addEventListener('submit', L21, false);
+    function L21(event){
       event.preventDefault();
-      if(document.getElementById("21DestSel").value == "x1"){
-        document.getElementById("21DestErr").innerHTML = "Line 21 Dest: How many bits does x1 hold? How many are needed for a word (int)?";
+      if(document.getElementById("line21").value.toLowerCase() != "ldr"){
+        document.getElementById("21Err").innerHTML = "Line 21: What instruction gets the value of i into a register? See the If Statements slide for more help!";
       }
-      if(document.getElementById("21DestSel").value == "w1"){
-        document.getElementById("21DestErr").innerHTML = "";
-      }
-      if(document.getElementById("21FeetSel").value != "Height: feet"){
-        document.getElementById("w1").innerHTML = document.getElementById("21FeetSel").value;
+      if(document.getElementById("line21").value.toLowerCase() == "ldr"){
+        document.getElementById("21Err").innerHTML = "";
       }
     }
 
     //22
-    document.getElementById("22").addEventListener('submit', Src22, false);
-    function Src22(event) {
+    document.getElementById("22").addEventListener('submit', L22, false);
+    function L22(event){
       event.preventDefault();
-      if(document.getElementById("22DestSel").value == "x2"){
-        document.getElementById("22DestErr").innerHTML = "Line 22 Dest: How many bits does x1 hold? How many are needed for a word (int)?";
+      if(document.getElementById("line22").value.toLowerCase() != "adr"){
+        document.getElementById("22Err").innerHTML = "Line 22: What instruction gets you the address of j? See the If Statements slide for more help!";
       }
-      if(document.getElementById("22DestSel").value == "w2"){
-        document.getElementById("22DestErr").innerHTML = "";
-      }
-      if(document.getElementById("22InchesSel").value != "Height: Inches"){
-        document.getElementById("w2").innerHTML = document.getElementById("22InchesSel").value;
+      if(document.getElementById("line22").value.toLowerCase() == "adr"){
+        document.getElementById("22Err").innerHTML = "";
       }
     }
 
     //23
-    document.getElementById("23").addEventListener('submit', Src23, false);
-    function Src23(event) {
+    document.getElementById("23").addEventListener('submit', L23, false);
+    function L23(event){
       event.preventDefault();
-      //Dest
-      if(document.getElementById("23DestSel").value == "x2"){
-        document.getElementById("23DestErr").innerHTML = "Line 23 Dest: How many bits does x2 hold? How many are needed for a word (int)?";
+      if(document.getElementById("line23").value.toLowerCase() != "ldr"){
+        document.getElementById("23Err").innerHTML = "Line 23: What instruction gets the value of j into a register? See the If Statements slide for more help!";
       }
-      if(document.getElementById("23DestSel").value == "w1"){
-        document.getElementById("23DestErr").innerHTML = "";
-        if(document.getElementById("23Src1Sel").value == "w1"){
-          document.getElementById(document.getElementById("23DestSel").value).innerHTML = parseInt(document.getElementById("21FeetSel").value) * 12;
-        }
-      }
-      if(document.getElementById("23DestSel").value == "x1"){
-        document.getElementById("23DestErr").innerHTML = "Line 23 Dest: How many bits does x1 hold? How many are needed for a word (int)?";
-      }
-      if(document.getElementById("23DestSel").value == "w2"){
-        document.getElementById("23DestErr").innerHTML = "Line 23 Dest: You've lost your height :inches from register 2! Resubmit Line 22 and change this destination";
-      }
-      //Src
-      if(document.getElementById("23Src1Sel").value != "w1"){
-        document.getElementById("23Src1Err").innerHTML = "Line 23 Src1: Where is height in feet?";
-      }
-      if(document.getElementById("23Src1Sel").value == "w1"){
-        document.getElementById("23Src1Err").innerHTML = "";
+      if(document.getElementById("line23").value.toLowerCase() == "ldr"){
+        document.getElementById("23Err").innerHTML = "";
       }
     }
 
     //24
-    document.getElementById("24").addEventListener('submit', Src24, false);
-    function Src24(event) {
+    document.getElementById("24").addEventListener('submit', L24, false);
+    function L24(event){
       event.preventDefault();
-      if(document.getElementById("24DestSel").value == "x2"){
-        document.getElementById("24DestErr").innerHTML = "Line 24 Dest: How many bits does x2 hold? How many are needed for a word (int)?";
+      if(document.getElementById("line24").value.toLowerCase() != "adr"){
+        document.getElementById("24Err").innerHTML = "Line 24: What instruction gets you the address of k? See the If Statements slide for more help!";
       }
-      if(document.getElementById("24DestSel").value == "x1"){
-        document.getElementById("24DestErr").innerHTML = "Line 24 Dest: How many bits does x1 hold? How many are needed for a word (int)?";
-      }
-      if((document.getElementById("24DestSel").value == "w1") || (document.getElementById("24DestSel").value == "w2")){
-        document.getElementById("24DestErr").innerHTML = "";
-      }
-      if((document.getElementById("24Src1Sel").value == "x1") ||(document.getElementById("24Src1Sel").value == "x2")){
-        document.getElementById("24Src1Err").innerHTML = "Line 24 Src1: Try and stay consistent!";
-      }
-      if((document.getElementById("24Src2Sel").value == "x1") ||(document.getElementById("24Src2Sel").value == "x2")){
-        document.getElementById("24Src2Err").innerHTML = "Line 24 Src2: Try and stay consistent!";
-      }
-      if(((document.getElementById("24Src1Sel").value == "w1") && (document.getElementById("24Src2Sel").value == "w1"))||((document.getElementById("24Src1Sel").value == "w2") && (document.getElementById("24Src2Sel").value == "w2"))){
-        document.getElementById("24Src2Err").innerHTML = "Line 24 Src2: Oops! You forgot to add value";
-      }
-      if(((document.getElementById("24Src1Sel").value == "w1") && (document.getElementById("24Src2Sel").value == "w2"))||((document.getElementById("24Src1Sel").value == "w2") && (document.getElementById("24Src2Sel").value == "w1"))){
-        document.getElementById("24Src2Err").innerHTML = "";
-        document.getElementById("24Src1Err").innerHTML = "";
-        if((document.getElementById("24DestSel").value == "w1") || (document.getElementById("24DestSel").value == "w2")){
-          document.getElementById(document.getElementById("24DestSel").value).innerHTML = (parseInt(document.getElementById("21FeetSel").value) * 12) + parseInt(document.getElementById("22InchesSel").value);
-        }
+      if(document.getElementById("line24").value.toLowerCase() == "adr"){
+        document.getElementById("24Err").innerHTML = "";
       }
     }
 
     //25
-    document.getElementById("25").addEventListener('submit', Src25, false);
-    function Src25(event) {
+    document.getElementById("25").addEventListener('submit', L25, false);
+    function L25(event){
       event.preventDefault();
-      //Src
-      if((document.getElementById("25SrcSel").value != "x1")&& (document.getElementById("25SrcSel").value != "x2")){
-        if(document.getElementById("25SrcSel").value == document.getElementById("24DestSel").value) {
-          document.getElementById("25SrcErr").innerHTML = "";
-          if(document.getElementById("25IndexSel").value == "1"){
-            if(document.getElementById("25OpsSel").value == "LSL2"){
-              document.getElementById("Index1").innerHTML = (parseInt(document.getElementById("21FeetSel").value) * 12) + parseInt(document.getElementById("22InchesSel").value);
-            }
-          }
-        }
-        if(document.getElementById("25SrcSel").value != document.getElementById("24DestSel").value) {
-          document.getElementById("25SrcErr").innerHTML = "Line 25 Src: Where is your height sum stored?";
-        }
+      if(document.getElementById("line25").value.toLowerCase() != "ldr"){
+        document.getElementById("25Err").innerHTML = "Line 25: What instruction gets the value of k into a register? See the If Statements slide for more help!";
       }
+      if(document.getElementById("line25").value.toLowerCase() == "ldr"){
+        document.getElementById("25Err").innerHTML = "";
+      }
+    }
 
-      if(document.getElementById("25SrcSel").value == "x1"){
-        document.getElementById("25SrcErr").innerHTML = "Line 25 Src: How many bits does x1 hold? How many are needed for a word (int)?";
+    //26
+    document.getElementById("26").addEventListener('submit', L26, false);
+    function L26(event){
+      event.preventDefault();
+      if(document.getElementById("line26").value.toLowerCase() != "adr"){
+        document.getElementById("26Err").innerHTML = "Line 26: What instruction gets you the address of count? See the If Statements slide for more help!";
       }
-      if(document.getElementById("25SrcSel").value == "x2"){
-        document.getElementById("25SrcErr").innerHTML = "Line 25 Src: How many bits does x1 hold? How many are needed for a word (int)?";
-      }
-      //Index
-      if(document.getElementById("25IndexSel").value == "1"){
-        document.getElementById("25IndexErr").innerHTML = "";
-      }
-      if((document.getElementById("25IndexSel").value == "3")||(document.getElementById("25IndexSel").value == "2")){
-        document.getElementById("25IndexErr").innerHTML = "Line 25 Index: What array index should this information be stored in?";
-      }
-      // Ops
-      if((document.getElementById("25OpsSel").value == "LSL1")|| (document.getElementById("25OpsSel").value == "LSL3")|| (document.getElementById("25OpsSel").value == "LSL4")){
-        document.getElementById("25OpsErr").innerHTML = "Line 25 Operation: LSL = Logical shift left. 2^n = size of word (int)";
-      }
-      if(document.getElementById("25OpsSel").value == "LSL2"){
-        document.getElementById("25OpsErr").innerHTML = "";
+      if(document.getElementById("line26").value.toLowerCase() == "adr"){
+        document.getElementById("26Err").innerHTML = "";
       }
     }
 
     //27
-    document.getElementById("27").addEventListener('submit', Src27, false);
-    function Src27(event) {
+    document.getElementById("27").addEventListener('submit', L27, false);
+    function L27(event){
       event.preventDefault();
-      if(document.getElementById("27DigitSel").value != "Digit1"){
-        document.getElementById("w1").innerHTML = document.getElementById("27DigitSel").value;
+      if(document.getElementById("line27").value.toLowerCase() != "ldr"){
+        document.getElementById("27Err").innerHTML = "Line 27: What instruction gets the value of count into a register? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line27").value.toLowerCase() == "ldr"){
+        document.getElementById("27Err").innerHTML = "";
       }
     }
 
-    //28
-    document.getElementById("28").addEventListener('submit', Src28, false);
-    function Src28(event) {
+    //30
+    document.getElementById("30").addEventListener('submit', L30, false);
+    function L30(event){
       event.preventDefault();
-      if(document.getElementById("28DigitSel").value != "Digit2"){
-        document.getElementById("w2").innerHTML = document.getElementById("28DigitSel").value;
+      if(document.getElementById("line30").value.toLowerCase() != "mov"){
+        document.getElementById("30Err").innerHTML = "Line 30: This instruction is a shortcut to adding the imm 0 into the register? See the For Loops slide for more help!";
+      }
+      if(document.getElementById("line30").value.toLowerCase() == "mov"){
+        document.getElementById("30Err").innerHTML = "";
       }
     }
 
-    //29
-    document.getElementById("29").addEventListener('submit', Src29, false);
-    function Src29(event) {
+    //35
+    document.getElementById("35").addEventListener('submit', L35, false);
+    function L35(event){
       event.preventDefault();
-      if(document.getElementById("29DigitSel").value != "Digit3"){
-        document.getElementById("w3").innerHTML = document.getElementById("29DigitSel").value;
+      if(document.getElementById("line35").value.toLowerCase() != "add"){
+        document.getElementById("35Err").innerHTML = "Line 35: This is the statement in the For Loop. See the original C code for more help!";
+      }
+      if(document.getElementById("line35").value.toLowerCase() == "add"){
+        document.getElementById("35Err").innerHTML = "";
       }
     }
 
-    //33
-    document.getElementById("33").addEventListener('submit', Src33, false);
-    function Src33(event) {
+    //37
+    document.getElementById("37").addEventListener('submit', L37, false);
+    function L37(event){
       event.preventDefault();
-      document.getElementById("w1").innerHTML = parseInt(document.getElementById("29DigitSel").value) + parseInt(document.getElementById("28DigitSel").value) + parseInt(document.getElementById("27DigitSel").value);
-      //Index
-      if(document.getElementById("33IndexSel").value == "0"){
-        document.getElementById("33IndexErr").innerHTML = "";
-        if(document.getElementById("33OpsSel").value == "LSL2"){
-          document.getElementById("w2").innerHTML = document.getElementById("18NumSel").value;
-        }
+      if(document.getElementById("line37").value.toLowerCase() != "ble"){
+        document.getElementById("37Err").innerHTML = "Line 37: what is the condition in the C If Statement? Remember to invert it! See the original C code and the last slide for more help!";
       }
-      if((document.getElementById("33IndexSel").value == "2")||(document.getElementById("33IndexSel").value == "1")){
-        document.getElementById("33IndexErr").innerHTML = "Line 33 Index: What array index is this information stored in?";
-      }
-      // Ops
-      if((document.getElementById("33OpsSel").value == "LSL1")|| (document.getElementById("33OpsSel").value == "LSL3")|| (document.getElementById("33OpsSel").value == "LSL4")){
-        document.getElementById("33OpsErr").innerHTML = "Line 33 Operation: LSL = Logical shift left. 2^n = size of word (int)";
-      }
-      if(document.getElementById("33OpsSel").value == "LSL2"){
-        document.getElementById("33OpsErr").innerHTML = "";
+      if(document.getElementById("line37").value.toLowerCase() == "ble"){
+        document.getElementById("37Err").innerHTML = "";
       }
     }
 
-    //36
-    document.getElementById("36").addEventListener('submit', Src36, false);
-    function Src36(event) {
+    //38
+    document.getElementById("38").addEventListener('submit', L38, false);
+    function L38(event){
       event.preventDefault();
-      //Index
-      if(document.getElementById("36IndexSel").value == "2"){
-        document.getElementById("36IndexErr").innerHTML = "";
-        if(document.getElementById("36OpsSel").value == "LSL2"){
-          document.getElementById("Index2b").innerHTML = document.getElementById("18NumSel").value;
-        }
+      if(document.getElementById("line38").value.toLowerCase() != "sub"){
+        document.getElementById("38Err").innerHTML = "Line 38: This is the statment in the If Statement. See the original C code for more help!";
       }
-      if((document.getElementById("36IndexSel").value == "3")||(document.getElementById("36IndexSel").value == "1")){
-        document.getElementById("36IndexErr").innerHTML = "Line 36 Index: What array index should this information be stored in?";
-      }
-      // Ops
-      if((document.getElementById("36OpsSel").value == "LSL1")|| (document.getElementById("36OpsSel").value == "LSL3")|| (document.getElementById("36OpsSel").value == "LSL4")){
-        document.getElementById("36OpsErr").innerHTML = "Line 36 Operation: LSL = Logical shift left. 2^n = size of word (int)";
-      }
-      if(document.getElementById("36OpsSel").value == "LSL2"){
-        document.getElementById("36OpsErr").innerHTML = "";
+      if(document.getElementById("line38").value.toLowerCase() == "sub"){
+        document.getElementById("38Err").innerHTML = "";
       }
     }
 
     //39
-    document.getElementById("39").addEventListener('submit', Src39, false);
-    function Src39(event) {
+    document.getElementById("39").addEventListener('submit', L39, false);
+    function L39(event){
       event.preventDefault();
-      //Index
-      if(document.getElementById("39IndexSel").value == "2"){
-        document.getElementById("39IndexErr").innerHTML = "";
-        if(document.getElementById("39OpsSel").value == "LSL2"){
-          document.getElementById("Index2g").innerHTML = parseInt(document.getElementById("29DigitSel").value) + parseInt(document.getElementById("28DigitSel").value) + parseInt(document.getElementById("27DigitSel").value);
-        }
+      if(document.getElementById("line39").value != "endIf"){
+        document.getElementById("39Err").innerHTML = "Line 39: Where should we jump to after executing the if statement? See the original C code and the If Statement slide for more help!";
       }
-      if((document.getElementById("39IndexSel").value == "3")||(document.getElementById("39IndexSel").value == "1")){
-        document.getElementById("39IndexErr").innerHTML = "Line 39 Index: What array index should this information be stored in?";
-      }
-      // Ops
-      if((document.getElementById("39OpsSel").value == "LSL1")|| (document.getElementById("39OpsSel").value == "LSL3")|| (document.getElementById("39OpsSel").value == "LSL4")){
-        document.getElementById("39OpsErr").innerHTML = "Line 39 Operation: LSL = Logical shift left. 2^n = size of word (int)";
-      }
-      if(document.getElementById("39OpsSel").value == "LSL2"){
-        document.getElementById("39OpsErr").innerHTML = "";
+      if(document.getElementById("line39").value == "endIf"){
+        document.getElementById("39Err").innerHTML = "";
       }
     }
 
-    let world = document.getElementById("world");
-    world.addEventListener('click', goToWorld, false);
-    function goToWorld() {
-      window.location.href = "./world2.html"
+    //41
+    document.getElementById("41").addEventListener('submit', L41, false);
+    function L41(event){
+      event.preventDefault();
+      if(document.getElementById("line41").value != "endIf"){
+        document.getElementById("41Err").innerHTML = "Line 41: Where should we jump to after executing the else statement? See the original C code and the If Statement slide for more help!";
+      }
+      if(document.getElementById("line41").value == "endIf"){
+        document.getElementById("41Err").innerHTML = "";
+      }
     }
 
-    let lesson = document.getElementById("lesson");
-    lesson.addEventListener('click', goToLesson, false);
-    function goToLesson() {
-      window.open("./assignment2.html");
+    //47
+    document.getElementById("47").addEventListener('submit', L47, false);
+    function L47(event){
+      event.preventDefault();
+      if(document.getElementById("line47").value != "cmp"){
+        document.getElementById("47Err").innerHTML = "Line 47: How should we set the PSTATE register for the next instruction? See the While Loop slide for more help!";
+      }
+      if(document.getElementById("line47").value == "cmp"){
+        document.getElementById("47Err").innerHTML = "";
+      }
+
+    }
+    //49
+    document.getElementById("49").addEventListener('submit', L49, false);
+    function L49(event){
+      event.preventDefault();
+      if(document.getElementById("line49").value != "sub"){
+        document.getElementById("49Err").innerHTML = "Line 49: This while loop statement is seperated into two instructions. See the original C code for more help!";
+      }
+      if(document.getElementById("line49").value == "sub"){
+        document.getElementById("49Err").innerHTML = "";
+      }
+    }
+
+    //50
+    document.getElementById("50").addEventListener('submit', L50, false);
+    function L50(event){
+      event.preventDefault();
+      if(document.getElementById("line50").value != "sub"){
+        document.getElementById("50Err").innerHTML = "Line 50: This while loop statement is seperated into two instructions. See the original C code for more help!";
+      }
+      if(document.getElementById("line50").value == "sub"){
+        document.getElementById("50Err").innerHTML = "";
+      }
+    }
+
+    //52
+    document.getElementById("52").addEventListener('submit', L52, false);
+    function L52(event){
+      event.preventDefault();
+      if(document.getElementById("line52").value != "endForStartWhile"){
+        document.getElementById("52Err").innerHTML = "Line 52: Where should you jump back to at the end of a while loop iteration? See the While Loop slide for more help!";
+      }
+      if(document.getElementById("line52").value == "endForStartWhile"){
+        document.getElementById("52Err").innerHTML = "";
+      }
+    }
+
+    //Exit
+    document.getElementById("exit").addEventListener('submit', LExit, false);
+    function LExit(event){
+      event.preventDefault();
+      if(document.getElementById("lineExit").value != "6"){
+        document.getElementById("ExitErr").innerHTML = "Count: Try again! Be careful and keep track of all the variables during each iteration of the loops. Loop at the original C code for help!";
+      }
+      if(document.getElementById("lineExit").value == "6"){
+        document.getElementById("ExitErr").innerHTML = "";
+      }
     }
 
     //Images
+    //C code
+    var Mod = document.getElementById("Mod");
+    var c = document.getElementById("c");
+    var modc = document.getElementById("modc");
+    c.onclick = function(){
+      Mod.style.display = "block";
+      modc.src = this.src;
+    }
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      Mod.style.display = "none";
+    }
     //S1
     var Mod1 = document.getElementById("Mod1");
     var a2S1 = document.getElementById("A2S1");
@@ -884,7 +862,7 @@
       Mod1.style.display = "block";
       moda2s1.src = this.src;
     }
-    var span1 = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close")[1];
     span1.onclick = function() {
       Mod1.style.display = "none";
     }
@@ -897,7 +875,7 @@
       Mod2.style.display = "block";
       moda2s2.src = this.src;
     }
-    var span2 = document.getElementsByClassName("close")[1];
+    var span2 = document.getElementsByClassName("close")[2];
     span2.onclick = function() {
       Mod2.style.display = "none";
     }
@@ -910,7 +888,7 @@
       Mod3.style.display = "block";
       moda2s3.src = this.src;
     }
-    var span3 = document.getElementsByClassName("close")[2];
+    var span3 = document.getElementsByClassName("close")[3];
     span3.onclick = function() {
       Mod3.style.display = "none";
     }
@@ -923,7 +901,7 @@
       Mod4.style.display = "block";
       moda2s4.src = this.src;
     }
-    var span4 = document.getElementsByClassName("close")[3];
+    var span4 = document.getElementsByClassName("close")[4];
     span4.onclick = function() {
       Mod4.style.display = "none";
     }
@@ -936,7 +914,7 @@
       Mod5.style.display = "block";
       moda2s5.src = this.src;
     }
-    var span5 = document.getElementsByClassName("close")[4];
+    var span5 = document.getElementsByClassName("close")[5];
     span5.onclick = function() {
       Mod5.style.display = "none";
     }
@@ -949,9 +927,21 @@
       Mod6.style.display = "block";
       moda2s6.src = this.src;
     }
-    var span6 = document.getElementsByClassName("close")[5];
+    var span6 = document.getElementsByClassName("close")[6];
     span6.onclick = function() {
       Mod6.style.display = "none";
+    }
+
+    let world = document.getElementById("world");
+    world.addEventListener('click', goToWorld, false);
+    function goToWorld() {
+      window.location.href = "./world2.html"
+    }
+
+    let lesson = document.getElementById("lesson");
+    lesson.addEventListener('click', goToLesson, false);
+    function goToLesson() {
+      window.open("./assignment2.html");
     }
     </script>
 
