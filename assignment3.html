@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie Flower">
+    <link href="https://fonts.googleapis.com/css?family=Noto Sans JP" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      h1{
+        font-family: "Indie Flower";
+        font-size: 50px;
+        color: white
+      }
+      p{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 23px;
+        color: white
+      }
+      p1{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 20px;
+        color: white
+      }
+      ul{
+        list-style-type: disc;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 20px;
+        color: white
+      }
+      ol{
+        list-style-type: lower-roman;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 19px;
+        color: white
+      }
+      a{
+        color:white
+      }
+      .start {
+        padding-right: 500px;
+      }
+    </style>
+  </head>
+  <style>
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+    .button1 {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+    .button1: hover {
+      background-color: RoyalBlue;
+    }
+    .button {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 2px 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .button: hover {
+      background-color: RoyalBlue;
+    }
+    .column {
+      float: left;
+      width: 53%;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .column1 {
+      float: right;
+      width: 44%;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .column2 {
+      float: left;
+      width: 30%;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .column3 {
+      float: right;
+      width: 64%;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    h1 {
+      text-align: left-align;
+      margin-left: 1px;
+      margin-bottom: 2px
+    }
+    p{
+      text-indent:10px;
+      text-align: left-align;
+      margin-top: 0px;
+      margin-right: 50px;
+      margin-bottom: 2px
+    }
+    p1{
+      text-align: left-align;
+      margin-top: 0px;
+      margin-right: 50px;
+      margin-left: 5px;
+      margin-bottom: 0px;
+    }
+    ul{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    li{
+      margin-top: 1px;
+      margin-bottom: 0px;
+    }
+    ol{
+      margin-bottom: 0px;
+      margin-top:0px;
+    }
+  </style>
+  <body style="background-color: rgb(51, 51, 51); overflow: hidden;">
+    <button type="button" class="button" id="prev"><i class="fa fa-arrow-left"> Previous</i></button>
+    <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
+    <button type="button" class="button" id="next">Next <i class="fa fa-arrow-right"></i></button>
+
+    <div class= "slides">
+      <div id = "intro" style = "background-image: url('./A3/bgA3.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+      <h1 id ="introh"> Welcome to Lesson 3 !</h1>
+      <p class = "start" id="introInstruct"><b>Use the arrows to navigate the slides. Look out for interactive features! If at any time you want to go back to World 3, click the world button.</b></p>
+      <br>
+      <p class = "start" id ="introp"><b> Lesson 3 goes over calling conventions in ARM. Good luck!</b></p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+
+
+      <h1 id="h0">The Prolog and Epilog (finally!)</h1>
+      <div class="column">
+      <ul id="s0a">
+        <li><p1>Why we have them:
+          <ol>
+            <li>Our code is being called from an outside source (_start) so we are a <b><font color="#818ad2">callee function</font></b> (we got called)</li>
+            <li>Need a way to return to the <b><font color="#d28181">calleer</font></b> (function that called us)</li>
+            <li>Convention: use register <b>x30</b> to send return address (where <b><font color="#d28181">calleer</font></b> used branch and link (<b>bl</b>) instruction to call us) </li>
+            <li>Need to save this value on the stack just in case we need to use <b>x30</b> to call another function</p1></li>
+          </ol>
+        </li>
+        <li><p1>Prolog:
+          <ol>
+            <li><b><font color="#81d297">sub:</font></b> Allocate space on the stack (remember we use multiples of 16)</li>
+            <li><b><font color="#d47098">str:</font></b> Store return address on stack</li>
+          </ol></p1>
+        </li>
+        <li><p1>Epilog:
+          <ol>
+            <li>Restore x30 by doing the inverse in reverse order (<b><font color="#d47098">load</font></b> and <b><font color="#81d297">add</font></b>)</li>
+          </ol></p1>
+        </li>
+      </ul>
+      </div>
+      <div class="column1">
+      <img id ="prolog" src="./A3/prolog.jpg" width="550" height="380" style="margin-right:2px; margin-left:1px; margin-bottom: 5px;"/>
+      </div>
+
+
+      <h1 id="h1">Passing Arguments Between Functions &emsp;&emsp;</h1>
+      <div class="column2">
+      <ul id="s1a">
+        <li><p1>In General:
+          <ol>
+            <li>Use register 0 - 7 to pass values or addresses</li>
+            <li><b><font color="#818ad2">Callee</font></b> will save these arguments on the stack</li>
+            <li>Use offset from sp to push/pop agruments from stack</li>
+            <li>For example, use [sp, 4] to store an arguemnt of size word (int) on the stack</li>
+          </ol></p1>
+        </li>
+      </ul>
+      </div>
+      <div class="column3">
+      <img id ="i1" src="./A3/args.jpg" width="905" height="530" style="margin-right:5px; margin-left:5px; margin-bottom: 5px;"/>
+    </div>
+
+
+      <h1 id="h2">Storing Local Variables on Stack &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
+      <div class="column2">
+      <ul id="s2a">
+        <li><p1>Store similarly to arguments except:
+          <ol>
+            <li>Can only be used inside the function that created them</li>
+            <li>Will be discarded after function returns</li>
+            <li>Pop in reverse order of creation (stack is <b>Last In, First Out</b> order)</li>
+          </ol></p1>
+        </li>
+      </ul>
+      </div>
+      <div class="column3">
+      <img id ="ifARM1" src="./A3/localVar.jpg" width="1100" height="650" style="margin-left:5px;margin-bottom: 5px;"/>
+    </div>
+
+      <h1 id="h3"><b><font color="#818ad2">Callee</font></b>/<b><font color="#d28181">Calleer</font></b> Conventions Summary</h1>
+      <div class="column">
+      <ul id="s3a">
+        <li><p1><b><font color="#818ad2">Callee</font></b>-save registers
+          <ol>
+          <li><b><font color="#818ad2">x19 - x29 (w19 - w19)</font></b></li>
+          <li>These registers do not "belong" to you but can you them if you need to </li>
+          <li><b>Save</b> register values before usage and <b>restore</b> when finished</li>
+          </ol></p1>
+        </li>
+        <li><p1><b><font color="#d28181">Calleer</font></b>-save registers
+          <ol>
+          <li><b><font color="#d28181">x8 - x18 (w8 - w18)</font></b> and <b><font color="#d28181">x0 - x7 </font></b> for parameters  </li>
+          <li>Can use but if you call another function, there is no gurantee <b><font color="#818ad2">callee</font></b> function will not use them.  </li>
+          <li><b>Save</b> register values before calling and <b>restore</b> when <b><font color="#818ad2">callee</font></b> returns</li>
+          </ol></p1>
+        </li>
+      </ul>
+      </div>
+      <div class="column1">
+      <img id ="forARM2" src="./A3/calling.jpg" width="520" height="380" style="margin-bottom: 5px; margin-top:50px;margin-left:5px;"/>
+      </div>
+
+      <h1 id="h4">Possible Optimzations (use with caution)</h1>
+      <div class="column2">
+      <ul id="s4a">
+        <li><p1>Try out only if code is already working perfectly:
+          <ol>
+          <li>Instead of remembering the offset number of data in the stack, make a constant using .equ</li>
+          <li>Store local variables in specific registers (x19 -x23) and "name" the registers using .req. Remembering the conventions!</li>
+          <li>Create a hybrid of the calling conventions to avoid redudancy (can get ugly really quickly!)</li>
+          </ol></p1>
+        </li>
+      </ul>
+      <p id = "more"><a href = "https://www.cs.princeton.edu/courses/archive/fall20/cos217/lectures/19_AssemblyFunctions.pdf#page=35" target="_blank" rel="noopener noreferrer">Learn more</a></p>
+      </div>
+      <div class="column3">
+      <img id ="whileARM2" src="./A3/opt.jpg"width="900" height="500" style="margin-right:15px; margin-left:50px; margin-bottom: 5px;"/>
+
+    </div>
+
+    <h1 id="h7">Practice what you've learned!</h1>
+    <p  id="s7"> Click "Start" launch the interactive example </p>
+    <button type="button" class="button1" id="start"><a href="./practice3.html">Start</a></button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <script >
+      let next = document.getElementById("next");
+      let world = document.getElementById("world");
+      let prev = document.getElementById("prev");
+
+      let introh = document.getElementById("introh");
+      let introa = document.getElementById("introInstruct");
+      let introb = document.getElementById("introp");
+      let intro = document.getElementById("intro");
+
+      let h0 = document.getElementById("h0");
+      let s0a = document.getElementById("s0a");
+      let i0a = document.getElementById("prolog");
+
+      let h1 = document.getElementById("h1");
+      let s1a = document.getElementById("s1a");
+      let i1 = document.getElementById("i1");
+
+      let h2 = document.getElementById("h2");
+      let s2a = document.getElementById("s2a");
+      let i2a = document.getElementById("ifARM1");
+
+      let h3 = document.getElementById("h3");
+      let s3a = document.getElementById("s3a");
+      let i3b = document.getElementById("forARM2");
+
+      let h4 = document.getElementById("h4");
+      let s4a = document.getElementById("s4a");
+      let i4b = document.getElementById("whileARM2");
+      let i4c = document.getElementById("more");
+
+      let h7 = document.getElementById("h7");
+      let s7 = document.getElementById("s7");
+      let b7 = document.getElementById("start");
+      // Display the first slide
+      introh.style.display = "inline";
+      introa.style.display = "block";
+      introb.style.display = "block";
+      intro.style.display = "block";
+
+      h0.style.display = "none";
+      s0a.style.display = "none";
+      i0a.style.display = "none";
+
+      h1.style.display = "none";
+      s1a.style.display = "none";
+      i1.style.display = "none";
+
+      h2.style.display = "none";
+      s2a.style.display = "none";
+      i2a.style.display = "none";
+
+      h3.style.display = "none";
+      s3a.style.display = "none";
+      i3b.style.display = "none";
+
+      h4.style.display = "none";
+      s4a.style.display = "none";
+      i4b.style.display = "none";
+      i4c.style.display = "none";
+
+      h7.style.display = "none";
+      s7.style.display = "none";
+      b7.style.display = "none";
+
+      // slide number
+      let slide = 0;
+      // click next or prev buttons
+      next.addEventListener('click', nextSlide, false);
+      world.addEventListener('click', goToWorld, false);
+      prev.addEventListener('click', prevSlide, false);
+
+      function goToWorld() {
+        window.location.href = "./world3.html"
+      }
+
+      function nextSlide() {
+        switch (slide) {
+          case 0:
+            slide = 1;
+            h0.style.display = "inline";
+            s0a.style.display = "block";
+            i0a.style.display = "inline";
+
+            introh.style.display = "none";
+            introa.style.display = "none";
+            introb.style.display = "none";
+            intro.style.display = "none";
+
+            break;
+          case 1:
+            slide = 2;
+
+            h1.style.display = "inline";
+            s1a.style.display = "block";
+            i1.style.display = "inline";
+
+            h0.style.display = "none";
+            s0a.style.display = "none";
+            i0a.style.display = "none";
+
+            break;
+          case 2:
+            slide = 3;
+
+            h2.style.display = "inline";
+            s2a.style.display = "block";
+            i2a.style.display = "block";
+
+            h1.style.display = "none";
+            s1a.style.display = "none";
+            i1.style.display = "none";
+
+            break;
+          case 3:
+            slide = 4;
+
+            h2.style.display = "none";
+            s2a.style.display = "none";
+            i2a.style.display = "none";
+
+            h3.style.display = "inline";
+            s3a.style.display = "block";
+            i3b.style.display = "block";
+            break;
+          case 4:
+            slide = 5;
+
+            h3.style.display = "none";
+            s3a.style.display = "none";
+            i3b.style.display = "none";
+
+            h4.style.display = "inline";
+            s4a.style.display = "block";
+            i4b.style.display = "block";
+            i4c.style.display = "block";
+            break;
+          case 5:
+            slide = 6;
+
+            h4.style.display = "none";
+            s4a.style.display = "none";
+            i4b.style.display = "none";
+            i4c.style.display = "none";
+
+            h7.style.display = "inline";
+            s7.style.display = "block";
+            b7.style.display = "block";
+            break;
+          default:
+            next.style.display = "inline";
+            world.style.display = "inline";
+            prev.style.display = "none";
+
+        }
+      }
+
+      function prevSlide(){
+        switch (slide) {
+          case 1:
+            slide = 0;
+
+            introh.style.display = "inline";
+            introa.style.display = "block";
+            introb.style.display = "block";
+            intro.style.display = "block";
+
+            h0.style.display = "none";
+            s0a.style.display = "none";
+            i0a.style.display = "none";
+            break;
+          case 2:
+            slide = 1;
+
+            h0.style.display = "inline";
+            s0a.style.display = "block";
+            i0a.style.display = "inline";
+
+            h1.style.display = "none";
+            s1a.style.display = "none";
+            i1.style.display = "none";
+            break;
+          case 3:
+            slide = 2;
+            h1.style.display = "inline";
+            s1a.style.display = "block";
+            i1.style.display = "inline";
+
+            h2.style.display = "none";
+            s2a.style.display = "none";
+            i2a.style.display = "none";
+            break;
+          case 4:
+            slide = 3;
+
+            h2.style.display = "inline";
+            s2a.style.display = "block";
+            i2a.style.display = "block";
+
+            h3.style.display = "none";
+            s3a.style.display = "none";
+            i3b.style.display = "none";
+            break;
+          case 5:
+            slide = 4;
+
+            h3.style.display = "inline";
+            s3a.style.display = "block";
+            i3b.style.display = "block";
+
+            h4.style.display = "none";
+            s4a.style.display = "none";
+            i4b.style.display = "none";
+            i4c.style.display = "none";
+            break;
+          case 6:
+            slide = 5;
+
+            h4.style.display = "inline";
+            s4a.style.display = "block";
+            i4b.style.display = "block";
+            i4c.style.display = "block";
+
+            h7.style.display = "none";
+            s7.style.display = "none";
+            b7.style.display = "none";
+            break;
+      }
+    }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,949 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie Flower">
+    <link href="https://fonts.googleapis.com/css?family=Noto Sans JP" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      h1{
+        font-family: "Indie Flower";
+        font-size: 50px;
+        color: white
+      }
+      p{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 23px;
+        color: white
+      }
+
+    </style>
+  </head>
+  <style>
+      #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      #myImg:hover {opacity: 0.7;}
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+      }
+
+      /* Modal Content (Image) */
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      /* Add Animation - Zoom in the Modal */
+      .modal-content, #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+      }
+
+      @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+      }
+
+      /* The Close Button */
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* 100% Image Width on Smaller Screens */
+      @media only screen and (max-width: 500px){
+        .modal-content {
+          width: 100%;
+        }
+      }
+
+    .error {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      color: 	snow;
+      display: inline-block;
+      background-color: #003156;
+    }
+    .button1 {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+    .button1: hover {
+      background-color: RoyalBlue;
+    }
+    .button {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 5px 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .button: hover {
+      background-color: RoyalBlue;
+    }
+    /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 63%;
+    padding: 10px;
+  }
+  .column1 {
+    float: right;
+    width: 33%;
+    padding: 10px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    h1 {
+      text-align: left-align;
+    }
+    p{
+      text-align: left-align;
+      margin-top: 0px;
+      margin-right: 50px;
+      margin-bottom: 2px
+    }
+    .list{
+      display: inline;
+    }
+    .comm{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: silver;
+      display: inline-block;
+    }
+    .label{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: inline-block;
+      text-indent: 10px;
+    }
+    .sect{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: cyan;
+      display: inline-block;
+      text-indent: 200px;
+    }
+    .instruct{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: mediumpurple;
+      display: inline-block;
+    }
+    .dest{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: seagreen;
+      display: inline-block;
+    }
+    .src1{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: palegoldenrod;
+      display: inline-block;
+    }
+    .src2{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: coral;
+      display: inline-block;
+    }
+    .img{
+      display: inline-block;
+    }
+    .reg{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: inline-block;
+    }
+    .errorReg{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: inline-block;
+      background-color: #003156;
+    }
+    .dir{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: inline-block;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .mid{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: white;
+      display: inline-block;
+      text-indent: 200px;
+    }
+    .num{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      color: dimgray;
+      display:inline;
+    }
+  </style>
+  <body style="background-color: rgb(52, 60, 66);">
+
+    <button type="button" class="button" id="lesson"><i class="fa fa-arrow-left"> Lesson2 </i></button>
+    <button type="button" class="button" id="world"><i class="fa fa-globe"></i></button>
+      <h1>Practice 2: Loop Around</h1>
+      <p> Given the original C code, fill it out with the correct information. Hover over the code for more information and help!</p><br>
+      <p class = "dir">Fill out the information sequentially. Type in the correct instruction or label using the <b>Word Bank</b> for help. Submit after each line is completed. Look towards the left for feedback. If none is present, you've got it right! For a look at the slides from Lesson 2, click on the images on the left.</p>
+      <div class="row">
+      <div class="column" style="background-color:#0E1D2B;">
+        <p class="num">1</p><br>
+        <p class="num">2</p><p class="sect">.section .data</p><br>
+        <p class="num">3</p><p class="label"><span title= " variable size word(int) with value 100"> k:</span> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; .word&emsp; 100</p><br>
+        <p class="num">4</p><p class="label"><span title= " variable size word (int) with value 0"> count:</span> &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp; .word&emsp; 0</p>
+        <br>
+        <p class="num">5</p><p class="comm">//------------------------------------------------------------------------------</p><br>
+        <p class="num">6</p><p class="sect">.section .bss</p><br>
+        <p class="num">7</p><p class="label"> <span title= " variable size word (int)"> i:</span> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; .skip&emsp; 4</p><br>
+        <p class="num">8</p><p class="label"> <span title= " variable size word (int)"> j:</span> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; .skip&emsp; 4</p>
+        <br>
+        <p class="num">9</p><p class="comm">//------------------------------------------------------------------------------</p><br>
+        <p class="num">10</p><p class="sect">.section .text</p><br>
+        <p class="num">11</p><p class="comm">//This is to keep track of where in the stack we add things</p><br>
+        <p class="num">12</p><p class="comm">//(more on this in Lesson 3) </p>
+        <br>
+        <p class="num">13</p><p class="label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;.equ &emsp;MAIN_STACK,&emsp;16</p>
+        <br>
+        <p class="num">14</p><p class="mid"> .global main </p>
+        <br>
+        <p class="num">15</p><p class="reg"> main: </p><br>
+        <p class="num">16</p><p class="comm">//---------------------------------Prolog------------------------------------</p>
+        <br>
+        <!--Prolog for MAIN_STACK-->
+        <p class="num">17</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;&ensp;sub&emsp;</p>
+          <p class="dest">sp,</p><p class="src1">sp,</p>
+          <p class="src2">MAIN_STACK</p>
+        <br>
+
+        <p class="num">18</p>
+          <p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;&ensp;str&emsp;</p>
+          <p class="src1">x30,</p>
+          <p class="dest">[sp]</p>
+        <br>
+
+        <!-- 19-->
+        <p class="num">19</p><p class="comm">//-------------------------Load variables to registers-------------------</p><br>
+
+          <p class="num">20</p>
+          <form class="list" id ="20" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line20" name = "line20" size="3"></p>
+            <p class="dest">x0,</p>
+            <p class="src1">i&emsp;&emsp;&ensp;&emsp;</p>
+            <p class="comm">// Load i&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">21</p>
+          <form class="list" id ="21" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line21" name = "line21" size="3"></p>
+            <p class="dest">w1,</p>
+            <p class="src1">[x0]&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">22</p>
+          <form class="list" id ="22" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line22" name = "line22" size="3"></p>
+            <p class="dest">x0,</p>
+            <p class="src1">j&emsp;&emsp;&ensp;&emsp;</p>
+            <p class="comm">// Load j&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">23</p>
+          <form class="list" id ="23" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line23" name = "line23" size="3"></p>
+            <p class="dest">w2</p>
+            <p class="src1">[x0]&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">24</p>
+          <form class="list" id ="24" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line24" name = "line24" size="3"></p>
+            <p class="dest">x0,</p>
+            <p class="src1">k&emsp;&emsp;&ensp;&emsp;</p>
+            <p class="comm">// Load k&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">25</p>
+          <form class="list" id ="25" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line25" name = "line25" size="3"></p>
+            <p class="dest">w3,</p>
+            <p class="src1">[x0]&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">26</p>
+          <form class="list" id ="26" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line26" name = "line26" size="3"></p>
+            <p class="dest">x0,</p>
+            <p class="src1">count&emsp;&ensp;</p>
+            <p class="comm">// Load count&emsp;&emsp;&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">27</p>
+          <form class="list" id ="27" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line27" name = "line27" size="3"></p>
+            <p class="dest">w4,</p>
+            <p class="src1">count&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">28</p><p class="comm">//----------------------------------Init i and j--------------------------------</p><br>
+          <p class="num">29</p>
+            <p class="instruct">&emsp;&emsp;&emsp;mov&ensp;</p>
+            <p class="dest">w1,</p>
+            <p class="src1">0&emsp;&emsp;&ensp;&emsp;</p>
+            <p class="comm">// i = 0 </p>
+            <br>
+
+        <p class="num">30</p>
+          <form class="list" id ="30" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line30" name = "line30" size="3"></p>
+            <p class="dest">w2,</p>
+            <p class="src1">0&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">31</p>
+          <p class="comm">//--------------------------Start of For Loop-------------------------------</p>
+        <br>
+
+        <p class="num">32</p>
+          <p class="label">ForLoop:</p><br>
+
+        <p class="num">33</p>
+          <p class="instruct">&emsp;&emsp;&emsp;cmp&ensp;</p>
+          <p class="dest">w1,</p>
+          <p class="src1">5&emsp;&emsp;&ensp;&emsp;</p>
+          <p class="comm">// compare i and 5 </p>
+          <br>
+
+        <p class="num">34</p>
+          <p class="instruct">&emsp;&emsp;&emsp;bge&ensp;</p>
+          <p class="dest">endForStartWhile&emsp;&ensp;</p>
+          <p class="comm">// brach if i >=5 </p>
+          <br>
+
+        <p class="num">35</p>
+          <form class="list" id ="35" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line35" name = "line35" size="3"></p>
+            <p class="dest">w2,</p>
+            <p class="src1">w2,</p>
+            <p class="src2">w1&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">36</p>
+          <p class="instruct">&emsp;&emsp;&emsp;cmp&ensp;</p>
+          <p class="dest">w2,</p>
+          <p class="src1">5&emsp;&emsp;&ensp;&emsp;</p>
+          <p class="comm">// compare j and 5 </p>
+          <br>
+
+        <p class="num">37</p>
+          <form class="list" id ="37" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line37" name = "line37" size="3"></p>
+            <p class="dest">Else&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;</p>
+            <p class="comm">// if condition, inverted</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">38</p>
+          <form class="list" id ="38" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line38" name = "line38" size="3"></p>
+            <p class="dest">w3,</p>
+            <p class="src1">w3,</p>
+            <p class="src2">w2&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+
+        <p class="num">39</p>
+          <form class="list" id ="39" method="GET">
+            <p class="instruct">&emsp;&emsp;&emsp;b&emsp;&ensp;  </p>
+            <p class="dest"><input type = "text" id = "line39" name = "line39" size="16"></p>
+            <p class="comm">// end of statements in if&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">40</p>
+          <p class="label">Else:</p><br>
+
+        <p class="num">41</p>
+          <form class="list" id ="41" method="GET">
+            <p class="instruct">&emsp;&emsp;&emsp;b&emsp;&ensp;  </p>
+            <p class="dest"><input type = "text" id = "line41" name = "line41" size="16"></p>
+            <p class="comm">// end of statements&emsp;&emsp;&nbsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">42</p>
+          <p class="label">endIf:</p><br>
+
+        <p class="num">43</p>
+          <p class="instruct">&emsp;&emsp;&ensp;add&ensp;</p>
+          <p class="dest">w1,</p>
+          <p class="src1">w1,</p>
+          <p class="src2">1&emsp;
+          <p class="comm">//&ensp; i++</p> <br>
+
+        <p class="num">44</p>
+          <p class="instruct">&emsp;&emsp;&ensp;b&emsp;</p>
+          <p class="dest">ForLoop</p>
+          <br>
+
+        <p class="num">45</p>
+          <p class="comm">//--------------------------Start of While Loop---------------------------</p><br>
+
+        <p class="num">46</p>
+          <p class="label">endForStartWhile:</p><br>
+
+        <p class="num">47</p>
+          <form class="list" id ="47" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line47" name = "line47" size="3">
+            <p class="dest">w3,</p>
+            <p class="src1">0&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form>
+            <br>
+
+        <p class="num">48</p>
+          <p class="instruct">&emsp;&emsp;&emsp;ble&ensp;</p>
+          <p class="dest">endWhile&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+          <p class="comm">// brach if  k <= 5 </p>
+          <br>
+
+        <p class="num">49</p>
+          <form class="list" id ="49" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line49" name = "line49" size="3"></p>
+            <p class="dest">w3,</p>
+            <p class="src1">w3,</p>
+            <p class="src2">w2&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">50</p>
+          <form class="list" id ="50" method="GET">
+            <p class="instruct">&emsp;&emsp;&ensp;<input type = "text" id = "line50" name = "line50" size="3"></p>
+            <p class="dest">w3,</p>
+            <p class="src1">w3,</p>
+            <p class="src2">w1&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+        <p class="num">51</p>
+          <p class="instruct">&emsp;&emsp;&ensp;add&emsp;&ensp;</p>
+          <p class="dest">w4,</p>
+          <p class="src1">w4,</p>
+          <p class="src2">1&emsp;
+          <p class="comm">//&ensp; count++</p> <br>
+
+        <p class="num">52</p>
+          <form class="list" id ="52" method="GET">
+            <p class="instruct">&emsp;&emsp;&emsp;b&emsp;&ensp;  </p>
+            <p class="dest"><input type = "text" id = "line52" name = "line52" size=16></p>
+            <p class = "src1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+
+          <p class="num">53</p>
+            <p class="label">endWhile:</p><br>
+
+          <p class="num">51</p>
+            <p class="instruct">&emsp;&emsp;&ensp;str&emsp;&ensp;</p>
+            <p class="src1">w4,</p>
+            <p class="dest">[x0]</p>
+            <p class="comm">//&ensp;store k from w4 to the varible</p>
+        <br>
+        <p class="num">52</p><p class="comm">//---------------------------------Epilog-------------------------------------</p><br>
+        <p class="num">53</p><p class="reg"> Done: </p><br>
+        <p class="num">54</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;mov</p><p class="dest">w0,</p><p class="src1">0</p>
+        <br>
+        <p class="num">55</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;ldr</p><p class="dest">x30,</p><p class="src1">[sp]</p>
+        <br>
+        <p class="num">56</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;add</p><p class="dest">sp,</p><p class="src1">sp,</p> <p class="src2">MAIN_STACK</p>
+        <br>
+        <p class="num">57</p><p class="instruct"><span title="More in Lesson 3">&emsp;&emsp;&emsp;ret</p><br><br>
+
+          <form class="list" id ="exit" method="GET">
+            <p class="instruct">&emsp;&emsp; What is the value of count after exiting the while loop?</p>
+            <p class="dest"><input type = "text" id = "lineExit" name = "lineExit" size="3"></p>
+            <input type="submit" name="button" value="Submit"/>
+          </form><br>
+      </div>
+
+        <!--Display Error Messages-->
+        <div class="column1" style="background-color:#292929; height:105px" >
+        <p class="comm">Word Bank:</p><br>
+        <p class="comm">cmp &emsp;&emsp; endForStartWhile &emsp;&emsp; add &emsp;&emsp; endIf &emsp;&emsp; adr &emsp;&emsp; mov</p>
+        <p class="comm">ble &emsp;&emsp; sub &emsp;&emsp; ldr&emsp;&emsp;</p><br><br>
+
+        <p class= "errorReg"> Look here for feedback!<p>
+        <p class="error" id="20Err"></p>
+        <p class="error" id="21Err"></p>
+        <p class="error" id="22Err"></p>
+        <p class="error" id="23Err"></p>
+        <p class="error" id="24Err"></p>
+        <p class="error" id="25Err"></p>
+        <p class="error" id="26Err"></p>
+        <p class="error" id="27Err"></p>
+        <p class="error" id="30Err"></p>
+        <p class="error" id="33Err"></p>
+        <p class="error" id="35Err"></p>
+        <p class="error" id="37Err"></p>
+        <p class="error" id="38Err"></p>
+        <p class="error" id="39Err"></p>
+        <p class="error" id="41Err"></p>
+        <p class="error" id="47Err"></p>
+        <p class="error" id="49Err"></p>
+        <p class="error" id="50Err"></p>
+        <p class="error" id="52Err"></p>
+        <p class="error" id="ExitErr"></p>
+        <br>
+        <br>
+
+        <!--Images-->
+        <!--Orginal C-->
+        <img id="c" src="./A2/originalC.png" style="width:100%;max-width:150px">
+        <div id="Mod" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modc">
+        </div>
+        <!-- S1 -->
+        <img id="A2S1" src="./A2/A2S1.png" alt="Slide1" style="width:100%;max-width:300px">
+
+        <!-- The Modal -->
+        <div id="Mod1" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="a2s1">
+        </div>
+
+        <!--S2-->
+        <img id="A2S2" src="./A2/A2S2.png" alt="Slide1" style="width:100%;max-width:300px">
+        <div id="Mod2" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="a2s2">
+        </div>
+
+        <!--S3-->
+        <img id="A2S3" src="./A2/A2S3.png" alt="Slide1" style="width:100%;max-width:300px">
+        <div id="Mod3" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="a2s3">
+        </div>
+        <!--S4-->
+        <img id="A2S4" src="./A2/A2S4.png" alt="Slide1" style="width:100%;max-width:300px">
+        <div id="Mod4" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="a2s4">
+        </div>
+        <!--S5-->
+        <img id="A2S5" src="./A2/A2S5.png" alt="Slide1" style="width:100%;max-width:300px">
+        <div id="Mod5" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="a2s5">
+        </div>
+        <!--S6-->
+        <img id="A2S6" src="./A2/A2S6.png" alt="Slide1" style="width:100%;max-width:300px">
+        <div id="Mod6" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="a2s6">
+        </div>
+        </div>
+
+      </div>
+    <canvas id="canvas"></canvas>
+    <script type ="module">
+
+    //20
+    document.getElementById("20").addEventListener('submit', L20, false);
+    function L20(event){
+      event.preventDefault();
+      if(document.getElementById("line20").value.toLowerCase() != "adr"){
+        document.getElementById("20Err").innerHTML = "Line 20: What instruction gets you the address of i? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line20").value.toLowerCase() == "adr"){
+        document.getElementById("20Err").innerHTML = "";
+      }
+    }
+
+    //21
+    document.getElementById("21").addEventListener('submit', L21, false);
+    function L21(event){
+      event.preventDefault();
+      if(document.getElementById("line21").value.toLowerCase() != "ldr"){
+        document.getElementById("21Err").innerHTML = "Line 21: What instruction gets the value of i into a register? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line21").value.toLowerCase() == "ldr"){
+        document.getElementById("21Err").innerHTML = "";
+      }
+    }
+
+    //22
+    document.getElementById("22").addEventListener('submit', L22, false);
+    function L22(event){
+      event.preventDefault();
+      if(document.getElementById("line22").value.toLowerCase() != "adr"){
+        document.getElementById("22Err").innerHTML = "Line 22: What instruction gets you the address of j? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line22").value.toLowerCase() == "adr"){
+        document.getElementById("22Err").innerHTML = "";
+      }
+    }
+
+    //23
+    document.getElementById("23").addEventListener('submit', L23, false);
+    function L23(event){
+      event.preventDefault();
+      if(document.getElementById("line23").value.toLowerCase() != "ldr"){
+        document.getElementById("23Err").innerHTML = "Line 23: What instruction gets the value of j into a register? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line23").value.toLowerCase() == "ldr"){
+        document.getElementById("23Err").innerHTML = "";
+      }
+    }
+
+    //24
+    document.getElementById("24").addEventListener('submit', L24, false);
+    function L24(event){
+      event.preventDefault();
+      if(document.getElementById("line24").value.toLowerCase() != "adr"){
+        document.getElementById("24Err").innerHTML = "Line 24: What instruction gets you the address of k? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line24").value.toLowerCase() == "adr"){
+        document.getElementById("24Err").innerHTML = "";
+      }
+    }
+
+    //25
+    document.getElementById("25").addEventListener('submit', L25, false);
+    function L25(event){
+      event.preventDefault();
+      if(document.getElementById("line25").value.toLowerCase() != "ldr"){
+        document.getElementById("25Err").innerHTML = "Line 25: What instruction gets the value of k into a register? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line25").value.toLowerCase() == "ldr"){
+        document.getElementById("25Err").innerHTML = "";
+      }
+    }
+
+    //26
+    document.getElementById("26").addEventListener('submit', L26, false);
+    function L26(event){
+      event.preventDefault();
+      if(document.getElementById("line26").value.toLowerCase() != "adr"){
+        document.getElementById("26Err").innerHTML = "Line 26: What instruction gets you the address of count? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line26").value.toLowerCase() == "adr"){
+        document.getElementById("26Err").innerHTML = "";
+      }
+    }
+
+    //27
+    document.getElementById("27").addEventListener('submit', L27, false);
+    function L27(event){
+      event.preventDefault();
+      if(document.getElementById("line27").value.toLowerCase() != "ldr"){
+        document.getElementById("27Err").innerHTML = "Line 27: What instruction gets the value of count into a register? See the If Statements slide for more help!";
+      }
+      if(document.getElementById("line27").value.toLowerCase() == "ldr"){
+        document.getElementById("27Err").innerHTML = "";
+      }
+    }
+
+    //30
+    document.getElementById("30").addEventListener('submit', L30, false);
+    function L30(event){
+      event.preventDefault();
+      if(document.getElementById("line30").value.toLowerCase() != "mov"){
+        document.getElementById("30Err").innerHTML = "Line 30: This instruction is a shortcut to adding the imm 0 into the register? See the For Loops slide for more help!";
+      }
+      if(document.getElementById("line30").value.toLowerCase() == "mov"){
+        document.getElementById("30Err").innerHTML = "";
+      }
+    }
+
+    //35
+    document.getElementById("35").addEventListener('submit', L35, false);
+    function L35(event){
+      event.preventDefault();
+      if(document.getElementById("line35").value.toLowerCase() != "add"){
+        document.getElementById("35Err").innerHTML = "Line 35: This is the statement in the For Loop. See the original C code for more help!";
+      }
+      if(document.getElementById("line35").value.toLowerCase() == "add"){
+        document.getElementById("35Err").innerHTML = "";
+      }
+    }
+
+    //37
+    document.getElementById("37").addEventListener('submit', L37, false);
+    function L37(event){
+      event.preventDefault();
+      if(document.getElementById("line37").value.toLowerCase() != "ble"){
+        document.getElementById("37Err").innerHTML = "Line 37: what is the condition in the C If Statement? Remember to invert it! See the original C code and the last slide for more help!";
+      }
+      if(document.getElementById("line37").value.toLowerCase() == "ble"){
+        document.getElementById("37Err").innerHTML = "";
+      }
+    }
+
+    //38
+    document.getElementById("38").addEventListener('submit', L38, false);
+    function L38(event){
+      event.preventDefault();
+      if(document.getElementById("line38").value.toLowerCase() != "sub"){
+        document.getElementById("38Err").innerHTML = "Line 38: This is the statment in the If Statement. See the original C code for more help!";
+      }
+      if(document.getElementById("line38").value.toLowerCase() == "sub"){
+        document.getElementById("38Err").innerHTML = "";
+      }
+    }
+
+    //39
+    document.getElementById("39").addEventListener('submit', L39, false);
+    function L39(event){
+      event.preventDefault();
+      if(document.getElementById("line39").value != "endIf"){
+        document.getElementById("39Err").innerHTML = "Line 39: Where should we jump to after executing the if statement? See the original C code and the If Statement slide for more help!";
+      }
+      if(document.getElementById("line39").value == "endIf"){
+        document.getElementById("39Err").innerHTML = "";
+      }
+    }
+
+    //41
+    document.getElementById("41").addEventListener('submit', L41, false);
+    function L41(event){
+      event.preventDefault();
+      if(document.getElementById("line41").value != "endIf"){
+        document.getElementById("41Err").innerHTML = "Line 41: Where should we jump to after executing the else statement? See the original C code and the If Statement slide for more help!";
+      }
+      if(document.getElementById("line41").value == "endIf"){
+        document.getElementById("41Err").innerHTML = "";
+      }
+    }
+
+    //47
+    document.getElementById("47").addEventListener('submit', L47, false);
+    function L47(event){
+      event.preventDefault();
+      if(document.getElementById("line47").value != "cmp"){
+        document.getElementById("47Err").innerHTML = "Line 47: How should we set the PSTATE register for the next instruction? See the While Loop slide for more help!";
+      }
+      if(document.getElementById("line47").value == "cmp"){
+        document.getElementById("47Err").innerHTML = "";
+      }
+
+    }
+    //49
+    document.getElementById("49").addEventListener('submit', L49, false);
+    function L49(event){
+      event.preventDefault();
+      if(document.getElementById("line49").value != "sub"){
+        document.getElementById("49Err").innerHTML = "Line 49: This while loop statement is seperated into two instructions. See the original C code for more help!";
+      }
+      if(document.getElementById("line49").value == "sub"){
+        document.getElementById("49Err").innerHTML = "";
+      }
+    }
+
+    //50
+    document.getElementById("50").addEventListener('submit', L50, false);
+    function L50(event){
+      event.preventDefault();
+      if(document.getElementById("line50").value != "sub"){
+        document.getElementById("50Err").innerHTML = "Line 50: This while loop statement is seperated into two instructions. See the original C code for more help!";
+      }
+      if(document.getElementById("line50").value == "sub"){
+        document.getElementById("50Err").innerHTML = "";
+      }
+    }
+
+    //52
+    document.getElementById("52").addEventListener('submit', L52, false);
+    function L52(event){
+      event.preventDefault();
+      if(document.getElementById("line52").value != "endForStartWhile"){
+        document.getElementById("52Err").innerHTML = "Line 52: Where should you jump back to at the end of a while loop iteration? See the While Loop slide for more help!";
+      }
+      if(document.getElementById("line52").value == "endForStartWhile"){
+        document.getElementById("52Err").innerHTML = "";
+      }
+    }
+
+    //Exit
+    document.getElementById("exit").addEventListener('submit', LExit, false);
+    function LExit(event){
+      event.preventDefault();
+      if(document.getElementById("lineExit").value != "6"){
+        document.getElementById("ExitErr").innerHTML = "Count: Try again! Be careful and keep track of all the variables during each iteration of the loops. Loop at the original C code for help!";
+      }
+      if(document.getElementById("lineExit").value == "6"){
+        document.getElementById("ExitErr").innerHTML = "";
+      }
+    }
+
+    //Images
+    //C code
+    var Mod = document.getElementById("Mod");
+    var c = document.getElementById("c");
+    var modc = document.getElementById("modc");
+    c.onclick = function(){
+      Mod.style.display = "block";
+      modc.src = this.src;
+    }
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      Mod.style.display = "none";
+    }
+    //S1
+    var Mod1 = document.getElementById("Mod1");
+    var a2S1 = document.getElementById("A2S1");
+    var moda2s1 = document.getElementById("a2s1");
+    a2S1.onclick = function(){
+      Mod1.style.display = "block";
+      moda2s1.src = this.src;
+    }
+    var span1 = document.getElementsByClassName("close")[1];
+    span1.onclick = function() {
+      Mod1.style.display = "none";
+    }
+
+    //S2
+    var Mod2 = document.getElementById("Mod2");
+    var a2S2 = document.getElementById("A2S2");
+    var moda2s2 = document.getElementById("a2s2");
+    a2S2.onclick = function(){
+      Mod2.style.display = "block";
+      moda2s2.src = this.src;
+    }
+    var span2 = document.getElementsByClassName("close")[2];
+    span2.onclick = function() {
+      Mod2.style.display = "none";
+    }
+
+    //S3
+    var Mod3 = document.getElementById("Mod3");
+    var a2S3 = document.getElementById("A2S3");
+    var moda2s3 = document.getElementById("a2s3");
+    a2S3.onclick = function(){
+      Mod3.style.display = "block";
+      moda2s3.src = this.src;
+    }
+    var span3 = document.getElementsByClassName("close")[3];
+    span3.onclick = function() {
+      Mod3.style.display = "none";
+    }
+
+    //S4
+    var Mod4 = document.getElementById("Mod4");
+    var a2S4 = document.getElementById("A2S4");
+    var moda2s4 = document.getElementById("a2s4");
+    a2S4.onclick = function(){
+      Mod4.style.display = "block";
+      moda2s4.src = this.src;
+    }
+    var span4 = document.getElementsByClassName("close")[4];
+    span4.onclick = function() {
+      Mod4.style.display = "none";
+    }
+
+    //S5
+    var Mod5 = document.getElementById("Mod5");
+    var a2S5 = document.getElementById("A2S5");
+    var moda2s5 = document.getElementById("a2s5");
+    a2S5.onclick = function(){
+      Mod5.style.display = "block";
+      moda2s5.src = this.src;
+    }
+    var span5 = document.getElementsByClassName("close")[5];
+    span5.onclick = function() {
+      Mod5.style.display = "none";
+    }
+
+    //S6
+    var Mod6 = document.getElementById("Mod6");
+    var a2S6 = document.getElementById("A2S6");
+    var moda2s6 = document.getElementById("a2s6");
+    a2S6.onclick = function(){
+      Mod6.style.display = "block";
+      moda2s6.src = this.src;
+    }
+    var span6 = document.getElementsByClassName("close")[6];
+    span6.onclick = function() {
+      Mod6.style.display = "none";
+    }
+
+    let world = document.getElementById("world");
+    world.addEventListener('click', goToWorld, false);
+    function goToWorld() {
+      window.location.href = "./world3.html"
+    }
+
+    let lesson = document.getElementById("lesson");
+    lesson.addEventListener('click', goToLesson, false);
+    function goToLesson() {
+      window.open("./assignment3.html");
+    }
+    </script>
+
+  </body>
+</html>
