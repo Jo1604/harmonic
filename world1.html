@@ -50,7 +50,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 8.5, 0);
+        camera.position.set(3, 12.5, 0);
         //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -172,8 +172,15 @@
           scene.add( gltf.scene );
         });
 
+        //load star
+        const loaderStar = new GLTFLoader();
+        // add conditional
+        loaderStar.load('./star.glb', function (gltf) {
+          scene.add( gltf.scene );
+        });
+
         // load computer
-        const box = new THREE.BoxGeometry( 0.5, 1, 1 );
+        const box = new THREE.BoxGeometry( 1, 1, 1 );
         const loadComputer = new THREE.TextureLoader();
         const materials = [
           new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
@@ -186,8 +193,8 @@
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -5;
-        cube.position.y = 9;
-        cube.position.z = 2;
+        cube.position.y = 12;
+        cube.position.z = 0;
 
         //meteors
         const rock = new THREE.DodecahedronGeometry( 0.5);
@@ -195,8 +202,13 @@
         const meteor = new THREE.Mesh( rock, material );
         scene.add( meteor );
         meteor.position.x = -3;
-        meteor.position.y = 9;
-        meteor.position.z = 2;
+        meteor.position.y = 12;
+        meteor.position.z = -10;
+
+        const meteor1 = metor.clone();
+        const meteor2 = metor.clone();
+        const meteor3 = metor.clone();
+
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
