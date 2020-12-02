@@ -220,7 +220,13 @@
         meteor1.position.x = -3;
         meteor1.position.y = 12;
         meteor1.position.z = -10;
+
         const meteor2 = meteor.clone();
+        var material2 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        scene.add( meteor2 );
+        meteor2.position.x = -3;
+        meteor2.position.y = 12;
+        meteor2.position.z = -10;
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
