@@ -186,17 +186,17 @@
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -5;
-        cube.position.y = 8;
+        cube.position.y = 9;
         cube.position.z = 2;
 
-        //
+        //meteors
         const rock = new THREE.DodecahedronGeometry( 0.5, 1, 1 );
-        const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-        const cube = new THREE.Mesh( geometry, material );
-        scene.add( cube );
-        cube.position.x = -5;
-        cube.position.y = 8;
-        cube.position.z = 2;
+        const material = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        const meteor = new THREE.Mesh( rock, material );
+        scene.add( meteor );
+        meteor.position.x = -3;
+        meteor.position.y = 9;
+        meteor.position.z = 2;
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
