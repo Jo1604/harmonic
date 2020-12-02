@@ -43,6 +43,7 @@
       var direction = new THREE.Vector3();
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
+      var counter;
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -50,7 +51,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 12.5, 0);
+        camera.position.set(3, 12, 0);
         //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -84,12 +85,18 @@
               }
               if(object == 15) { //meteor
                 material = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                scene.add(meteor);
+                counter++;
               }
               if(object == 16) { //meteor
                 material1 = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                scene.add(meteor1);
+                counter++;
               }
               if(object == 17) { //meteor
                 material2 = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                scene.add(meteor2);
+                counter++;
               }
             }
           }
@@ -182,11 +189,13 @@
         });
 
         //load star
+        if (counter == 3) {
         const loaderStar = new GLTFLoader();
         // add conditional
         loaderStar.load('./star.glb', function (gltf) {
           scene.add( gltf.scene );
         });
+      }
 
         // load computer
         const box = new THREE.BoxGeometry( 1, 1, 1 );
@@ -241,8 +250,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 100.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 100.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 200.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 200.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
