@@ -125,7 +125,7 @@
   .column1 {
     float: right;
     width: 34%;
-    padding: 10px;
+    padding: 12px;
   }
 
   /* Clear floats after the columns */
@@ -150,6 +150,12 @@
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 18px;
       color: silver;
+      display: inline-block;
+    }
+    .result{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      color: gold;
       display: inline-block;
     }
     .label{
@@ -238,12 +244,6 @@
       <div class="row">
       <div class="column" style="background-color:#0E1D2B;">
         <br>
-        <form class="list" id ="init" method="GET">
-          <p class="label">&emsp;Enter your birthday here (MM/DD/YYYY): <input type = "text" id = "init" name = "init" size="2">&nbsp;/&nbsp;
-            <input type = "text" id = "init" name = "init" size="2">&nbsp;/&nbsp;
-            <input type = "text" id = "init" name = "init" size="4">&emsp;&emsp;&emsp;
-          <input type="submit" name="button" value="Submit"/></p>
-          <br><br><br>
         <p class="num">1</p><p class="comm">//------------birthdayFun(int month, int day, int year)------------</p><br>
         <p class="num">2</p><p class="sect">.section .data</p><br>
         <p class="num">3</p><p class="comm">//------------------------------------------------------------------------------</p><br>
@@ -252,7 +252,7 @@
         <p class="num">6</p><p class="sect">.section .text</p><br>
         <p class="num">7</p><p class="comm"><span title="Must be multiple of 16">//&emsp;Total Stack Size</p><br>
         <p class="num">8</p>
-        <form class="list" id ="8" method="GET">
+        <form class="list" id="8" method="GET">
           <p class="label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;.equ &emsp;MAIN_STACK,&emsp;<input type = "text" id = "line8" name = "line8" size="2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
             &emsp;&emsp;
           <input type="submit" name="button" value="Submit"/></p>
@@ -385,10 +385,10 @@
         </form><br>
 
         <p class="num">39</p>
-        <form class="list" id ="38" method="GET">
+        <form class="list" id ="39" method="GET">
           <p class="instruct"><span title="Technically not necessary but here for habit building">&emsp;&emsp;&emsp;&ensp;mov</p>
           <p class="dest">x1,</p>
-          <p class="src1">&emsp;&emsp;<input type = "text" id = "line38" name = "line38" size="5">
+          <p class="src1">&emsp;&emsp;<input type = "text" id = "line39" name = "line39" size="5">
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
             <input type="submit" name="button" value="Submit"/></p>
         </form><br>
@@ -464,15 +464,24 @@
           <p class="src2">MAIN_STACK</p>
         <br>
 
-        <p class="num">50</p><p class="instruct"><span title=>&emsp;&emsp;&emsp;&ensp;ret</p><br><br>
+        <p class="num">50</p><p class="instruct"><span title=>&emsp;&emsp;&emsp;&ensp;ret</p><br>
+
+        <p class="num">51</p><p class="comm">//--------------------------------------------------------------------------------</p><br>
+        <form class="list" id ="init" method="GET">
+          <p class="label">&emsp;Enter your birthday here (MM/DD/YYYY): <input type = "text" id = "init1" name = "init1" size="2">&nbsp;/&nbsp;
+            <input type = "text" id = "init2" name = "init2" size="2">&nbsp;/&nbsp;
+            <input type = "text" id = "init3" name = "init3" size="4">
+          <input type="submit" name="button" value="Call birthdayFun!"/></p>
+          </form>
+          <br>
       </div>
 
         <!--Display Error Messages-->
-        <div class="column1" style="background-color:#292929; height:162px" >
+        <div class="column1" style="background-color:#292929; height:180px" >
         <p class="comm"><b>nextBirthday(int month, int day, int year)</b></p><br><br>
-        <p class="comm">&emsp;returns (int days)</p><p class="comm" id ="DAYS"></p><br><br>
+        <p class="comm">&emsp;returns (int days)</p><p class="result" id ="DAYS"></p><br><br>
         <p class="comm"><b>ageInSeconds(int month, int day, int year)</b></p><br><br>
-        <p class="comm">&emsp;returns (int seconds)</p><p class="comm" id ="SECONDS"></p><br>
+        <p class="comm">&emsp;returns (int seconds)</p><p class="result" id ="SECONDS"></p><br>
         <br>
 
         <p class= "errorReg"> Look here for feedback!<p>
@@ -482,7 +491,7 @@
         <p class="error" id="26Err"></p>
         <p class="error" id="28Err"></p>
         <p class="error" id="29Err"></p>
-        <p class="error" id="30rr"></p>
+        <p class="error" id="30Err"></p>
         <p class="error" id="35Err"></p>
         <p class="error" id="36Err"></p>
         <p class="error" id="38Err"></p>
@@ -541,7 +550,6 @@
       </div>
     <canvas id="canvas"></canvas>
     <script type ="module">
-
     //8
     document.getElementById("8").addEventListener('submit', L8, false);
     function L8(event){
@@ -595,7 +603,7 @@
     function L28(event){
       event.preventDefault();
       if(document.getElementById("line28").value.toLowerCase() != "x0"){
-        document.getElementById("28Err").innerHTML = "Line 28: This is where the first parameter is sent. For more help, see the slide on Parameters!";
+        document.getElementById("28Err").innerHTML = "Line 28: This is where the first parameter was sent. For more help, see the slide on Parameters!";
       }
       if(document.getElementById("line28").value.toLowerCase() == "x0"){
         document.getElementById("28Err").innerHTML = "";
@@ -607,7 +615,7 @@
     function L29(event){
       event.preventDefault();
       if(document.getElementById("line29").value.toLowerCase() != "x1"){
-        document.getElementById("29Err").innerHTML = "Line 29: This is where the second parameter is sent. For more help, see the slide on Parameters!";
+        document.getElementById("29Err").innerHTML = "Line 29: This is where the second parameter was sent. For more help, see the slide on Parameters!";
       }
       if(document.getElementById("line29").value.toLowerCase() == "x1"){
         document.getElementById("29Err").innerHTML = "";
@@ -619,7 +627,7 @@
     function L30(event){
       event.preventDefault();
       if(document.getElementById("line30").value.toLowerCase() != "x2"){
-        document.getElementById("30Err").innerHTML = "Line 30: This is where the third parameter is sent. For more help, see the slide on Parameters!";
+        document.getElementById("30Err").innerHTML = "Line 30: This is where the third parameter was sent. For more help, see the slide on Parameters!";
       }
       if(document.getElementById("line30").value.toLowerCase() == "x2"){
         document.getElementById("30Err").innerHTML = "";
@@ -630,10 +638,10 @@
     document.getElementById("35").addEventListener('submit', L35, false);
     function L35(event){
       event.preventDefault();
-      if(document.getElementById("line35").value.toLowerCase() != "nextBirthday"){
+      if(document.getElementById("line35").value != "nextBirthday"){
         document.getElementById("35Err").innerHTML = "Line 35: What is the label of the function? ";
       }
-      if(document.getElementById("line35").value.toLowerCase() == "nextBirthday"){
+      if(document.getElementById("line35").value == "nextBirthday"){
         document.getElementById("35Err").innerHTML = "";
       }
     }
@@ -642,10 +650,10 @@
     document.getElementById("36").addEventListener('submit', L36, false);
     function L36(event){
       event.preventDefault();
-      if(document.getElementById("line36").value.toLowerCase() != "nextBirthday"){
-        document.getElementById("36Err").innerHTML = "Line 36: What is the label of the function? ";
+      if(document.getElementById("line36").value != "NEXT"){
+        document.getElementById("36Err").innerHTML = "Line 36: What offset label looks like it belongs here? Hint: Look at the function name";
       }
-      if(document.getElementById("line36").value.toLowerCase() == "nextBirthday"){
+      if(document.getElementById("line36").value == "NEXT"){
         document.getElementById("36Err").innerHTML = "";
       }
     }
@@ -654,10 +662,10 @@
     document.getElementById("38").addEventListener('submit', L38, false);
     function L38(event){
       event.preventDefault();
-      if(document.getElementById("line38").value.toLowerCase() != "nextBirthday"){
-        document.getElementById("38Err").innerHTML = "Line 38: This is the statment in the If Statement. See the original C code for more help!";
+      if(document.getElementById("line38").value != "MONTH"){
+        document.getElementById("38Err").innerHTML = "Line 38: This is the first parameter we need to send. For more help, see the slide on Parameters!";
       }
-      if(document.getElementById("line38").value.toLowerCase() == "sub"){
+      if(document.getElementById("line38").value == "MONTH"){
         document.getElementById("38Err").innerHTML = "";
       }
     }
@@ -666,11 +674,23 @@
     document.getElementById("39").addEventListener('submit', L39, false);
     function L39(event){
       event.preventDefault();
-      if(document.getElementById("line39").value != "endIf"){
-        document.getElementById("39Err").innerHTML = "Line 39: Where should we jump to after executing the if statement? See the original C code and the If Statement slide for more help!";
+      if(document.getElementById("line39").value != "DAY"){
+        document.getElementById("39Err").innerHTML = "Line 39: This is the second parameter we need to send. For more help, see the slide on Parameters!";
       }
-      if(document.getElementById("line39").value == "endIf"){
+      if(document.getElementById("line39").value == "DAY"){
         document.getElementById("39Err").innerHTML = "";
+      }
+    }
+
+    //40
+    document.getElementById("40").addEventListener('submit', L40, false);
+    function L40(event){
+      event.preventDefault();
+      if(document.getElementById("line40").value != "YEAR"){
+        document.getElementById("40Err").innerHTML = "Line 40: This is the third parameter we need to send. For more help, see the slide on Parameters!";
+      }
+      if(document.getElementById("line40").value == "YEAR"){
+        document.getElementById("40Err").innerHTML = "";
       }
     }
 
@@ -678,11 +698,59 @@
     document.getElementById("41").addEventListener('submit', L41, false);
     function L41(event){
       event.preventDefault();
-      if(document.getElementById("line41").value != "endIf"){
-        document.getElementById("41Err").innerHTML = "Line 41: Where should we jump to after executing the else statement? See the original C code and the If Statement slide for more help!";
+      if(document.getElementById("line41").value != "ageInSeconds"){
+        document.getElementById("41Err").innerHTML = "Line 41: What is the label of the function?";
       }
-      if(document.getElementById("line41").value == "endIf"){
+      if(document.getElementById("line41").value == "ageInSeconds"){
         document.getElementById("41Err").innerHTML = "";
+      }
+    }
+
+    //42
+    document.getElementById("42").addEventListener('submit', L42, false);
+    function L42(event){
+      event.preventDefault();
+      if(document.getElementById("line42").value != "SECONDS"){
+        document.getElementById("42Err").innerHTML = "Line 42: What offset label looks like it belongs here? Hint: Look at the function name";
+      }
+      if(document.getElementById("line42").value == "SECONDS"){
+        document.getElementById("42Err").innerHTML = "";
+      }
+    }
+
+    //44
+    document.getElementById("44").addEventListener('submit', L44, false);
+    function L44(event){
+      event.preventDefault();
+      if(document.getElementById("line44").value != "0"){
+        document.getElementById("44Err").innerHTML = "Line 44: What value should birthdayFun return?";
+      }
+      if(document.getElementById("line44").value == "0"){
+        document.getElementById("44Err").innerHTML = "";
+      }
+    }
+
+    //45
+    document.getElementById("45").addEventListener('submit', L45, false);
+    function L45(event){
+      event.preventDefault();
+      if(document.getElementById("line45").value != "oldx21"){
+        document.getElementById("45Err").innerHTML = "Line 45: What offset has the value to restore here? Remember, these are in reverse order from the prolog. For more help, see the slide on Optimizations!";
+      }
+      if(document.getElementById("line45").value == "oldx21"){
+        document.getElementById("45Err").innerHTML = "";
+      }
+    }
+
+    //46
+    document.getElementById("46").addEventListener('submit', L46, false);
+    function L46(event){
+      event.preventDefault();
+      if(document.getElementById("line46").value != "oldx20"){
+        document.getElementById("46Err").innerHTML = "Line 46: What offset has the value to restore here? Remember, these are in reverse order from the prolog. For more help, see the slide on Optimizations!";
+      }
+      if(document.getElementById("line46").value == "oldx20"){
+        document.getElementById("46Err").innerHTML = "";
       }
     }
 
@@ -690,61 +758,63 @@
     document.getElementById("47").addEventListener('submit', L47, false);
     function L47(event){
       event.preventDefault();
-      if(document.getElementById("line47").value != "cmp"){
-        document.getElementById("47Err").innerHTML = "Line 47: How should we set the PSTATE register for the next instruction? See the While Loop slide for more help!";
+      if(document.getElementById("line47").value != "oldx19"){
+        document.getElementById("47Err").innerHTML = "Line 47: What offset has the value to restore here? Remember, these are in reverse order from the prolog. For more help, see the slide on Optimizations!";
       }
-      if(document.getElementById("line47").value == "cmp"){
+      if(document.getElementById("line47").value == "oldx19"){
         document.getElementById("47Err").innerHTML = "";
       }
-
-    }
-    //49
-    document.getElementById("49").addEventListener('submit', L49, false);
-    function L49(event){
-      event.preventDefault();
-      if(document.getElementById("line49").value != "sub"){
-        document.getElementById("49Err").innerHTML = "Line 49: This while loop statement is seperated into two instructions. See the original C code for more help!";
-      }
-      if(document.getElementById("line49").value == "sub"){
-        document.getElementById("49Err").innerHTML = "";
-      }
     }
 
-    //50
-    document.getElementById("50").addEventListener('submit', L50, false);
-    function L50(event){
+    // Birthday calculations
+    document.getElementById("init").addEventListener('submit', calc, false);
+    function calc(event){
       event.preventDefault();
-      if(document.getElementById("line50").value != "sub"){
-        document.getElementById("50Err").innerHTML = "Line 50: This while loop statement is seperated into two instructions. See the original C code for more help!";
+      var month = parseInt(document.getElementById("init1").value) - 1;
+      var day = parseInt(document.getElementById("init2").value);
+      var year = parseInt(document.getElementById("init3").value);
+      var birthday = new Date();
+      birthday.setMonth(month);
+      birthday.setDate(day);
+      birthday.setFullYear(year);
+      var nextBirthday = new Date();
+      nextBirthday.setMonth(month);
+      nextBirthday.setDate(day);
+      nextBirthday.setFullYear(year);
+      var today = new Date();
+
+      //Age in Seconds
+      var secs = Math.ceil((today.getTime() - birthday.getTime())/1000);
+      document.getElementById("SECONDS").innerHTML = secs;
+
+      //Days til Next Birthday
+      console.log(today.getDate());
+      if(today.getMonth() > birthday.getMonth()) {
+        nextBirthday.setFullYear(today.getFullYear() + 1);
       }
-      if(document.getElementById("line50").value == "sub"){
-        document.getElementById("50Err").innerHTML = "";
+      if(today.getMonth() == birthday.getMonth()){
+        if(today.getDate() > birthday.getDate()) {
+          nextBirthday.setFullYear(today.getFullYear() + 1);
+        }
+        else {
+          nextBirthday.setFullYear(today.getFullYear());
+          console.log("A");
+        }
+      }
+      if(today.getMonth() < birthday.getMonth()){
+        nextBirthday.setFullYear(today.getFullYear());
+        console.log("B");
+      }
+
+      console.log(nextBirthday);
+      console.log(today);
+      var days = Math.floor((nextBirthday.getTime()-today.getTime())/(1000*60*60*24));
+      document.getElementById("DAYS").innerHTML = days;
+      if(days == 0) {
+        document.getElementById("DAYS").innerHTML = "0 Happy Birthday!";
       }
     }
 
-    //52
-    document.getElementById("52").addEventListener('submit', L52, false);
-    function L52(event){
-      event.preventDefault();
-      if(document.getElementById("line52").value != "endForStartWhile"){
-        document.getElementById("52Err").innerHTML = "Line 52: Where should you jump back to at the end of a while loop iteration? See the While Loop slide for more help!";
-      }
-      if(document.getElementById("line52").value == "endForStartWhile"){
-        document.getElementById("52Err").innerHTML = "";
-      }
-    }
-
-    //Exit
-    document.getElementById("exit").addEventListener('submit', LExit, false);
-    function LExit(event){
-      event.preventDefault();
-      if(document.getElementById("lineExit").value != "6"){
-        document.getElementById("ExitErr").innerHTML = "Count: Try again! Be careful and keep track of all the variables during each iteration of the loops. Loop at the original C code for help!";
-      }
-      if(document.getElementById("lineExit").value == "6"){
-        document.getElementById("ExitErr").innerHTML = "";
-      }
-    }
 
     //Images
     //S1
