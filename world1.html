@@ -190,7 +190,7 @@
         cube.position.z = 2;
 
         //meteors
-        const rock = new THREE.DodecahedronGeometry( 0.5, 1, 1 );
+        const rock = new THREE.DodecahedronGeometry( 0.5);
         const material = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
         const meteor = new THREE.Mesh( rock, material );
         scene.add( meteor );
