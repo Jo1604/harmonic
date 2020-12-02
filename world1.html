@@ -82,6 +82,9 @@
               if(object == 14) { //cube
                 window.location.href = "./assignment1.html"
               }
+              if(object == 15) { //meteor
+                material = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+              }
             }
           }
         }
@@ -198,7 +201,7 @@
 
         //meteors
         const rock = new THREE.DodecahedronGeometry( 0.5);
-        const material = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        var material = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
         const meteor = new THREE.Mesh( rock, material );
         scene.add( meteor );
         meteor.position.x = -3;
