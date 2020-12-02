@@ -85,6 +85,12 @@
               if(object == 15) { //meteor
                 material = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
               }
+              if(object == 16) { //meteor
+                material1 = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+              }
+              if(object == 17) { //meteor
+                material2 = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+              }
             }
           }
         }
@@ -208,9 +214,13 @@
         meteor.position.y = 12;
         meteor.position.z = -10;
 
-        const meteor1 = metor.clone();
-        const meteor2 = metor.clone();
-        const meteor3 = metor.clone();
+        const meteor1 = meteor.clone();
+        var material1 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        scene.add( meteor1 );
+        meteor1.position.x = -3;
+        meteor1.position.y = 12;
+        meteor1.position.z = -10;
+        const meteor2 = meteor.clone();
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
