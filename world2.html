@@ -232,8 +232,8 @@
         ];
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
-        cube.position.x = -46;
-        cube.position.y = 3;
+        cube.position.x = -43;
+        cube.position.y = -2;
         cube.position.z = -31.3;
 
         //knot
@@ -242,7 +242,7 @@
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
         home.position.x = 39.8;
-        home.position.y = 3;
+        home.position.y = -2;
         home.position.z = -54;
 
         //coconuts
@@ -272,9 +272,10 @@
         const onAnimationFrameHandler = (timeStamp) => {
             if (obj1 && obj2 && obj3) {
               scene.add( whaleModel);
-              whaleModel.position.x = -63;
-              whaleModel.position.y = 1;
-              whaleModel.position.z= -7.7;
+              whaleModel.position.x = -50;
+              whaleModel.position.y = -6;
+              whaleModel.position.z= -14.7;
+              whaleModel.rotation.z += 0.01;
             }
             if (controls.isLocked === true) {
               var time = Date.now();
