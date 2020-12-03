@@ -288,8 +288,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 480.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 480.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 500.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 500.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
