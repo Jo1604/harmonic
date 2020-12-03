@@ -83,13 +83,13 @@
             for (var i = 0; i < intersects.length; i++) {
               object = intersects[i].object.id;
               console.log(object)
-              if(object == 16) { //Door1
+              if(object == 14) { //Door1
                 //window.location.href = "./assignment2.html"
               }
-              if(object == 18) { //knot
+              if(object == 15) { //knot
                 //window.location.href = "./home.html"
               }
-              if(object == 15) { //coconut
+              if(object == 16) { //coconut
                 const rockb = new THREE.SphereGeometry(3);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
                 const coconutb = new THREE.Mesh( rockb, materialb );
@@ -100,7 +100,7 @@
                 coconutb.position.z = 86;
                 obj1 = true;
               }
-              if(object == 16) { //coconut
+              if(object == 17) { //coconut
                 const rock1b = new THREE.SphereGeometry(3);
                 var material1b = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
                 const coconut1b = new THREE.Mesh( rock1b, material1b );
@@ -111,7 +111,7 @@
                 coconut1b.position.z = -16;
                 obj2 = true;
               }
-              if(object == 17) { //coconut
+              if(object == 18) { //coconut
                 const rock2b = new THREE.SphereGeometry(3);
                 var material2b = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
                 const coconut2b = new THREE.Mesh( rock2b, material2b );
@@ -299,7 +299,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            //console.log(camera.position)
+            console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
