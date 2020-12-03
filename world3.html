@@ -213,14 +213,11 @@ Box<!DOCTYPE html>
         });
 
         //load star
-        if (counter == 3) {
         const loaderStar = new GLTFLoader();
         // add conditional
         loaderStar.load('./walrus.glb', function (gltf) {
           walrusModel = gltf.scene;
         });
-        counter ++;
-        }
 
         // load computer
         const box = new THREE.BoxGeometry( 4, 4, 4 );
