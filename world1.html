@@ -217,12 +217,6 @@
           starModel = gltf.scene;
         });
 
-        if (counter == 3) {
-          console.log("inside");
-          scene.add( gltf.scene );
-          counter++;
-        }
-
         // load computer
         const box = new THREE.BoxGeometry( 1, 1, 1 );
         const loadComputer = new THREE.TextureLoader();
@@ -265,6 +259,11 @@
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
+            if (counter == 3) {
+              console.log("inside");
+              scene.add( gltf.scene );
+              counter++;
+            }
             if (controls.isLocked === true) {
               var time = Date.now();
               var delta = (time - prevTime) / 1000.0;
