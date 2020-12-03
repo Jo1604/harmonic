@@ -85,17 +85,18 @@
               }
               if(object == 15) { //meteor
                 const meteorb = meteor.clone();
-                materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 scene.remove(meteor);
                 scene.add( meteorb );
                 meteorb.position.x = -6;
                 meteorb.position.y = 12;
                 meteorb.position.z = -10;
                 counter++;
+                console.log(counter);
               }
               if(object == 16) { //meteor
                 const meteor1b = meteor.clone();
-                material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                var material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 scene.remove(meteor1);
                 scene.add( meteor1b );
                 meteor1b.position.x = -10;
