@@ -20,7 +20,7 @@
     }
   </style>
   <body>
-    <p>Click on the computer for the lesson plan. Explore and find the fallen stars!</p>
+    <p>Click on the computer for the lesson plan and on the knot to go back home. Explore and find the fallen meteors! </p>
     <p>Press the spacebar to start moving. Use your mouse to look around and arrow keys (or WASD) to move. Press ESC key to use your mouse normally. </p>
 
     <script src="three.min.js"></script>
@@ -53,7 +53,7 @@
 
         // Set up camera
         camera.position.set(-14, 12, -17);
-        //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
+        camera.lookAt(new THREE.Vector3(13, 12, 5.6));
 
         // Set up renderer, canvas, and minor CSS adjustments
         const canvas = document.getElementById('canvas1');
@@ -233,6 +233,15 @@
         cube.position.x = -5;
         cube.position.y = 12;
         cube.position.z = 0;
+
+        //knot
+        const knot = new THREE.TorusKnotGeometry(10, 3, 37);
+        var knotMaterial = new THREE.MeshBasicMaterial( {color: 0x6d0269} );
+        const home = new THREE.Mesh( knot, knotMaterial );
+        scene.add( home );
+        home.position.x = 15;
+        home.position.y = 10;
+        home.position.z = 0.16;
 
         //meteors
         const rock = new THREE.DodecahedronGeometry( 0.5);
