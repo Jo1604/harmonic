@@ -260,8 +260,10 @@
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (counter == 3) {
-              console.log("inside");
               scene.add( starModel );
+              starModel.position.x = 1;
+              starModel.position.y = 15;
+              starModel.position.z= 0;
               counter++;
             }
             if (controls.isLocked === true) {
