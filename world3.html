@@ -85,37 +85,37 @@ Box<!DOCTYPE html>
                 window.location.href = "./assignment2.html"
               }
               if(object == 18) { //gift
-                const rockb = new THREE.BoxGeometry( 0.5);
+                const rockb = new THREE.BoxGeometry(4, 4, 4);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const giftb = new THREE.Mesh( rockb, materialb );
                 scene.remove(gift);
                 scene.add( giftb );
-                giftb.position.x = 115.4;
-                giftb.position.y = 40;
-                giftb.position.z = 11;
+                giftb.position.x = 113;
+                giftb.position.y = 39;
+                giftb.position.z = 21.8;
                 counter++;
                 console.log(counter);
               }
               if(object == 19) { //gift
-                const rock1b = new THREE.BoxGeometry( 0.5);
+                const rock1b = new THREE.BoxGeometry(4, 4, 4);
                 var material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const gift1b = new THREE.Mesh( rock1b, material1b );
                 scene.remove(gift1);
                 scene.add( gift1b );
-                gift1b.position.x = 35;
-                gift1b.position.y = 46;
-                gift1b.position.z = -28.6;
+                gift1b.position.x = 35.8;
+                gift1b.position.y = 42;
+                gift1b.position.z = -34;
                 counter++;
                 console.log(counter);
               }
               if(object == 20) { //gift
-                const rock2b = new THREE.BoxGeometry( 0.5);
+                const rock2b = new THREE.BoxGeometry(4, 4, 4 );
                 var material2b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const gift2b = new THREE.Mesh( rock2b, material2b );
                 scene.remove(gift2);
                 scene.add( gift2b );
                 gift2b.position.x = -69.5;
-                gift2b.position.y = 48;
+                gift2b.position.y = 45;
                 gift2b.position.z = -0.5;
                 counter++;
                 console.log(counter);
@@ -221,7 +221,7 @@ Box<!DOCTYPE html>
         }
 
         // load computer
-        const box = new THREE.BoxGeometry( 3, 3, 3 );
+        const box = new THREE.BoxGeometry( 4, 4, 4 );
         const loadComputer = new THREE.TextureLoader();
         const materials = [
           new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
@@ -242,31 +242,31 @@ Box<!DOCTYPE html>
         var knotMaterial = new THREE.MeshBasicMaterial( {color: 0xc55656} );
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
-        home.position.x = 15;
-        home.position.y = 50;
-        home.position.z = 0.16;
+        home.position.x = 30;
+        home.position.y = 48.5;
+        home.position.z = -5.5;
 
         //gifts
-        const rock = new THREE.BoxGeometry(3);
-        var material = new THREE.MeshBasicMaterial( {color: 0xa9638e} );
+        const rock = new THREE.BoxGeometry(4, 4, 4);
+        var material = new THREE.MeshBasicMaterial( {color: 0x8149b2} );
         const gift = new THREE.Mesh( rock, material );
         scene.add( gift );
-        gift.position.x = 115.4;
-        gift.position.y = 40;
-        gift.position.z = 11;
+        gift.position.x = 113;
+        gift.position.y = 39;
+        gift.position.z = 21.8;
 
         const gift1 = gift.clone();
-        var material1 = new THREE.MeshBasicMaterial( {color: 0xa9638e} );
+        var material1 = new THREE.MeshBasicMaterial( {color: 0x8149b2} );
         scene.add( gift1 );
-        gift1.position.x = 35;
-        gift1.position.y = 46;
-        gift1.position.z = -28.6;
+        gift1.position.x = 35.8;
+        gift1.position.y = 42;
+        gift1.position.z = -34;
 
         const gift2 = gift.clone();
-        var material2 = new THREE.MeshBasicMaterial( {color: 0xa9638e} );
+        var material2 = new THREE.MeshBasicMaterial( {color: 0x8149b2} );
         scene.add( gift2 );
         gift2.position.x = -69.5;
-        gift2.position.y = 48;
+        gift2.position.y = 45;
         gift2.position.z = -0.5;
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
