@@ -44,6 +44,7 @@
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
       var counter = 0;
+      var whaleModel;
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -81,8 +82,43 @@
               object = intersects[i].object.id;
               console.log(object)
               if(object == 16) { //Door1
-                console.log("door1")
                 window.location.href = "./assignment2.html"
+              }
+              if(object == 15) { //coconut
+                const rockb = new THREE.SphereGeometry( 0.5);
+                var materialb = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
+                const coconutb = new THREE.Mesh( rockb, materialb );
+                scene.remove(coconut);
+                scene.add( coconutb );
+                coconutb.position.x = -6;
+                coconutb.position.y = 12;
+                coconutb.position.z = -10;
+                counter++;
+                console.log(counter);
+              }
+              if(object == 16) { //coconut
+                const rock1b = new THREE.SphereGeometry( 0.5);
+                var material1b = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
+                const coconut1b = new THREE.Mesh( rock1b, material1b );
+                scene.remove(coconut1);
+                scene.add( coconut1b );
+                coconut1b.position.x = -10;
+                coconut1b.position.y = 12;
+                coconut1b.position.z = -10;
+                counter++;
+                console.log(counter);
+              }
+              if(object == 17) { //coconut
+                const rock2b = new THREE.SphereGeometry( 0.5);
+                var material2b = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
+                const coconut2b = new THREE.Mesh( rock2b, material2b );
+                scene.remove(coconut2);
+                scene.add( coconut2b );
+                coconut2b.position.x = -6;
+                coconut2b.position.y = 12;
+                coconut2b.position.z = -10;
+                counter++;
+                console.log(counter);
               }
             }
           }
@@ -140,7 +176,7 @@
         //lighting
         const dir = new THREE.SpotLight(0xf9e38a, 1.6, 10, 0, 1, 0.9);
         const ambi = new THREE.AmbientLight(0xa5a17d, 1);
-        const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
+        const hemi = new THREE.HemiSphereLight(0x044058, 0xa8b0b4, 2.3);
 
         dir.position.set(0, 50, 0);
         //dir.target.position.set(0, 0, 0);
@@ -175,25 +211,61 @@
         });
 
         //load star
-        if (counter == 3) {
         const loaderStar = new GLTFLoader();
         // add conditional
         loaderStar.load('./whale.glb', function (gltf) {
-          scene.add( gltf.scene );
+          whaleModel = gltf.scene;
         });
-        counter ++;
-      }
 
         // load computer
-        const geometry = new THREE.BoxGeometry( 0.5, 1, 1 );
-        const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-        const cube = new THREE.Mesh( geometry, material );
+        const box = new THREE.BoxGeometry( 1, 1, 1 );
+        const loadComputer = new THREE.TextureLoader();
+        const materials = [
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture1.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture1.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+        ];
+        const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -5;
-        cube.position.y = 8;
-        cube.position.z = 2;
+        cube.position.y = 12;
+        cube.position.z = 0;
+
+        //coconuts
+        const rock = new THREE.SphereGeometry( 0.5);
+        var material = new THREE.MeshBasicMaterial( {color: 0x874814} );
+        const coconut = new THREE.Mesh( rock, material );
+        scene.add( coconut );
+        coconut.position.x = -3;
+        coconut.position.y = 12;
+        coconut.position.z = -10;
+
+        const coconut1 = coconut.clone();
+        var material1 = new THREE.MeshBasicMaterial( {color: 0x874814} );
+        scene.add( coconut1 );
+        coconut1.position.x = -3;
+        coconut1.position.y = 12;
+        coconut1.position.z = -10;
+
+        const coconut2 = coconut.clone();
+        var material2 = new THREE.MeshBasicMaterial( {color: 0x874814} );
+        scene.add( coconut2 );
+        coconut2.position.x = -3;
+        coconut2.position.y = 12;
+        coconut2.position.z = -10;
+
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
+            if (counter == 3) {
+              scene.add( whaleModel );
+              whaleModel.position.x = 1;
+              whaleModel.position.y = 15;
+              whaleModel.position.z= 0;
+              counter++;
+            }
             if (controls.isLocked === true) {
               var time = Date.now();
               var delta = (time - prevTime) / 1000.0;

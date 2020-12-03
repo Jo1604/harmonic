@@ -266,6 +266,9 @@
               starModel.position.z= 0;
               counter++;
             }
+            if(counter > 3) {
+              starModel.rotation.x +=0.01;
+            }
             if (controls.isLocked === true) {
               var time = Date.now();
               var delta = (time - prevTime) / 1000.0;
