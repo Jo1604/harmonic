@@ -185,13 +185,21 @@
         }
 
         // load computer
-        const geometry = new THREE.BoxGeometry( 0.5, 1, 1 );
-        const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-        const cube = new THREE.Mesh( geometry, material );
+        const box = new THREE.BoxGeometry( 1, 1, 1 );
+        const loadComputer = new THREE.TextureLoader();
+        const materials = [
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture1.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture1.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+          new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
+        ];
+        const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -5;
-        cube.position.y = 8;
-        cube.position.z = 2;
+        cube.position.y = 52;
+        cube.position.z = 0
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
