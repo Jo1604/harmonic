@@ -43,7 +43,7 @@
       var direction = new THREE.Vector3();
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
-      var obj1 = true; //false;
+      var obj1 = false;
       var obj2 = true; //false;
       var obj3 = true; //false;
       var whaleModel;
@@ -271,7 +271,7 @@
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (obj1 && obj2 && obj3) {
-              scene.add( whaleModel );
+              scene.add( whaleModel);
               whaleModel.position.x = 8.4;
               whaleModel.position.y = 1;
               whaleModel.position.z= -8.4;
