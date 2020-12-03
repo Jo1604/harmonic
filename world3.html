@@ -271,6 +271,9 @@
         const onAnimationFrameHandler = (timeStamp) => {
             if (obj1 && obj2 && obj3){
               scene.add(walrusModel);
+              walrusModel.position.x = -11.1;
+              walrusModel.position.y = 48;
+              walrusModel.position.z = 75;
             }
             if (controls.isLocked === true) {
               var time = Date.now();
