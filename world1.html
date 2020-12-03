@@ -20,7 +20,7 @@
     }
   </style>
   <body>
-    <p>Click on the computer for the lesson plan and on the knot to go back home. Explore and find the fallen meteors! </p>
+    <p>Click on the computer for the lesson plan and on the pyramid to go back home. Explore and find the fallen meteors! </p>
     <p>Press the spacebar to start moving. Use your mouse to look around and arrow keys (or WASD) to move. Press ESC key to use your mouse normally. </p>
 
     <script src="three.min.js"></script>
@@ -306,7 +306,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            console.log(camera.position)
+            //console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
