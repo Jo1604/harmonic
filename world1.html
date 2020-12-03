@@ -43,7 +43,7 @@
       var direction = new THREE.Vector3();
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
-      var counter;
+      var counter = 0;
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -216,7 +216,7 @@
         loaderStar.load('./star.glb', function (gltf) {
           scene.add( gltf.scene );
         });
-        counter ++;
+        counter++;
       }
 
         // load computer

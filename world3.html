@@ -43,6 +43,7 @@
       var direction = new THREE.Vector3();
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
+      var counter = 0;
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -50,7 +51,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 15.5, 0);
+        camera.position.set(3, 30.5, 0);
         //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -172,6 +173,16 @@
         loaderScene.load('./NorthPole.glb', function (gltf) {
           scene.add( gltf.scene );
         });
+
+        //load star
+        if (counter == 3) {
+        const loaderStar = new GLTFLoader();
+        // add conditional
+        loaderStar.load('./walrus.glb', function (gltf) {
+          scene.add( gltf.scene );
+        });
+        counter ++;
+      }
 
         // load computer
         const geometry = new THREE.BoxGeometry( 0.5, 1, 1 );
