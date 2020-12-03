@@ -94,8 +94,13 @@
                 counter++;
               }
               if(object == 16) { //meteor
-                material1 = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
-                scene.add(meteor1);
+                const meteor1b = meteor.clone();
+                material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                scene.remove(meteor1);
+                scene.add( meteor1b );
+                meteor1b.position.x = -10;
+                meteor1b.position.y = 12;
+                meteor1b.position.z = -10;
                 counter++;
               }
               if(object == 17) { //meteor
