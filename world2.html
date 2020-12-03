@@ -52,8 +52,8 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(-24, 9, -135);
-        //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
+        camera.position.set(1.4, 7.5, 21.2);
+        camera.lookAt(new THREE.Vector3(-1.4, 7.5, -22.1));
 
         // Set up renderer, canvas, and minor CSS adjustments
         const canvas = document.getElementById('canvas1');
@@ -83,6 +83,9 @@
               console.log(object)
               if(object == 16) { //Door1
                 window.location.href = "./assignment2.html"
+              }
+              if(object == 18) { //knot
+                //window.location.href = "./home.html"
               }
               if(object == 15) { //coconut
                 const rockb = new THREE.SphereGeometry(3);
@@ -230,18 +233,18 @@
         ];
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
-        cube.position.x = 41;
-        cube.position.y = 8.5 ;
-        cube.position.z = 41.3;
+        cube.position.x = -46;
+        cube.position.y = 7.5 ;
+        cube.position.z = -31.3;
 
         //knot
         const knot = new THREE.ConeGeometry(2, 5, 4);
         var knotMaterial = new THREE.MeshBasicMaterial( {color: 0xc55656} );
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
-        home.position.x = -9;
-        home.position.y = 5.5;
-        home.position.z = -7.8;
+        home.position.x = 39.8;
+        home.position.y = 7.5;
+        home.position.z = -54;
 
         //coconuts
         const rock = new THREE.SphereGeometry(3);
@@ -298,7 +301,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            console.log(camera.position)
+            //console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 

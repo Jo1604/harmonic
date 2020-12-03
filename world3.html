@@ -81,8 +81,10 @@ Box<!DOCTYPE html>
               object = intersects[i].object.id;
               console.log(object)
               if(object == 16) { //Door1
-                console.log("door1")
-                window.location.href = "./assignment2.html"
+                //window.location.href = "./assignment3.html"
+              }
+              if(object == 18) { //knot
+                //window.location.href = "./home.html"
               }
               if(object == 18) { //gift
                 const rockb = new THREE.BoxGeometry(4, 4, 4);
@@ -233,9 +235,9 @@ Box<!DOCTYPE html>
         ];
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
-        cube.position.x = -35;
-        cube.position.y = 50;
-        cube.position.z = 18.9;
+        cube.position.x = 7.7;
+        cube.position.y = 49;
+        cube.position.z = 37.7;
 
         //knot
         const knot = new THREE.ConeGeometry(2, 5, 4);
