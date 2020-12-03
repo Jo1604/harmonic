@@ -64,9 +64,10 @@
         const controls = new PointerLockControls(camera, canvas);
         document.body.addEventListener( 'keydown' , function (event) {
           //lock mouse on screen
-          if(event.keyCode == 32)
+          if(event.keyCode == 32){
             controls.lock();
           }
+          
           }, false);
 
         // Double click on objects
