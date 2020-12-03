@@ -138,13 +138,13 @@
         window.addEventListener('keyup', onKeyUp, false);
 
         //lighting
-        const dir = new THREE.SpotLight(0xf9e38a, 0.6, 10, 0, 1, 1);
+        //const dir = new THREE.SpotLight(0xf9e38a, 0.6, 10, 0, 1, 1);
         const ambi = new THREE.AmbientLight(0xa5a17d, 2);
         const hemi = new THREE.HemisphereLight(0x3a3a4b, 0xa8b0b4, 1.3);
 
-        dir.position.set(3, 20, 0);
+        //dir.position.set(3, 20, 0);
         //dir.target.position.set(0, 0, 0);
-        scene.add(dir);
+        //scene.add(dir);
         scene.add(ambi);
         scene.add(hemi);
 
