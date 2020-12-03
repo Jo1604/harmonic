@@ -52,7 +52,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 12, 0);
+        camera.position.set(-14, 12, -17);
         //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -90,9 +90,9 @@
                 const meteorb = new THREE.Mesh( rockb, materialb );
                 scene.remove(meteor);
                 scene.add( meteorb );
-                meteorb.position.x = -6;
-                meteorb.position.y = 12;
-                meteorb.position.z = -10;
+                meteorb.position.x = -16.5;
+                meteorb.position.y = 10;
+                meteorb.position.z = -4;
                 counter++;
                 console.log(counter);
               }
@@ -102,9 +102,9 @@
                 const meteor1b = new THREE.Mesh( rock1b, material1b );
                 scene.remove(meteor1);
                 scene.add( meteor1b );
-                meteor1b.position.x = -10;
-                meteor1b.position.y = 12;
-                meteor1b.position.z = -10;
+                meteor1b.position.x = -18;
+                meteor1b.position.y = 11;
+                meteor1b.position.z = -14;
                 counter++;
                 console.log(counter);
               }
@@ -114,9 +114,9 @@
                 const meteor2b = new THREE.Mesh( rock2b, material2b );
                 scene.remove(meteor2);
                 scene.add( meteor2b );
-                meteor2b.position.x = -6;
-                meteor2b.position.y = 12;
-                meteor2b.position.z = -10;
+                meteor2b.position.x = 13;
+                meteor2b.position.y = 11;
+                meteor2b.position.z = 10;
                 counter++;
                 console.log(counter);
               }
@@ -239,23 +239,23 @@
         var material = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
         const meteor = new THREE.Mesh( rock, material );
         scene.add( meteor );
-        meteor.position.x = -3;
-        meteor.position.y = 12;
-        meteor.position.z = -10;
+        meteor.position.x = -16;
+        meteor.position.y = 10;
+        meteor.position.z = -4;
 
         const meteor1 = meteor.clone();
         var material1 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
         scene.add( meteor1 );
-        meteor1.position.x = -3;
-        meteor1.position.y = 12;
-        meteor1.position.z = -10;
+        meteor1.position.x = -18;
+        meteor1.position.y = 11;
+        meteor1.position.z = 14;
 
         const meteor2 = meteor.clone();
         var material2 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
         scene.add( meteor2 );
-        meteor2.position.x = -3;
-        meteor2.position.y = 12;
-        meteor2.position.z = -10;
+        meteor2.position.x = 13;
+        meteor2.position.y = 11;
+        meteor2.position.z = 10;
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
