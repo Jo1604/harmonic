@@ -84,10 +84,10 @@
               object = intersects[i].object.id;
               console.log(object)
               if(object == 14) { //Door1
-                //window.location.href = "./assignment2.html"
+                window.location.href = "./assignment2.html"
               }
               if(object == 15) { //knot
-                //window.location.href = "./home.html"
+                window.location.href = "./home.html"
               }
               if(object == 16) { //coconut
                 const rockb = new THREE.SphereGeometry(3);
@@ -177,8 +177,8 @@
 
         //lighting
         //const dir = new THREE.SpotLight(0xf9e38a, 1.6, 10, 0, 1, 0.9);
-        const ambi = new THREE.AmbientLight(0xd8ca8c, 1);
-        const hemi = new THREE.HemisphereLight(0xae6204, 0xf6f6a3, 2.3);
+        const ambi = new THREE.AmbientLight(0xdfdac6, 1);
+        const hemi = new THREE.HemisphereLight(0x3f9ea1, 0xf2e5bd, 2.3);
 
         //dir.position.set(-25, 30, -41);
         //dir.target.position.set(0, 0, 0);
@@ -273,7 +273,7 @@
             if (obj1 && obj2 && obj3) {
               scene.add( whaleModel);
               whaleModel.position.x = -52;
-              whaleModel.position.y = -8;
+              whaleModel.position.y = -11;
               whaleModel.position.z= -14.7;
               whaleModel.rotation.z += 0.01;
             }
