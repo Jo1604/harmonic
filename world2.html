@@ -91,7 +91,7 @@
                 scene.remove(coconut);
                 scene.add( coconutb );
                 coconutb.position.x = -6;
-                coconutb.position.y = 12;
+                coconutb.position.y = 52;
                 coconutb.position.z = -10;
                 counter++;
                 console.log(counter);
@@ -103,7 +103,7 @@
                 scene.remove(coconut1);
                 scene.add( coconut1b );
                 coconut1b.position.x = -10;
-                coconut1b.position.y = 12;
+                coconut1b.position.y = 52;
                 coconut1b.position.z = -10;
                 counter++;
                 console.log(counter);
@@ -115,7 +115,7 @@
                 scene.remove(coconut2);
                 scene.add( coconut2b );
                 coconut2b.position.x = -6;
-                coconut2b.position.y = 12;
+                coconut2b.position.y = 52;
                 coconut2b.position.z = -10;
                 counter++;
                 console.log(counter);
@@ -201,7 +201,7 @@
 
         var stars = new THREE.Points(starGeo, starMaterial);
         // Set background to a nice color
-        scene.background = new THREE.Color(0x7da3be);
+        scene.background = new THREE.Color(0xfbbf63);
         scene.add(stars);
 
         //load base
@@ -231,7 +231,7 @@
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -5;
-        cube.position.y = 12;
+        cube.position.y = 12 ;
         cube.position.z = 0;
 
         //coconuts
@@ -240,21 +240,21 @@
         const coconut = new THREE.Mesh( rock, material );
         scene.add( coconut );
         coconut.position.x = -3;
-        coconut.position.y = 12;
+        coconut.position.y = 10;
         coconut.position.z = -10;
 
         const coconut1 = coconut.clone();
         var material1 = new THREE.MeshBasicMaterial( {color: 0x874814} );
         scene.add( coconut1 );
         coconut1.position.x = -3;
-        coconut1.position.y = 12;
+        coconut1.position.y = 10;
         coconut1.position.z = -10;
 
         const coconut2 = coconut.clone();
         var material2 = new THREE.MeshBasicMaterial( {color: 0x874814} );
         scene.add( coconut2 );
         coconut2.position.x = -3;
-        coconut2.position.y = 12;
+        coconut2.position.y = 10;
         coconut2.position.z = -10;
 
         // Render loop
