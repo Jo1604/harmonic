@@ -43,7 +43,9 @@
       var direction = new THREE.Vector3();
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
-      var counter = 0;
+      var obj1 = false;
+      var obj2 = false;
+      var obj3 = false;
       var whaleModel;
 
       // Initialize core ThreeJS components
@@ -52,7 +54,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(23.1, 7, -129.7);
+        camera.position.set(23.1, 4.5, -129.7);
         camera.lookAt(new THREE.Vector3(-1.4, 7, -22.1));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -96,8 +98,7 @@
                 coconutb.position.x = 13;
                 coconutb.position.y = 8;
                 coconutb.position.z = 86;
-                counter++;
-                console.log(counter);
+                obj1 = true;
               }
               if(object == 16) { //coconut
                 const rock1b = new THREE.SphereGeometry(3);
@@ -108,8 +109,7 @@
                 coconut1b.position.x = 81;
                 coconut1b.position.y = 8.1;
                 coconut1b.position.z = -16;
-                counter++;
-                console.log(counter);
+                obj2 = true;
               }
               if(object == 17) { //coconut
                 const rock2b = new THREE.SphereGeometry(3);
@@ -120,8 +120,7 @@
                 coconut2b.position.x = -58;
                 coconut2b.position.y = 9;
                 coconut2b.position.z = -94;
-                counter++;
-                console.log(counter);
+                obj3 = true;
               }
             }
           }
@@ -234,7 +233,7 @@
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -46;
-        cube.position.y = 6 ;
+        cube.position.y = 3;
         cube.position.z = -31.3;
 
         //knot
@@ -243,7 +242,7 @@
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
         home.position.x = 39.8;
-        home.position.y = 6;
+        home.position.y = 3;
         home.position.z = -54;
 
         //coconuts
@@ -271,12 +270,11 @@
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
-            if (counter == 3) {
+            if (obj1 && obj2 && obj3) {
               scene.add( whaleModel );
-              whaleModel.position.x = 1;
-              whaleModel.position.y = 15;
-              whaleModel.position.z= 0;
-              counter++;
+              whaleModel.position.x = 8.4;
+              whaleModel.position.y = 1;
+              whaleModel.position.z= -8.4;
             }
             if (controls.isLocked === true) {
               var time = Date.now();
@@ -289,8 +287,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 500.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 500.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 550.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 550.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
