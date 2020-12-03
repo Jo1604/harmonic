@@ -200,6 +200,29 @@
         cube.position.x = -5;
         cube.position.y = 52;
         cube.position.z = 0
+
+        //gifts
+        const rock = new THREE.DodecahedronGeometry( 0.5);
+        var material = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        const gift = new THREE.Mesh( rock, material );
+        scene.add( gift );
+        gift.position.x = -3;
+        gift.position.y = 52;
+        gift.position.z = -10;
+
+        const gift1 = gift.clone();
+        var material1 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        scene.add( gift1 );
+        gift1.position.x = -3;
+        gift1.position.y = 52;
+        gift1.position.z = -10;
+
+        const gift2 = gift.clone();
+        var material2 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
+        scene.add( gift2 );
+        gift2.position.x = -3;
+        gift2.position.y = 52;
+        gift2.position.z = -10;
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
