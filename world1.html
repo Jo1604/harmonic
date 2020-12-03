@@ -207,18 +207,18 @@
         const loaderScene = new GLTFLoader();
         loaderScene.load('./Moon.glb', function (gltf) {
           scene.add( gltf.scene );
-        });
+        } );
 
         //load star
-        if (counter == 3) {
-          console.log("inside");
         const loaderStar = new GLTFLoader();
         // add conditional
         loaderStar.load('./star.glb', function (gltf) {
-          scene.add( gltf.scene );
+          if (counter == 3) {
+            console.log("inside");
+            scene.add( gltf.scene );
+            counter++;
+          }
         });
-        counter++;
-      }
 
         // load computer
         const box = new THREE.BoxGeometry( 1, 1, 1 );
