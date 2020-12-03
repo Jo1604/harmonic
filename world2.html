@@ -52,7 +52,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 9.2, 0);
+        camera.position.set(-24, 9, -135);
         //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -218,7 +218,7 @@
         });
 
         // load computer
-        const box = new THREE.BoxGeometry( 3, 3, 13);
+        const box = new THREE.BoxGeometry( 3, 3, 3);
         const loadComputer = new THREE.TextureLoader();
         const materials = [
           new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
@@ -230,9 +230,9 @@
         ];
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
-        cube.position.x = -5;
-        cube.position.y = 10 ;
-        cube.position.z = 0;
+        cube.position.x = 41;
+        cube.position.y = 8.5 ;
+        cube.position.z = 41.3;
 
         //knot
         const knot = new THREE.ConeGeometry(2, 5, 4);
@@ -240,23 +240,23 @@
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
         home.position.x = -9;
-        home.position.y = 9;
+        home.position.y = 5.5;
         home.position.z = -7.8;
 
         //coconuts
-        const rock = new THREE.SphereGeometry(1);
+        const rock = new THREE.SphereGeometry(3);
         var material = new THREE.MeshBasicMaterial( {color: 0x874814} );
         const coconut = new THREE.Mesh( rock, material );
         scene.add( coconut );
         coconut.position.x = 13;
-        coconut.position.y = 9;
+        coconut.position.y = 8;
         coconut.position.z = 86;
 
         const coconut1 = coconut.clone();
         var material1 = new THREE.MeshBasicMaterial( {color: 0x874814} );
         scene.add( coconut1 );
         coconut1.position.x = 81;
-        coconut1.position.y = 8.9;
+        coconut1.position.y = 8.1;
         coconut1.position.z = -16;
 
         const coconut2 = coconut.clone();
@@ -298,7 +298,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            console.log(camera.position)
+            //console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
