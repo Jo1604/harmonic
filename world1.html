@@ -44,6 +44,7 @@
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
       var counter = 0;
+      var starModel;
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -213,12 +214,14 @@
         const loaderStar = new GLTFLoader();
         // add conditional
         loaderStar.load('./star.glb', function (gltf) {
-          if (counter == 3) {
-            console.log("inside");
-            scene.add( gltf.scene );
-            counter++;
-          }
+          starModel = gltf.scene;
         });
+
+        if (counter == 3) {
+          console.log("inside");
+          scene.add( gltf.scene );
+          counter++;
+        }
 
         // load computer
         const box = new THREE.BoxGeometry( 1, 1, 1 );
