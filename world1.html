@@ -84,8 +84,9 @@
                 window.location.href = "./assignment1.html"
               }
               if(object == 15) { //meteor
-                const meteorb = meteor.clone();
+                const rockb = new THREE.DodecahedronGeometry( 0.5);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                const meteorb = new THREE.Mesh( rockb, materialb );
                 scene.remove(meteor);
                 scene.add( meteorb );
                 meteorb.position.x = -6;
@@ -95,19 +96,28 @@
                 console.log(counter);
               }
               if(object == 16) { //meteor
-                const meteor1b = meteor.clone();
+                const rock1b = new THREE.DodecahedronGeometry( 0.5);
                 var material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                const meteor1b = new THREE.Mesh( rock1b, material1b );
                 scene.remove(meteor1);
                 scene.add( meteor1b );
                 meteor1b.position.x = -10;
                 meteor1b.position.y = 12;
                 meteor1b.position.z = -10;
                 counter++;
+                console.log(counter);
               }
               if(object == 17) { //meteor
-                material2 = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
-                scene.add(meteor2);
+                const rock2b = new THREE.DodecahedronGeometry( 0.5);
+                var material2b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                const meteor2b = new THREE.Mesh( rock2b, material2b );
+                scene.remove(meteor2);
+                scene.add( meteor2b );
+                meteor2b.position.x = -6;
+                meteor2b.position.y = 12;
+                meteor2b.position.z = -10;
                 counter++;
+                console.log(counter);
               }
             }
           }
