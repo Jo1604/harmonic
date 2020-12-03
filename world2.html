@@ -52,7 +52,7 @@
         console.log(scene);
 
         // Set up camera
-        camera.position.set(3, 9.5, 0);
+        camera.position.set(3, 9.2, 0);
         //camera.lookAt(new THREE.Vector3(4, 7.5, 0));
 
         // Set up renderer, canvas, and minor CSS adjustments
@@ -174,13 +174,13 @@
         window.addEventListener('keyup', onKeyUp, false);
 
         //lighting
-        const dir = new THREE.SpotLight(0xf9e38a, 1.6, 10, 0, 1, 0.9);
-        const ambi = new THREE.AmbientLight(0xa5a17d, 1);
-        const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
+        //const dir = new THREE.SpotLight(0xf9e38a, 1.6, 10, 0, 1, 0.9);
+        const ambi = new THREE.AmbientLight(0xd8ca8c, 1);
+        const hemi = new THREE.HemisphereLight(0xae6204, 0xf6f6a3, 2.3);
 
-        dir.position.set(-25, 30, -41);
+        //dir.position.set(-25, 30, -41);
         //dir.target.position.set(0, 0, 0);
-        scene.add(dir);
+        //scene.add(dir);
         scene.add(ambi);
         scene.add(hemi);
 
@@ -234,21 +234,30 @@
         cube.position.y = 12 ;
         cube.position.z = 0;
 
+        //knot
+        const knot = new THREE.TorusKnotGeometry(10, 3, 37);
+        var knotMaterial = new THREE.MeshBasicMaterial( {color: 0x6d0269} );
+        const home = new THREE.Mesh( knot, knotMaterial );
+        scene.add( home );
+        home.position.x = -9;
+        home.position.y = 9.5;
+        home.position.z = -7.8;
+
         //coconuts
         const rock = new THREE.SphereGeometry( 0.5);
         var material = new THREE.MeshBasicMaterial( {color: 0x874814} );
         const coconut = new THREE.Mesh( rock, material );
         scene.add( coconut );
-        coconut.position.x = -3;
-        coconut.position.y = 10;
-        coconut.position.z = -10;
+        coconut.position.x = 13;
+        coconut.position.y = 9;
+        coconut.position.z = 86;
 
         const coconut1 = coconut.clone();
         var material1 = new THREE.MeshBasicMaterial( {color: 0x874814} );
         scene.add( coconut1 );
-        coconut1.position.x = -3;
-        coconut1.position.y = 10;
-        coconut1.position.z = -10;
+        coconut1.position.x = 81;
+        coconut1.position.y = 9.3;
+        coconut1.position.z = -16;
 
         const coconut2 = coconut.clone();
         var material2 = new THREE.MeshBasicMaterial( {color: 0x874814} );
@@ -277,8 +286,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 250.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 250.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 300.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 300.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
