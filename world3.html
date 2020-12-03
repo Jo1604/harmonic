@@ -178,7 +178,7 @@
         //lighting
         //const dir = new THREE.SpotLight(0xf9e38a, 0.6, 10, 0, 1, 1);
         const ambi = new THREE.AmbientLight(0xceeeee, 1);
-        const hemi = new THREE.HemisphereLight(0x191958, 0xd4d4d4, 0.5);
+        const hemi = new THREE.HemisphereLight(0x191958, 0x258a98, 0.8);
 
         //dir.position.set(3, 20, 0);
         //dir.target.position.set(0, 0, 0);
@@ -300,7 +300,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            console.log(camera.position)
+            //console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
