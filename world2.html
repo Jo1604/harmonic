@@ -235,7 +235,7 @@
         cube.position.z = 0;
 
         //knot
-        const knot = new THREE.TorusKnotGeometry(1, 0.4, 17);
+        const knot = new THREE.ConeGeometry(2, 5, 4);
         var knotMaterial = new THREE.MeshBasicMaterial( {color: 0xc55656} );
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );

@@ -84,13 +84,16 @@
               if(object == 14) { //cube
                 window.location.href = "./assignment1.html"
               }
+              if(object == 18) { //knot
+                window.location.href = "./home.html"
+              }
               if(object == 19) { //meteor
                 const rockb = new THREE.DodecahedronGeometry( 0.5);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const meteorb = new THREE.Mesh( rockb, materialb );
                 scene.remove(meteor);
                 scene.add( meteorb );
-                meteorb.position.x = -16.5;
+                meteorb.position.x = -16;
                 meteorb.position.y = 10;
                 meteorb.position.z = -4;
                 counter++;
@@ -104,7 +107,7 @@
                 scene.add( meteor1b );
                 meteor1b.position.x = -18;
                 meteor1b.position.y = 11;
-                meteor1b.position.z = -14;
+                meteor1b.position.z = 14;
                 counter++;
                 console.log(counter);
               }
@@ -219,7 +222,7 @@
         });
 
         // load computer
-        const box = new THREE.BoxGeometry( 1, 1, 1 );
+        const box = new THREE.BoxGeometry( 2, 2, 2 );
         const loadComputer = new THREE.TextureLoader();
         const materials = [
           new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
@@ -231,12 +234,12 @@
         ];
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
-        cube.position.x = -5;
-        cube.position.y = 12;
-        cube.position.z = 0;
+        cube.position.x = -16.6;
+        cube.position.y = 10;
+        cube.position.z = 0.7;
 
         //knot
-        const knot = new THREE.TorusKnotGeometry(1, 0.4, 17);
+        const knot = new THREE.ConeGeometry(2, 5, 4);
         var knotMaterial = new THREE.MeshBasicMaterial( {color: 0xc55656} );
         const home = new THREE.Mesh( knot, knotMaterial );
         home.castShadow = true;
