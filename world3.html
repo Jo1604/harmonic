@@ -43,7 +43,10 @@ Box<!DOCTYPE html>
       var direction = new THREE.Vector3();
       var mouse = new THREE.Vector2();
       var raycaster = new THREE.Raycaster();
-      var counter = 0;
+      var walrusModel;
+      var obj1 = FALSE;
+      var obj2 = FALSE;
+      var obj3 = FALSE;
 
       // Initialize core ThreeJS components
         const scene = new THREE.Scene();
@@ -80,13 +83,13 @@ Box<!DOCTYPE html>
             for (var i = 0; i < intersects.length; i++) {
               object = intersects[i].object.id;
               console.log(object)
-              if(object == 16) { //Door1
-                //window.location.href = "./assignment3.html"
+              if(object == 14) { //Door1
+                window.location.href = "./assignment3.html"
               }
-              if(object == 18) { //knot
-                //window.location.href = "./home.html"
+              if(object == 15) { //knot
+                window.location.href = "./home.html"
               }
-              if(object == 18) { //gift
+              if(object == 16) { //gift
                 const rockb = new THREE.BoxGeometry(4, 4, 4);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const giftb = new THREE.Mesh( rockb, materialb );
@@ -95,10 +98,9 @@ Box<!DOCTYPE html>
                 giftb.position.x = 113;
                 giftb.position.y = 39;
                 giftb.position.z = 21.8;
-                counter++;
-                console.log(counter);
+                obj1 = TRUE;
               }
-              if(object == 19) { //gift
+              if(object == 17) { //gift
                 const rock1b = new THREE.BoxGeometry(4, 4, 4);
                 var material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const gift1b = new THREE.Mesh( rock1b, material1b );
@@ -107,10 +109,9 @@ Box<!DOCTYPE html>
                 gift1b.position.x = 35.8;
                 gift1b.position.y = 42;
                 gift1b.position.z = -34;
-                counter++;
-                console.log(counter);
+                obj2 = TRUE;
               }
-              if(object == 20) { //gift
+              if(object == 18) { //gift
                 const rock2b = new THREE.BoxGeometry(4, 4, 4 );
                 var material2b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const gift2b = new THREE.Mesh( rock2b, material2b );
@@ -119,8 +120,7 @@ Box<!DOCTYPE html>
                 gift2b.position.x = -69.5;
                 gift2b.position.y = 45;
                 gift2b.position.z = -0.5;
-                counter++;
-                console.log(counter);
+                obj3 = TRUE;
               }
             }
           }
@@ -217,7 +217,7 @@ Box<!DOCTYPE html>
         const loaderStar = new GLTFLoader();
         // add conditional
         loaderStar.load('./walrus.glb', function (gltf) {
-          scene.add( gltf.scene );
+          walrusModel = gltf.scene;
         });
         counter ++;
         }
@@ -272,6 +272,9 @@ Box<!DOCTYPE html>
         gift2.position.z = -0.5;
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
+            if (obj1 && obj2 && obj3){
+              scene.add(walrusModel);
+            }
             if (controls.isLocked === true) {
               var time = Date.now();
               var delta = (time - prevTime) / 1000.0;
