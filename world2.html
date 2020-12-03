@@ -218,7 +218,7 @@
         });
 
         // load computer
-        const box = new THREE.BoxGeometry( 1, 1, 1 );
+        const box = new THREE.BoxGeometry( 3, 3, 13);
         const loadComputer = new THREE.TextureLoader();
         const materials = [
           new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
@@ -231,16 +231,16 @@
         const cube = new THREE.Mesh( box, materials );
         scene.add( cube );
         cube.position.x = -5;
-        cube.position.y = 12 ;
+        cube.position.y = 10 ;
         cube.position.z = 0;
 
         //knot
-        const knot = new THREE.TorusKnotGeometry(2, 1., 17);
-        var knotMaterial = new THREE.MeshBasicMaterial( {color: 0x6d0269} );
+        const knot = new THREE.TorusKnotGeometry(1, 0.4, 17);
+        var knotMaterial = new THREE.MeshBasicMaterial( {color: 0xc55656} );
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
         home.position.x = -9;
-        home.position.y = 9.5;
+        home.position.y = 9;
         home.position.z = -7.8;
 
         //coconuts
@@ -286,8 +286,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 400.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 400.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 500.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 500.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);

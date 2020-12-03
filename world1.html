@@ -84,7 +84,7 @@
               if(object == 14) { //cube
                 window.location.href = "./assignment1.html"
               }
-              if(object == 18) { //meteor
+              if(object == 19) { //meteor
                 const rockb = new THREE.DodecahedronGeometry( 0.5);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const meteorb = new THREE.Mesh( rockb, materialb );
@@ -96,7 +96,7 @@
                 counter++;
                 console.log(counter);
               }
-              if(object == 19) { //meteor
+              if(object == 20) { //meteor
                 const rock1b = new THREE.DodecahedronGeometry( 0.5);
                 var material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const meteor1b = new THREE.Mesh( rock1b, material1b );
@@ -108,7 +108,7 @@
                 counter++;
                 console.log(counter);
               }
-              if(object == 20) { //meteor
+              if(object == 21) { //meteor
                 const rock2b = new THREE.DodecahedronGeometry( 0.5);
                 var material2b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
                 const meteor2b = new THREE.Mesh( rock2b, material2b );
@@ -236,8 +236,8 @@
         cube.position.z = 0;
 
         //knot
-        const knot = new THREE.TorusKnotGeometry(1, 0.8, 17);
-        var knotMaterial = new THREE.MeshBasicMaterial( {color: 0x6d0269} );
+        const knot = new THREE.TorusKnotGeometry(1, 0.4, 17);
+        var knotMaterial = new THREE.MeshBasicMaterial( {color: 0xc55656} );
         const home = new THREE.Mesh( knot, knotMaterial );
         home.castShadow = true;
         scene.add( home );
@@ -303,7 +303,7 @@
             renderer.render(scene, camera);
             scene.update && scene.update(timeStamp);
             window.requestAnimationFrame(onAnimationFrameHandler);
-            //console.log(camera.position)
+            console.log(camera.position)
         };
         window.requestAnimationFrame(onAnimationFrameHandler);
 
