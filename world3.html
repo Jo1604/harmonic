@@ -142,7 +142,7 @@
         const ambi = new THREE.AmbientLight(0xa5a17d, 1);
         const hemi = new THREE.HemisphereLight(0x044058, 0xa8b0b4, 2.3);
 
-        dir.position.set(3, 50, 0);
+        dir.position.set(3, 100, 0);
         //dir.target.position.set(0, 0, 0);
         scene.add(dir);
         scene.add(ambi);
@@ -205,8 +205,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 100.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 100.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 200.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 200.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
