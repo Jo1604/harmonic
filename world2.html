@@ -85,7 +85,7 @@
                 window.location.href = "./assignment2.html"
               }
               if(object == 15) { //coconut
-                const rockb = new THREE.SphereGeometry( 0.5);
+                const rockb = new THREE.SphereGeometry(1);
                 var materialb = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
                 const coconutb = new THREE.Mesh( rockb, materialb );
                 scene.remove(coconut);
@@ -97,7 +97,7 @@
                 console.log(counter);
               }
               if(object == 16) { //coconut
-                const rock1b = new THREE.SphereGeometry( 0.5);
+                const rock1b = new THREE.SphereGeometry(1 );
                 var material1b = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
                 const coconut1b = new THREE.Mesh( rock1b, material1b );
                 scene.remove(coconut1);
@@ -109,7 +109,7 @@
                 console.log(counter);
               }
               if(object == 17) { //coconut
-                const rock2b = new THREE.SphereGeometry( 0.5);
+                const rock2b = new THREE.SphereGeometry(1);
                 var material2b = new THREE.MeshBasicMaterial( {color: 0xe5d4c6} );
                 const coconut2b = new THREE.Mesh( rock2b, material2b );
                 scene.remove(coconut2);
@@ -244,7 +244,7 @@
         home.position.z = -7.8;
 
         //coconuts
-        const rock = new THREE.SphereGeometry( 0.5);
+        const rock = new THREE.SphereGeometry(1);
         var material = new THREE.MeshBasicMaterial( {color: 0x874814} );
         const coconut = new THREE.Mesh( rock, material );
         scene.add( coconut );
@@ -262,9 +262,9 @@
         const coconut2 = coconut.clone();
         var material2 = new THREE.MeshBasicMaterial( {color: 0x874814} );
         scene.add( coconut2 );
-        coconut2.position.x = -3;
-        coconut2.position.y = 10;
-        coconut2.position.z = -10;
+        coconut2.position.x = -58;
+        coconut2.position.y = 9;
+        coconut2.position.z = -94;
 
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {

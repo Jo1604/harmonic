@@ -239,6 +239,7 @@
         const knot = new THREE.TorusKnotGeometry(1, 0.8, 17);
         var knotMaterial = new THREE.MeshBasicMaterial( {color: 0x6d0269} );
         const home = new THREE.Mesh( knot, knotMaterial );
+        home.castShadow = true;
         scene.add( home );
         home.position.x = 15;
         home.position.y = 10;

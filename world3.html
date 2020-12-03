@@ -84,6 +84,42 @@
                 console.log("door1")
                 window.location.href = "./assignment2.html"
               }
+              if(object == 18) { //gift
+                const rockb = new THREE.DodecahedronGeometry( 0.5);
+                var materialb = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                const giftb = new THREE.Mesh( rockb, materialb );
+                scene.remove(gift);
+                scene.add( giftb );
+                giftb.position.x = -16.5;
+                giftb.position.y = 10;
+                giftb.position.z = -4;
+                counter++;
+                console.log(counter);
+              }
+              if(object == 19) { //gift
+                const rock1b = new THREE.DodecahedronGeometry( 0.5);
+                var material1b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                const gift1b = new THREE.Mesh( rock1b, material1b );
+                scene.remove(gift1);
+                scene.add( gift1b );
+                gift1b.position.x = -18;
+                gift1b.position.y = 11;
+                gift1b.position.z = -14;
+                counter++;
+                console.log(counter);
+              }
+              if(object == 20) { //gift
+                const rock2b = new THREE.DodecahedronGeometry( 0.5);
+                var material2b = new THREE.MeshBasicMaterial( {color: 0x00c5ff} );
+                const gift2b = new THREE.Mesh( rock2b, material2b );
+                scene.remove(gift2);
+                scene.add( gift2b );
+                gift2b.position.x = -69.5;
+                gift2b.position.y = 50;
+                gift2b.position.z = -0.5;
+                counter++;
+                console.log(counter);
+              }
             }
           }
         }
@@ -185,7 +221,7 @@
         }
 
         // load computer
-        const box = new THREE.BoxGeometry( 1, 1, 1 );
+        const box = new THREE.BoxGeometry( 3, 3, 3 );
         const loadComputer = new THREE.TextureLoader();
         const materials = [
           new THREE.MeshBasicMaterial({map: loadComputer.load('computerTexture.jpg')}),
@@ -207,7 +243,7 @@
         const home = new THREE.Mesh( knot, knotMaterial );
         scene.add( home );
         home.position.x = 15;
-        home.position.y = 10;
+        home.position.y = 50;
         home.position.z = 0.16;
 
         //gifts
@@ -229,9 +265,9 @@
         const gift2 = gift.clone();
         var material2 = new THREE.MeshBasicMaterial( {color: 0x48ba48} );
         scene.add( gift2 );
-        gift2.position.x = -3;
-        gift2.position.y = 52;
-        gift2.position.z = -10;
+        gift2.position.x = -69.5;
+        gift2.position.y = 50;
+        gift2.position.z = -0.5;
         // Render loop
         const onAnimationFrameHandler = (timeStamp) => {
             if (controls.isLocked === true) {
@@ -245,8 +281,8 @@
               direction.x = Number(moveRight) - Number(moveLeft);
               direction.normalize(); // this ensures consistent movements in all directions
 
-              if (moveForward || moveBackward) velocity.z -= direction.z * 200.0 * delta;
-              if (moveLeft || moveRight) velocity.x -= direction.x * 200.0 * delta;
+              if (moveForward || moveBackward) velocity.z -= direction.z * 400.0 * delta;
+              if (moveLeft || moveRight) velocity.x -= direction.x * 400.0 * delta;
 
 
               controls.moveRight(- velocity.x * delta);
