@@ -203,7 +203,7 @@
 
         var stars = new THREE.Points(starGeo, starMaterial);
         // Set background to a nice color
-        scene.background = new THREE.Color(0xfbbf63);
+        scene.background = new THREE.Color(0x6dcec6);
         scene.add(stars);
 
         //load base
@@ -273,9 +273,9 @@
             if (obj1 && obj2 && obj3) {
               scene.add( whaleModel);
               whaleModel.position.x = -52;
-              whaleModel.position.y = -6;
+              whaleModel.position.y = -8;
               whaleModel.position.z= -14.7;
-              whaleModel.rotation.x += 0.01;
+              whaleModel.rotation.z += 0.01;
             }
             if (controls.isLocked === true) {
               var time = Date.now();
